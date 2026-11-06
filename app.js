@@ -1,21 +1,21 @@
 // ==========================================================================
 // Speakers en Verde Tocopilla 2026 - Main Application Logic
-// Matches the visual identity and colors of official event posters
+// Storytelling, Interactive Showcase & Project Modals
 // ==========================================================================
 
-// 1. Projects Data
+// 1. The 10 School Projects Data
 const projects = [
   {
     id: 'acuaponia',
     title: 'Jardín Acuapónico',
     school: 'Escuela Arturo Prat Chacón',
     category: 'bio',
-    categoryLabel: 'Biotecnología & Alimentación',
+    categoryLabel: 'Biotecnología & Nutrición',
     icon: 'sprout',
-    shortDesc: 'Acuaponía vertical para la producción sustentable de hortalizas y crianza de peces, promoviendo hábitos saludables.',
-    fullDesc: 'La acuaponía vertical busca promover hábitos de alimentación saludable en los estudiantes mediante la producción sustentable de hortalizas y la crianza de peces. A través de experiencias prácticas de aprendizaje, los alumnos participarán activamente en el cultivo y cuidado del sistema, fortaleciendo sus conocimientos sobre nutrición, ciclos ecológicos y seguridad alimentaria.',
-    impact: 'Contribuirá a disminuir los índices de sobrepeso y obesidad escolar, asegurando el acceso y consumo de alimentos frescos, limpios y cosechados en el propio colegio.',
-    tags: ['Acuaponía', 'Seguridad Alimentaria', 'Nutrición', 'ODS 2 & 3']
+    shortDesc: 'Acuaponía vertical para la producción sustentable de hortalizas y crianza de peces, promoviendo hábitos saludables y combatiendo la obesidad infantil.',
+    fullDesc: 'La acuaponía vertical busca promover hábitos de alimentación saludable en los estudiantes mediante la producción sustentable de hortalizas y la crianza de peces. A través de experiencias prácticas de aprendizaje en su escuela, los alumnos participan activamente en el cultivo y cuidado del sistema, fortaleciendo sus conocimientos sobre nutrición, medioambiente y seguridad alimentaria.',
+    impact: 'Contribuirá a disminuir los índices de sobrepeso y obesidad escolar, asegurando el acceso y consumo de alimentos frescos, saludables y cosechados por los propios estudiantes en Tocopilla.',
+    tags: ['Acuaponía', 'Seguridad Alimentaria', 'Nutrición Escolar', 'ODS 2 & 3']
   },
   {
     id: 'sweet-calm',
@@ -24,10 +24,10 @@ const projects = [
     category: 'inclusion',
     categoryLabel: 'Inclusión & NEE',
     icon: 'heart-handshake',
-    shortDesc: 'Elaboración de té e infusiones naturales relajantes por estudiantes con Necesidades Educativas Permanentes.',
-    fullDesc: 'Este proyecto busca desarrollar habilidades laborales, cognitivas, sensoriales y de autonomía mediante la elaboración de bolsitas de té e infusiones naturales con propiedades relajantes. Diseñado especialmente para estudiantes con necesidades educativas permanentes (NEE), favoreciendo la atención, motricidad fina, seguimiento de instrucciones y regulación emocional.',
-    impact: 'Fomenta la inclusión sociolaboral efectiva, la regulación emocional y la inserción de estudiantes en cadenas de valor comunitarias y con identidad local.',
-    tags: ['Inclusión NEE', 'Salud Emocional', 'Herbalismo', 'ODS 10']
+    shortDesc: 'Elaboración de té e infusiones naturales relajantes desarrollado por estudiantes con Necesidades Educativas Permanentes.',
+    fullDesc: 'Este proyecto busca desarrollar habilidades laborales, cognitivas, sensoriales y de autonomía mediante la elaboración de bolsitas de té e infusiones naturales con propiedades relajantes. Diseñado especialmente para estudiantes con necesidades educativas permanentes (NEE), favorece la atención, la motricidad fina, el seguimiento de instrucciones, el trabajo colaborativo y la regulación emocional.',
+    impact: 'Favorece la inclusión sociolaboral efectiva de estudiantes con discapacidad, fortaleciendo su autoestima, autonomía y vinculación comunitaria.',
+    tags: ['Inclusión Escolar', 'NEE', 'Regulación Emocional', 'Herbalismo', 'ODS 10']
   },
   {
     id: 'lombrilab',
@@ -36,10 +36,10 @@ const projects = [
     category: 'circular',
     categoryLabel: 'Economía Circular & Suelos',
     icon: 'recycle',
-    shortDesc: 'Transformación de residuos orgánicos escolares en humus de alta calidad mediante lombricultura.',
-    fullDesc: 'LombriLab consiste en reciclar la materia orgánica generada en el casino y patios escolares a través de la lombricultura, utilizando lombrices para transformar los desechos en humus, un potente fertilizante natural. Buscamos reducir la contaminación, dar una segunda vida a los desechos y fomentar prácticas sustentables en nuestra comunidad escolar.',
-    impact: 'Reducción drástica de desechos orgánicos en vertederos locales, regeneración de suelos áridos de Tocopilla y educación ambiental práctica.',
-    tags: ['Lombricultura', 'Humus Natural', 'Residuos Cero', 'ODS 12']
+    shortDesc: 'Transformación de materia orgánica escolar en humus y fertilizante natural mediante lombricultura.',
+    fullDesc: 'El proyecto consiste en reciclar la materia orgánica generada en la comunidad escolar a través de la lombricultura, utilizando lombrices para transformar los residuos orgánicos en humus, un fertilizante natural de alta calidad. Buscamos reducir la contaminación, dar una segunda vida a los desechos y fomentar prácticas sustentables en nuestra comunidad escolar, otorgando un valor agregado al producto.',
+    impact: 'Reducción de residuos orgánicos en vertederos de Tocopilla, regeneración de suelos en zonas áridas y fomento de huertos escolares comunitarios.',
+    tags: ['Lombricultura', 'Humus Natural', 'Residuos Orgánicos', 'ODS 12']
   },
   {
     id: 'ecopuntos',
@@ -48,10 +48,10 @@ const projects = [
     category: 'circular',
     categoryLabel: 'Economía Circular & ABP',
     icon: 'box',
-    shortDesc: 'Transformación de contenedores en desuso de SQM en puntos limpios inclusivos mediante ABP.',
-    fullDesc: 'Proyecto basado en Aprendizaje Basado en Proyectos (ABP), desarrollado por estudiantes de 6° básico en Lenguaje y Ciencias, junto a la Escuela Pedro Aguirre Cerda y los párvulos de la escuela. Aborda la falta de puntos de reciclaje en Tocopilla reutilizando contenedores industriales en desuso de SQM para transformarlos en puntos limpios comunitarios.',
-    impact: 'Instalación de infraestructura de reciclaje en la comuna, articulación intercolegios y fomento de la corresponsabilidad ciudadana en la gestión de residuos.',
-    tags: ['Upcycling', 'SQM Contenedores', 'ABP Escolar', 'ODS 11 & 12']
+    shortDesc: 'Transformación de contenedores en desuso de SQM en modernos puntos limpios inclusivos mediante ABP escolar.',
+    fullDesc: 'Proyecto basado en Aprendizaje Basado en Proyectos (ABP) desarrollado por estudiantes de 6° básico en Lenguaje y Ciencias, junto a la Escuela Pedro Aguirre Cerda y los párvulos del establecimiento. La iniciativa aborda la falta de puntos de reciclaje en escuelas y espacios públicos de Tocopilla, reutilizando contenedores en desuso de SQM para transformarlos en puntos limpios que fomenten el reciclaje y el cuidado ambiental.',
+    impact: 'Instalación de infraestructura de reciclaje colaborativa, educación ambiental intergeneracional y fomento de la corresponsabilidad en Tocopilla.',
+    tags: ['Upcycling', 'SQM Contenedores', 'ABP Intercolegial', 'ODS 11 & 12']
   },
   {
     id: 'protesis',
@@ -60,10 +60,10 @@ const projects = [
     category: 'tech',
     categoryLabel: 'Tecnología & Robótica 3D',
     icon: 'cpu',
-    shortDesc: 'Prótesis funcional de miembro superior accesible y de bajo costo fabricada mediante impresión 3D.',
-    fullDesc: 'Desarrollo progresivo de una prótesis robótica de miembro superior fabricada mediante impresión 3D. Actualmente el equipo cuenta con un prototipo funcional de mano y antebrazo; la siguiente fase considera la incorporación del brazo y articulación de hombro para aumentar su funcionalidad y rango de movimiento, generando una alternativa accesible y de bajo costo.',
-    impact: 'Solución ortopédica accesible para personas con discapacidad física en la región, democratizando la tecnología biomédica.',
-    tags: ['Impresión 3D', 'Robótica', 'Biomédica', 'ODS 3 & 10']
+    shortDesc: 'Desarrollo de prótesis robótica funcional de miembro superior accesible y de bajo costo fabricada mediante impresión 3D.',
+    fullDesc: 'Desarrollo progresivo de una prótesis robótica de miembro superior fabricada mediante manufactura aditiva (impresión 3D). Actualmente el equipo cuenta con un prototipo funcional de mano y antebrazo; la siguiente etapa considera la incorporación del brazo y articulación de hombro para aumentar su funcionalidad y rango de movimiento, ofreciendo una alternativa accesible para personas con discapacidad física.',
+    impact: 'Democratización de tecnología biomédica de bajo costo para familias vulnerables del norte grande que no pueden costear prótesis comerciales.',
+    tags: ['Impresión 3D', 'Robótica Social', 'Biomédica', 'ODS 3 & 10']
   },
   {
     id: 'basurero-inteligente',
@@ -72,9 +72,9 @@ const projects = [
     category: 'tech',
     categoryLabel: 'Tecnología & Gamificación',
     icon: 'sparkles',
-    shortDesc: 'Contenedor inteligente con escáner tecnológico que clasifica residuos y premia al usuario con puntos en comercios.',
-    fullDesc: 'Dispositivo inteligente capaz de identificar y clasificar residuos mediante un sistema de reconocimiento tecnológico. A través de un escáner, las personas acercan un residuo (como una botella plástica) para que el dispositivo indique el contenedor exacto. Incorpora gamificación mediante acumulación de puntos canjeables por descuentos en comercios locales asociados de Tocopilla.',
-    impact: 'Aumento radical en las tasas de segregación de residuos en origen y dinamización del comercio local mediante una red colaborativa.',
+    shortDesc: 'Contenedor con sensor que clasifica residuos y premia al usuario con puntos canjeables en comercios locales de Tocopilla.',
+    fullDesc: 'Iniciativa que desarrolla un basurero inteligente capaz de identificar y clasificar residuos mediante un sistema de reconocimiento tecnológico. A través de un escáner, las personas acercan un residuo (como una botella plástica) para que el dispositivo indique el contenedor correcto. Además, incorpora gamificación: las personas acumulan puntos por reciclar correctamente, canjeables por descuentos o productos en comercios asociados de Tocopilla.',
+    impact: 'Aumento significativo en la segregación de residuos en origen y fortalecimiento de la economía circular y el comercio de barrio en Tocopilla.',
     tags: ['Sensores IoT', 'Gamificación', 'Comercio Local', 'ODS 12']
   },
   {
@@ -85,8 +85,8 @@ const projects = [
     categoryLabel: 'Economía Circular & Química Verde',
     icon: 'droplets',
     shortDesc: 'Elaboración de jabones artesanales mediante saponificación de aceites de cocina usados recolectados en locales gastronómicos.',
-    fullDesc: 'Transformación de un residuo altamente contaminante (aceite de cocina usado recolectado en locales de comida) en productos de higiene de valor agregado. Cuenta con dos líneas: Línea Herbal (ruda, menta, romero y lavanda) y Línea Nutritiva (miel, canela y borra de café para exfoliación).',
-    impact: 'Protección del agua y del borde costero de Tocopilla al evitar el descarte de aceites contaminantes, fomentando el espíritu emprendedor y la conciencia ecológica.',
+    fullDesc: 'Elaboración de jabones artesanales mediante saponificación utilizando como materia prima aceites de cocina usados asociados a locales de comida de Tocopilla. Transforma un residuo altamente contaminante del agua en productos de higiene de alto valor agregado. Contempla dos líneas: Línea Herbal (ruda, menta, romero y lavanda) y Línea Nutritiva (miel, canela y borra de café para exfoliación).',
+    impact: 'Protección directa del borde costero y red de alcantarillado de Tocopilla, evitando la contaminación hídrica y fomentando el emprendimiento escolar.',
     tags: ['Saponificación', 'Aceite Reciclado', 'Línea Herbal & Nutritiva', 'ODS 6 & 14']
   },
   {
@@ -96,33 +96,33 @@ const projects = [
     category: 'bio',
     categoryLabel: 'Biotecnología & Reforestación',
     icon: 'flower-2',
-    shortDesc: 'Cápsulas de vida y lápices plantables que convierten espacios desérticos vacíos en áreas verdes biodiversas.',
-    fullDesc: '¿Qué pasaría si un lápiz no terminara en la basura, transformándose en vida? ¿Y si una pequeña cápsula pudiera convertir espacios vacíos en lugares llenos de biodiversidad? Así nace BloomPods: lápices plantables y cápsulas germinadoras diseñadas para florecer en el clima árido del norte.',
-    impact: 'Revegetación escolar y comunitaria en el desierto costero de Tocopilla, promoviendo biodiversidad y educación en ciclos biológicos.',
+    shortDesc: 'Lápices plantables y cápsulas de vida que convierten espacios desérticos vacíos en áreas verdes llenas de biodiversidad.',
+    fullDesc: '¿Qué pasaría si un lápiz no terminara en la basura, transformándose en vida? ¿Y si una pequeña cápsula pudiera convertir espacios vacíos en lugares llenos de biodiversidad? Así nace BloomPods: una innovadora propuesta de lápices y cápsulas germinadoras diseñadas para adaptarse al suelo y clima árido de Tocopilla, promoviendo microecosistemas verdes.',
+    impact: 'Revegetación participativa en escuelas y espacios públicos de Tocopilla, creando conciencia ecológica y microclimas amigables en el desierto costero.',
     tags: ['Lápices Plantables', 'Biodiversidad', 'Áreas Verdes', 'ODS 15']
   },
   {
     id: 'pablo-neruda',
-    title: 'Propuesta Ecológica Escolar',
+    title: 'Propuesta Sustentable Escolar',
     school: 'Escuela Pablo Neruda',
     category: 'circular',
     categoryLabel: 'En Preparación Activa',
     icon: 'lightbulb',
-    shortDesc: 'Iniciativa medioambiental escolar desarrollada durante el proceso de mentoría para la final.',
+    shortDesc: 'Proyecto ecoemprendedor enfocado en soluciones sostenibles para el entorno de su comunidad educativa.',
     fullDesc: 'Los estudiantes de la Escuela Pablo Neruda han participado activamente en los talleres de oratoria, resolución de problemas y formulación de proyectos, preparando su pitch final para la jornada en Usqai UCN.',
-    impact: 'Aporte de la comunidad escolar a la sustentabilidad de la comuna de Tocopilla.',
+    impact: 'Aporte de la comunidad escolar a la sustentabilidad y el cuidado ambiental de la comuna de Tocopilla.',
     tags: ['En Preparación', 'Pitch Final', 'Tocopilla']
   },
   {
     id: 'domingo-latrille',
-    title: 'Propuesta Técnico-Profesional',
+    title: 'Innovación Técnico-Profesional',
     school: 'Liceo Polivalente Domingo Latrille',
     category: 'tech',
     categoryLabel: 'En Preparación Activa',
     icon: 'compass',
-    shortDesc: 'Proyecto ecoemprendedor formulado por estudiantes del liceo para la final comunal.',
-    fullDesc: 'El equipo del Liceo Polivalente Domingo Latrille presentará en la jornada del 13 de noviembre su solución desarrollada a lo largo del proceso formativo anual de Speakers en Verde.',
-    impact: 'Impulso al talento joven y compromiso social desde la educación técnico-profesional.',
+    shortDesc: 'Iniciativa formulada por estudiantes de educación media técnico-profesional para resolver desafíos comunitarios.',
+    fullDesc: 'El equipo del emblemático Liceo Polivalente Domingo Latrille presentará en la jornada del 13 de noviembre su solución desarrollada a lo largo del proceso formativo anual de Speakers en Verde.',
+    impact: 'Impulso al talento joven y compromiso social desde la educación técnico-profesional de Tocopilla.',
     tags: ['En Preparación', 'Innovación Juvenil', 'Tocopilla']
   }
 ];
@@ -133,47 +133,47 @@ function renderProjects(items) {
   if (!grid) return;
 
   grid.innerHTML = items.map(p => `
-    <div class="card-pop p-6 flex flex-col justify-between space-y-4 border-2 border-slate-900 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] bg-white">
+    <div class="story-card p-6 flex flex-col justify-between space-y-4 bg-white border border-slate-200">
       <div class="space-y-3">
         
         <!-- Header badge -->
         <div class="flex items-center justify-between gap-2">
-          <span class="badge-${p.category} text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-wider">
+          <span class="badge-${p.category} text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
             ${p.categoryLabel}
           </span>
-          <div class="w-8 h-8 rounded-xl bg-slate-100 border border-slate-300 flex items-center justify-center text-slate-800">
+          <div class="w-8 h-8 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700">
             <i data-lucide="${p.icon}" class="w-4 h-4"></i>
           </div>
         </div>
 
         <!-- Title & School -->
         <div>
-          <h3 class="text-xl font-black font-display text-slate-900 leading-tight">
+          <h3 class="text-xl font-bold font-display text-slate-900 leading-tight">
             ${p.title}
           </h3>
-          <div class="text-xs font-black text-poster-greenDark mt-1 flex items-center gap-1.5 uppercase">
+          <div class="text-xs font-bold text-sev-greenDark mt-1 flex items-center gap-1.5 uppercase">
             <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
             <span>${p.school}</span>
           </div>
         </div>
 
         <!-- Short Description -->
-        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
           ${p.shortDesc}
         </p>
 
         <!-- Tags -->
         <div class="flex flex-wrap gap-1.5 pt-1">
-          ${p.tags.map(t => `<span class="text-[10px] font-bold bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md border border-slate-300">${t}</span>`).join('')}
+          ${p.tags.map(t => `<span class="text-[10px] font-bold bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-md border border-slate-200">${t}</span>`).join('')}
         </div>
 
       </div>
 
       <!-- Action Footer -->
-      <div class="pt-4 border-t-2 border-slate-100 flex items-center justify-between">
+      <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
         <button onclick="openProjectModal('${p.id}')" 
-                class="w-full py-2.5 px-4 rounded-xl text-xs font-black bg-slate-900 hover:bg-poster-green text-white hover:text-slate-950 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition flex items-center justify-center gap-2 group">
-          <span>Ver Ficha del Proyecto</span>
+                class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-100 hover:bg-sev-purple hover:text-white text-slate-800 transition flex items-center justify-center gap-2 group">
+          <span>Ver Ficha Completa</span>
           <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
         </button>
       </div>
@@ -239,10 +239,10 @@ function openProjectModal(projectId) {
   const modalImpact = document.getElementById('modalImpact');
 
   modalTitle.textContent = p.title;
-  modalSchool.innerHTML = `<i data-lucide="graduation-cap" class="w-4 h-4"></i><span>${p.school}</span>`;
+  modalSchool.innerHTML = `<i data-lucide="graduation-cap" class="w-4 h-4 text-sev-greenDark"></i><span>${p.school}</span>`;
   
   modalBadges.innerHTML = `
-    <span class="badge-${p.category} text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+    <span class="badge-${p.category} text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
       ${p.categoryLabel}
     </span>
   `;
@@ -250,7 +250,7 @@ function openProjectModal(projectId) {
   modalBody.innerHTML = `
     <p class="text-sm leading-relaxed">${p.fullDesc}</p>
     <div class="flex flex-wrap gap-1.5 pt-2">
-      ${p.tags.map(t => `<span class="text-xs font-bold bg-slate-100 text-slate-800 px-2.5 py-1 rounded-lg border border-slate-300">${t}</span>`).join('')}
+      ${p.tags.map(t => `<span class="text-xs font-bold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg border border-slate-200">${t}</span>`).join('')}
     </div>
   `;
 
@@ -272,38 +272,38 @@ function closeProjectModal() {
   }
 }
 
-// 5. Lightbox for Posters & Images
-function openLightbox(src, caption) {
-  const modal = document.getElementById('lightboxModal');
-  const img = document.getElementById('lightboxImage');
-  const cap = document.getElementById('lightboxCaption');
-  
-  img.src = src;
-  img.alt = caption;
-  cap.textContent = caption;
-
-  modal.classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
-}
-
-function closeLightbox() {
-  const modal = document.getElementById('lightboxModal');
-  if (modal) {
-    modal.classList.add('hidden');
-    document.body.style.overflow = '';
-  }
-}
-
-// 6. Navigation and Keyboard Listeners
+// 5. Navigation & Header Behaviors
 function setupNavigation() {
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  const header = document.getElementById('mainHeader');
+
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
+
+  // Scroll styling
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header.classList.add('shadow-md');
+    } else {
+      header.classList.remove('shadow-md');
+    }
+  });
+
+  // Close modals on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeProjectModal();
-      closeLightbox();
     }
   });
 }

@@ -1,107 +1,133 @@
 /* ==========================================================================
-   Speakers en Verde Tocopilla 2026 - Official Luminous Visual Identity
-   100% White Canvas with Official Poster Palette (Magenta, Green, Yellow, Blue)
+   Speakers en Verde Tocopilla 2026 - Storytelling & Vertical Scroll Stylesheet
+   Crafted with the official brand colors of the initiative and partners
    ========================================================================== */
 
 :root {
-  --poster-magenta: #db2777;
-  --poster-magenta-deep: #850675;
-  --poster-green: #22c55e;
-  --poster-green-dark: #15803d;
-  --poster-yellow: #facc15;
-  --poster-yellow-light: #fef08a;
-  --poster-blue: #0284c7;
-  --poster-blue-light: #e0f2fe;
+  /* Brand Colors from Logos */
+  --sev-purple: #581c87;
+  --sev-purple-light: #7e22ce;
+  --sev-magenta: #db2777;
+  --sev-pink: #ec4899;
+  --sev-green: #16a34a;
+  --sev-green-dark: #15803d;
+  --sev-green-lime: #84cc16;
+  --sev-blue: #0284c7;
+  --sev-yellow: #f59e0b;
 }
 
 body {
-  background-color: #ffffff !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   color: #1e293b;
-  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-}
-
-/* Typography */
-.font-display {
-  font-family: 'Outfit', sans-serif;
-}
-
-.font-condensed {
-  font-family: 'Outfit', sans-serif;
-  letter-spacing: -0.01em;
-}
-
-/* Schedule typography matching Poster 2 */
-.schedule-time {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 900;
-  color: #0f172a;
-}
-
-.schedule-magenta {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 800;
-  color: #db2777;
-}
-
-.schedule-black {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 800;
-  color: #0f172a;
-}
-
-/* Luminous Card Styles with Color Accents */
-.card-luminous {
   background-color: #ffffff;
+}
+
+/* Headings font */
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Subtle gradient text */
+.text-gradient-sev {
+  background: linear-gradient(135deg, #581c87 0%, #db2777 60%, #16a34a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, #15803d 0%, #16a34a 50%, #84cc16 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Section styling with smooth subtle background alternates */
+.section-light {
+  background-color: #ffffff;
+}
+
+.section-soft {
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.section-warm {
+  background: linear-gradient(180deg, #fffbeb 0%, #ffffff 100%);
+}
+
+/* Timeline Vertical Line */
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: linear-gradient(180deg, #16a34a 0%, #db2777 50%, #581c87 100%);
+  transform: translateX(-50%);
+  border-radius: 9999px;
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 28px;
+  }
+}
+
+/* Story Cards */
+.story-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  border-color: #cbd5e1;
+}
+
+/* Partner Logo Boxes */
+.partner-logo-box {
+  background: #ffffff;
   border: 2px solid #e2e8f0;
   border-radius: 1.25rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.card-luminous:hover {
+.partner-logo-box:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
+  border-color: #16a34a;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
 }
 
-.card-green-accent {
-  border-left: 6px solid #22c55e;
-}
-
-.card-magenta-accent {
-  border-left: 6px solid #db2777;
-}
-
-.card-blue-accent {
-  border-left: 6px solid #0284c7;
-}
-
-.card-yellow-accent {
-  border-left: 6px solid #f59e0b;
-}
-
-/* Filter Buttons */
+/* Category Filter Buttons */
 .filter-btn {
-  background-color: #f8fafc;
+  background: #ffffff;
   color: #475569;
   border: 2px solid #e2e8f0;
   font-weight: 700;
-  border-radius: 0.75rem;
+  font-size: 0.8125rem;
   padding: 0.5rem 1rem;
+  border-radius: 0.875rem;
   transition: all 0.2s ease;
 }
 
 .filter-btn:hover {
-  background-color: #ffffff;
+  border-color: #94a3b8;
   color: #0f172a;
-  border-color: #cbd5e1;
 }
 
 .filter-btn.active {
-  background-color: #22c55e;
-  color: #052e16;
-  border-color: #16a34a;
-  font-weight: 800;
-  box-shadow: 0 4px 10px rgba(34, 197, 94, 0.25);
+  background: #16a34a;
+  color: #ffffff;
+  border-color: #15803d;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
 }
 
 /* Badges */
@@ -129,11 +155,11 @@ body {
   border: 1px solid #f472b6;
 }
 
-/* Modal Animation */
-@keyframes scaleUp {
+/* Smooth modal animation */
+@keyframes modalScale {
   from {
     opacity: 0;
-    transform: scale(0.96);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
@@ -141,6 +167,6 @@ body {
   }
 }
 
-.animate-scaleUp {
-  animation: scaleUp 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.animate-modal {
+  animation: modalScale 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
