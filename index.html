@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth bg-white">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Speakers en Verde Tocopilla 2026 | ¡Gran Final en Usqai UCN!</title>
+  <title>Speakers en Verde Tocopilla 2026 | ¡Gran Final!</title>
   <meta name="description" content="Iniciativa formativa escolar de ecoemprendimiento en Tocopilla. 10 equipos escolares, 9 establecimientos y más de 80 participantes en la Gran Final en Usqai UCN Antofagasta.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
   
-  <!-- Google Fonts: Outfit (heavy weights & pop style) and Plus Jakarta Sans -->
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,25 +18,22 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   
-  <!-- Tailwind Configuration with Poster Colors -->
+  <!-- Tailwind Configuration for Speakers en Verde Official Palette -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
             poster: {
-              magentaDark: '#4d0042',
-              magenta: '#850675',
-              magentaPop: '#db2777',
-              magentaPink: '#f43f5e',
-              yellow: '#feee00',
-              yellowGold: '#f59e0b',
+              magenta: '#db2777',
+              magentaDark: '#850675',
               green: '#22c55e',
               greenDark: '#15803d',
-              skyBlue: '#38bdf8',
-              navyStroke: '#0284c7',
-              navyDeep: '#0c4a6e',
-              sand: '#fef08a'
+              yellow: '#facc15',
+              yellowGold: '#f59e0b',
+              blue: '#0284c7',
+              blueDark: '#0369a1',
+              sky: '#38bdf8'
             }
           },
           fontFamily: {
@@ -50,443 +47,210 @@
   
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-poster-green selection:text-black overflow-x-hidden">
+<body class="bg-white text-slate-800 font-sans antialiased selection:bg-poster-green selection:text-slate-950 overflow-x-hidden">
 
-  <!-- TOP CANOPY WAVES (Official poster psychedelic liquid waves banner) -->
-  <div class="canopy-waves text-white pt-6 pb-20 relative">
-    
-    <!-- Floating Rocket & Lightbulb decorative graphics (like in the posters) -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      
-      <!-- Rocket (Top Left) -->
-      <div class="absolute left-2 sm:left-6 top-0 w-16 sm:w-24 md:w-28 animate-float pointer-events-none drop-shadow-xl z-10">
-        <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Rocket Body -->
-          <path d="M50 10 C65 35 70 70 65 90 L35 90 C30 70 35 35 50 10 Z" fill="#ffffff" stroke="#0c4a6e" stroke-width="3"/>
-          <path d="M50 10 C58 25 60 40 50 45 C40 40 42 25 50 10 Z" fill="#f43f5e"/>
-          <!-- Window -->
-          <circle cx="50" cy="55" r="12" fill="#38bdf8" stroke="#0c4a6e" stroke-width="3"/>
-          <circle cx="53" cy="52" r="4" fill="#ffffff"/>
-          <!-- Fins -->
-          <path d="M35 75 L15 95 L35 92 Z" fill="#38bdf8" stroke="#0c4a6e" stroke-width="3"/>
-          <path d="M65 75 L85 95 L65 92 Z" fill="#38bdf8" stroke="#0c4a6e" stroke-width="3"/>
-          <!-- Fire -->
-          <path d="M42 90 Q50 115 58 90 Q50 102 42 90 Z" fill="#feee00" stroke="#f97316" stroke-width="2"/>
-        </svg>
-      </div>
-
-      <!-- Lightbulb (Top Right) -->
-      <div class="absolute right-2 sm:right-6 top-0 w-16 sm:w-24 md:w-28 animate-float-reverse pointer-events-none drop-shadow-xl z-10">
-        <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Glass bulb with gradient / glow -->
-          <path d="M50 15 C30 15 20 32 20 50 C20 65 35 75 38 85 L62 85 C65 75 80 65 80 50 C80 32 70 15 50 15 Z" fill="#fef08a" stroke="#0c4a6e" stroke-width="3"/>
-          <!-- Green Eco Filament -->
-          <path d="M40 50 Q50 35 60 50 Q50 65 40 50" stroke="#22c55e" stroke-width="4" stroke-linecap="round" fill="none"/>
-          <!-- Base & Screw -->
-          <rect x="38" y="85" width="24" height="6" rx="2" fill="#e2e8f0" stroke="#0c4a6e" stroke-width="2"/>
-          <rect x="40" y="92" width="20" height="6" rx="2" fill="#cbd5e1" stroke="#0c4a6e" stroke-width="2"/>
-          <path d="M44 99 C44 105 56 105 56 99 Z" fill="#db2777"/>
-        </svg>
-      </div>
-
-      <!-- NAVBAR -->
-      <header class="flex items-center justify-between pb-6 border-b border-white/20">
-        <div class="flex items-center gap-3">
-          <div class="bg-white p-2 rounded-2xl shadow-lg border-2 border-black rotate-[-3deg]">
-            <span class="text-xl sm:text-2xl font-black font-display text-slate-900 tracking-tight">
-              <span class="text-poster-yellowGold">S</span><span class="text-poster-green">V</span>
+  <!-- TOP STICKY NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b-2 border-slate-200 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#inicio" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-poster-green/20 border-2 border-poster-green flex items-center justify-center font-black font-display text-xl text-poster-greenDark">
+            SV
+          </div>
+          <div class="flex flex-col">
+            <span class="text-lg sm:text-xl font-black font-display tracking-tight text-slate-900 leading-none">
+              SPEAKERS EN VERDE
+            </span>
+            <span class="text-xs font-bold uppercase tracking-wider text-poster-magenta">
+              Tocopilla 2026 • VI Edición
             </span>
           </div>
-          <span class="text-sm sm:text-base font-extrabold tracking-wider uppercase text-white drop-shadow">
-            Speakers en Verde • Tocopilla
-          </span>
-        </div>
+        </a>
 
-        <nav class="hidden md:flex items-center gap-2 text-xs sm:text-sm font-bold">
-          <a href="#inicio" class="px-3 py-1.5 rounded-full hover:bg-white/20 transition">Inicio</a>
-          <a href="#trayectoria" class="px-3 py-1.5 rounded-full hover:bg-white/20 transition">Trayectoria</a>
-          <a href="#metodologia" class="px-3 py-1.5 rounded-full hover:bg-white/20 transition">Ruta Formativa</a>
-          <a href="#proyectos" class="px-3 py-1.5 rounded-full bg-poster-green text-slate-950 shadow-md hover:bg-emerald-400 transition">10 Proyectos</a>
-          <a href="#programa" class="px-3 py-1.5 rounded-full hover:bg-white/20 transition">Cronograma</a>
-          <a href="#colaboradores" class="px-3 py-1.5 rounded-full hover:bg-white/20 transition">Alianzas</a>
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-bold text-slate-700">
+          <a href="#inicio" class="px-3.5 py-2 rounded-lg hover:text-poster-magenta hover:bg-pink-50 transition">Inicio</a>
+          <a href="#trayectoria" class="px-3.5 py-2 rounded-lg hover:text-poster-magenta hover:bg-pink-50 transition">Trayectoria</a>
+          <a href="#metodologia" class="px-3.5 py-2 rounded-lg hover:text-poster-magenta hover:bg-pink-50 transition">Ruta Formativa</a>
+          <a href="#proyectos" class="px-3.5 py-2 rounded-lg hover:text-poster-greenDark hover:bg-emerald-50 transition flex items-center gap-1.5">
+            <span>10 Proyectos</span>
+            <span class="px-2 py-0.5 text-xs font-extrabold bg-poster-green text-white rounded-full">Finalistas</span>
+          </a>
+          <a href="#programa" class="px-3.5 py-2 rounded-lg hover:text-poster-magenta hover:bg-pink-50 transition">Cronograma Final</a>
+          <a href="#colaboradores" class="px-3.5 py-2 rounded-lg hover:text-poster-magenta hover:bg-pink-50 transition">Alianzas</a>
         </nav>
 
-        <a href="https://docs.google.com/document/d/1ISSrXh3nnkgypkSGl6MjmsjYKpG5VzMCnXW1omyr0KQ/edit?tab=t.0" target="_blank" rel="noopener noreferrer" 
-           class="px-4 py-2 rounded-xl text-xs font-black bg-white text-poster-magentaDark shadow-lg hover:bg-poster-yellow transition flex items-center gap-1.5">
-          <i data-lucide="file-text" class="w-4 h-4 text-poster-greenDark"></i>
-          <span>Bases 2026</span>
-        </a>
-      </header>
-
-      <!-- OFFICIAL LOGO BADGE (SPEAKERS EN VERDE) -->
-      <div class="mt-8 mb-6 flex flex-col items-center text-center">
-        
-        <!-- Angular frame logo behind SPEAKERS -->
-        <div class="relative inline-block py-2 px-6">
-          <div class="absolute inset-0 bg-white border-2 border-black rounded-lg shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] rotate-[-1.5deg] z-0"></div>
-          
-          <div class="relative z-10">
-            <h2 class="text-4xl sm:text-6xl md:text-7xl font-black text-pop-speakers tracking-tight leading-none rotate-[-1deg]">
-              SPEAKERS
-            </h2>
-            <div class="text-center -mt-2 sm:-mt-3">
-              <span class="inline-block text-xl sm:text-3xl md:text-4xl font-extrabold text-poster-green tracking-wide uppercase px-4 py-0.5 font-display drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-                - EN VERDE -
-              </span>
-            </div>
-          </div>
+        <!-- CTA Bases Button -->
+        <div class="flex items-center gap-3">
+          <a href="https://docs.google.com/document/d/1ISSrXh3nnkgypkSGl6MjmsjYKpG5VzMCnXW1omyr0KQ/edit?tab=t.0" target="_blank" rel="noopener noreferrer" 
+             class="px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 hover:bg-slate-200 text-slate-800 border-2 border-slate-300 transition flex items-center gap-1.5">
+            <i data-lucide="file-text" class="w-4 h-4 text-poster-magenta"></i>
+            <span>Bases 2026</span>
+          </a>
+          <a href="#programa" 
+             class="px-5 py-2 rounded-xl text-xs sm:text-sm font-black bg-poster-green hover:bg-emerald-400 text-slate-950 border-2 border-poster-greenDark shadow-[2px_2px_0px_0px_#15803d] transition">
+            Ver Gran Final
+          </a>
         </div>
 
       </div>
-
     </div>
+  </header>
 
-    <!-- Curved Transition to White Section -->
-    <div class="absolute bottom-0 left-0 right-0 h-10 bg-white arch-mask"></div>
-  </div>
-
-  <!-- MAIN HERO SECTION (Crisp White with official poster typography) -->
-  <section id="inicio" class="relative -mt-6 pt-4 pb-16 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+  <!-- MAIN HERO SECTION (Featuring the official poster artwork & white canvas) -->
+  <section id="inicio" class="relative pt-6 pb-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
       
-      <!-- "¡Vive con nosotros la final de..." -->
-      <div class="space-y-2">
-        <p class="text-lg sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-slate-900 font-display">
-          ¡Vive con nosotros la final de
-        </p>
-        
-        <!-- Yellow green pop logo text -->
-        <div class="inline-block px-4 py-1 rounded-2xl bg-slate-900 text-poster-yellow border-2 border-black shadow-[4px_4px_0px_0px_#22c55e]">
-          <span class="text-2xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-poster-yellow">
-            SPEAKERS EN VERDE
-          </span>
-        </div>
-
-        <!-- 3D Bubble Blue Title: TOCOPILLA 2026! -->
-        <div class="pt-2">
-          <h1 class="text-5xl sm:text-7xl md:text-8xl font-black text-pop-tocopilla leading-none">
-            TOCOPILLA 2026!
-          </h1>
-        </div>
+      <!-- Official Poster Artwork Header (Exact Wave + Rocket + Bulb + Logo + TOCOPILLA 2026) -->
+      <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-900 bg-white">
+        <img src="assets/hero-title-complete.png" 
+             alt="Speakers en Verde Tocopilla 2026" 
+             class="w-full h-auto object-cover">
       </div>
 
-      <!-- Official Poster Paragraphs (verbatim from user's image) -->
-      <div class="max-w-3xl mx-auto space-y-4 text-xs sm:text-sm md:text-base font-bold uppercase tracking-tight text-slate-800 leading-relaxed pt-2">
-        <p class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
-          Te invitamos a conocer las innovadoras ideas de proyectos desarrolladas por equipos escolares del programa <strong class="text-poster-magenta font-black">Speakers en Verde Tocopilla 2026</strong>, una iniciativa que promueve habilidades emprendedoras y comunicacionales en niñas, niños y adolescentes.
+      <!-- Official Poster Text (High readability, crisp, clean) -->
+      <div class="max-w-3xl mx-auto space-y-4 text-sm sm:text-base md:text-lg font-bold uppercase tracking-tight text-slate-800 leading-relaxed">
+        <p class="p-5 rounded-2xl bg-slate-50 border-2 border-slate-200 text-slate-800">
+          Te invitamos a conocer las innovadoras ideas de proyectos desarrolladas por equipos escolares del programa <strong class="text-poster-magentaDark font-black">Speakers en Verde Tocopilla 2026</strong>, una iniciativa que promueve habilidades emprendedoras y comunicacionales en niñas, niños y adolescentes.
         </p>
         <p class="text-slate-700">
           Tras completar su proceso formativo, los equipos presentarán sus propuestas frente al jurado, en una entretenida jornada que marcará el cierre de la sexta edición.
         </p>
       </div>
 
-      <!-- Event Time & Location Callout Box (Exact match with poster) -->
-      <div class="p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-amber-50 via-white to-pink-50 border-2 border-slate-900 shadow-[6px_6px_0px_0px_#db2777] max-w-2xl mx-auto text-center space-y-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-poster-magentaPop text-white font-extrabold text-xs uppercase tracking-wider">
-          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
-          <span>Coordenadas de la Jornada</span>
+      <!-- Date, Time and Venue Callout Card (Matching the poster) -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-pink-50 via-white to-amber-50 border-4 border-slate-900 shadow-[6px_6px_0px_0px_#db2777] max-w-3xl mx-auto text-center space-y-4">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-poster-magenta text-white font-extrabold text-xs uppercase tracking-wider">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Jornada de Cierre Oficial</span>
         </div>
-        <p class="text-sm sm:text-base font-black uppercase text-slate-900 leading-snug">
-          El evento se realizará el día <span class="text-poster-magentaPop">Viernes 13 de Noviembre</span> desde las <span class="text-poster-greenDark">10:30 horas</span> en el <span class="text-blue-700">Laboratorio de Emprendimiento USQAI</span> de la Universidad Católica del Norte, ubicada en Avenida Angamos 0610, Antofagasta.
+
+        <p class="text-base sm:text-xl font-black uppercase text-slate-900 leading-snug">
+          El evento se realizará el día <span class="text-poster-magenta">Viernes 13 de Noviembre</span> desde las <span class="text-poster-greenDark">10:30 horas</span> en el <span class="text-blue-700">Laboratorio de Emprendimiento USQAI</span> de la Universidad Católica del Norte, ubicada en Avenida Angamos 0610, Antofagasta.
         </p>
-        <div class="text-2xl sm:text-3xl font-black text-poster-magentaDark font-display tracking-wider">
+
+        <div class="text-3xl sm:text-4xl font-black text-slate-900 font-display tracking-wider">
           ¡TE ESPERAMOS!
         </div>
+
+        <!-- Venue Directions & Pitch Start -->
+        <div class="pt-2 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-bold">
+          <span class="px-4 py-1.5 rounded-xl bg-poster-yellow text-slate-950 border-2 border-slate-900">
+            ★ Los Pitch comienzan a las 14:20 hrs
+          </span>
+          <a href="https://maps.google.com/?q=Av.+Angamos+0610,+Antofagasta" target="_blank" rel="noopener noreferrer" 
+             class="px-4 py-1.5 rounded-xl bg-white hover:bg-sky-50 text-blue-700 border-2 border-blue-400 flex items-center gap-1.5 transition">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            <span>Ver Ubicación en Google Maps</span>
+          </a>
+        </div>
+
       </div>
 
-      <!-- Quick Action Buttons -->
-      <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
         <a href="#proyectos" 
-           class="px-8 py-4 rounded-2xl text-base font-black bg-poster-green text-slate-950 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition flex items-center gap-2">
+           class="px-8 py-4 rounded-2xl text-base font-black bg-poster-green hover:bg-emerald-400 text-slate-950 border-2 border-slate-900 shadow-[4px_4px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#000] transition flex items-center gap-2">
           <i data-lucide="rocket" class="w-5 h-5"></i>
-          <span>Explorar los 10 Proyectos</span>
+          <span>Conoce los 10 Proyectos</span>
         </a>
         <a href="#programa" 
-           class="px-8 py-4 rounded-2xl text-base font-black bg-white text-slate-900 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-slate-100 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition flex items-center gap-2">
-          <i data-lucide="clock" class="w-5 h-5 text-poster-magentaPop"></i>
-          <span>Ver Programa del Día</span>
+           class="px-8 py-4 rounded-2xl text-base font-black bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-900 shadow-[4px_4px_0px_0px_#db2777] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#db2777] transition flex items-center gap-2">
+          <i data-lucide="clock" class="w-5 h-5 text-poster-magenta"></i>
+          <span>Programa de la Jornada</span>
         </a>
       </div>
 
-      <!-- Quick Afiche Lightbox Button -->
-      <div class="pt-2">
+      <!-- Quick Afiche View Button -->
+      <div>
         <button onclick="openLightbox('assets/afiche-invitacion.jpg', 'Afiche Oficial Speakers en Verde Tocopilla 2026')"
                 class="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-poster-magenta transition">
-          <i data-lucide="image" class="w-4 h-4"></i>
-          <span>Ver afiche oficial original en alta resolución</span>
+          <i data-lucide="zoom-in" class="w-4 h-4"></i>
+          <span>Ver afiche completo en alta resolución</span>
         </button>
       </div>
 
     </div>
 
-    <!-- TOCOPILLA LANDSCAPE ILLUSTRATION AT BASE (Pyramids, clouds, cargo ship with chimneys) -->
-    <div class="max-w-5xl mx-auto px-4 mt-12 relative">
-      <div class="w-full flex items-end justify-between border-b-4 border-slate-900 pb-0">
-        
-        <!-- Left: Turquoise & Pink Clouds + Desert Pyramids of Tocopilla -->
-        <div class="flex items-end gap-1 sm:gap-3">
-          <!-- Clouds -->
-          <div class="w-12 h-8 sm:w-20 sm:h-12 bg-sky-200 rounded-full border-2 border-slate-900 -mb-2"></div>
-          <div class="w-10 h-7 sm:w-16 sm:h-10 bg-pink-200 rounded-full border-2 border-slate-900 -mb-2 -ml-4"></div>
-          
-          <!-- Desert Ochre Pyramid / Mountains -->
-          <div class="relative w-28 sm:w-48 h-20 sm:h-32">
-            <svg viewBox="0 0 100 70" fill="none" class="w-full h-full">
-              <polygon points="50,5 95,68 5,68" fill="#f59e0b" stroke="#000" stroke-width="2.5"/>
-              <polygon points="50,5 95,68 50,68" fill="#d97706"/>
-              <!-- Stepped blocks at base -->
-              <rect x="20" y="60" width="8" height="8" fill="#fde047" stroke="#000" stroke-width="1.5"/>
-              <rect x="28" y="62" width="6" height="6" fill="#fde047" stroke="#000" stroke-width="1.5"/>
-              <rect x="65" y="58" width="10" height="10" fill="#fde047" stroke="#000" stroke-width="1.5"/>
-            </svg>
-          </div>
-        </div>
+    <!-- Official Tocopilla 3D Landscape Illustration (Pyramids, Ship, Clouds) -->
+    <div class="max-w-4xl mx-auto px-4 mt-8">
+      <div class="border-b-4 border-slate-900 pb-0">
+        <img src="assets/footer-illustration.png" 
+             alt="Ilustración Tocopilla: Cerros, Nubes y Barco" 
+             class="w-full h-auto object-contain">
+      </div>
+    </div>
 
-        <!-- Center: Key stats badge -->
-        <div class="hidden sm:flex items-center gap-4 pb-4">
-          <div class="text-center px-4 py-2 bg-white border-2 border-slate-900 rounded-xl shadow-[3px_3px_0px_0px_#22c55e]">
-            <div class="text-2xl font-black font-display text-slate-900">10</div>
-            <div class="text-[10px] font-bold uppercase text-slate-500">Equipos</div>
-          </div>
-          <div class="text-center px-4 py-2 bg-white border-2 border-slate-900 rounded-xl shadow-[3px_3px_0px_0px_#38bdf8]">
-            <div class="text-2xl font-black font-display text-slate-900">9</div>
-            <div class="text-[10px] font-bold uppercase text-slate-500">Colegios</div>
-          </div>
-          <div class="text-center px-4 py-2 bg-white border-2 border-slate-900 rounded-xl shadow-[3px_3px_0px_0px_#db2777]">
-            <div class="text-2xl font-black font-display text-slate-900">+80</div>
-            <div class="text-[10px] font-bold uppercase text-slate-500">Delegación</div>
-          </div>
-        </div>
-
-        <!-- Right: Cargo Ship with Industrial Chimneys (Port of Tocopilla) -->
-        <div class="flex items-end gap-2">
-          <!-- Pink & Lavender clouds -->
-          <div class="hidden sm:block w-14 h-9 bg-fuchsia-200 rounded-full border-2 border-slate-900 -mb-2"></div>
-          
-          <!-- Industrial Ship -->
-          <div class="w-32 sm:w-48 h-20 sm:h-28">
-            <svg viewBox="0 0 120 70" fill="none" class="w-full h-full">
-              <!-- Chimneys -->
-              <rect x="70" y="8" width="6" height="24" fill="#f97316" stroke="#000" stroke-width="2"/>
-              <rect x="80" y="8" width="6" height="24" fill="#f97316" stroke="#000" stroke-width="2"/>
-              <rect x="90" y="8" width="6" height="24" fill="#f97316" stroke="#000" stroke-width="2"/>
-              <!-- Cabin -->
-              <rect x="55" y="26" width="48" height="22" fill="#38bdf8" stroke="#000" stroke-width="2"/>
-              <rect x="60" y="32" width="6" height="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
-              <rect x="70" y="32" width="6" height="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
-              <rect x="80" y="32" width="6" height="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
-              <rect x="90" y="32" width="6" height="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
-              <!-- Ship Hull -->
-              <path d="M15 48 L105 48 L95 68 L30 68 Z" fill="#facc15" stroke="#000" stroke-width="2"/>
-              <!-- Sand base curve -->
-              <path d="M0 68 Q60 62 120 68" stroke="#f59e0b" stroke-width="3"/>
-            </svg>
-          </div>
-        </div>
-
+    <!-- Official Partner Logos Strip from Poster -->
+    <div class="max-w-4xl mx-auto px-4 mt-6">
+      <div class="p-4 rounded-2xl bg-white border-2 border-slate-200">
+        <img src="assets/partner-logos.png" 
+             alt="Proyecto apoyado por SQM, Ejecutado por En Verde Fundación, Diseñado por Verdical, Colabora USQAI UCN" 
+             class="w-full h-auto object-contain">
       </div>
     </div>
 
   </section>
 
-  <!-- SECTION: PROGRAMA JORNADA FINAL (EXACT MATCH WITH AFICHE 2) -->
-  <section id="programa" class="py-16 md:py-24 bg-white relative border-t-4 border-slate-900">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Poster 2 Header with Mini Waves Banner -->
-      <div class="canopy-waves rounded-3xl p-6 sm:p-10 text-center text-white mb-12 shadow-2xl relative border-4 border-slate-900">
-        
-        <div class="inline-block bg-white text-slate-950 px-5 py-1.5 rounded-xl border-2 border-black rotate-[-1deg] shadow-[3px_3px_0px_0px_#000] mb-3">
-          <span class="text-xl sm:text-2xl font-black text-pop-speakers">SPEAKERS</span>
-          <span class="text-sm sm:text-base font-extrabold text-poster-green ml-1">- EN VERDE -</span>
-        </div>
-
-        <h2 class="text-4xl sm:text-6xl md:text-7xl font-black text-pop-tocopilla tracking-tight leading-none">
-          PROGRAMA<br>JORNADA FINAL
-        </h2>
-
-        <p class="mt-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-pink-200">
-          Viernes 13 de Noviembre • Usqai UCN Antofagasta
-        </p>
-
-      </div>
-
-      <!-- Schedule Table (Matching the exact bold black & magenta style of Poster 2) -->
-      <div class="bg-white rounded-3xl border-4 border-slate-900 p-6 sm:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] space-y-4">
-        
-        <!-- 10:30 - 10:50 -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
-          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
-            10:30 - 10:50 HRS.
-          </div>
-          <div class="text-base sm:text-xl font-black schedule-title-black text-left sm:text-right flex-1">
-            RECEPCIÓN Y ENTREGA DE COLACIONES.
-          </div>
-        </div>
-
-        <!-- 10:50 - 11:00 (MAGENTA) -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
-          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
-            10:50 - 11:00 HRS.
-          </div>
-          <div class="text-base sm:text-xl font-black schedule-title-magenta text-left sm:text-right flex-1">
-            PALABRAS DE BIENVENIDA.
-          </div>
-        </div>
-
-        <!-- 11:00 - 12:30 (BLACK) -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
-          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
-            11:00 - 12:30 HRS.
-          </div>
-          <div class="text-base sm:text-xl font-black schedule-title-black text-left sm:text-right flex-1">
-            DINÁMICA DE TRABAJO "SOY SPEAKER".
-          </div>
-        </div>
-
-        <!-- 12:30 - 13:45 (MAGENTA) -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
-          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
-            12:30 - 13:45 HRS.
-          </div>
-          <div class="text-base sm:text-xl font-black schedule-title-magenta text-left sm:text-right flex-1">
-            ALMUERZO.
-          </div>
-        </div>
-
-        <!-- 13:45 - 14:00 (BLACK) -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
-          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
-            13:45 - 14:00 HRS.
-          </div>
-          <div class="text-base sm:text-xl font-black schedule-title-black text-left sm:text-right flex-1">
-            REGRESO A LA ZONA DE TRABAJO.
-          </div>
-        </div>
-
-        <!-- 14:00 - 14:20 (MAGENTA) -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
-          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
-            14:00 - 14:20 HRS.
-          </div>
-          <div class="text-base sm:text-xl font-black schedule-title-magenta text-left sm:text-right flex-1">
-            ACTIVACIÓN PREVIO AL PITCH.
-          </div>
-        </div>
-
-        <!-- 14:20 - 15:50 (MOMENTO CUMBRE PITCH - BLACK HIGHLIGHTED WITH BADGE) -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-4 px-4 rounded-2xl bg-poster-yellow/30 border-2 border-slate-900 shadow-[4px_4px_0px_0px_#000] gap-2">
-          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0 flex items-center gap-2">
-            <span>14:20 - 15:50 HRS.</span>
-          </div>
-          <div class="text-lg sm:text-2xl font-black schedule-title-black text-left sm:text-right flex-1 flex flex-col sm:items-end">
-            <span class="text-slate-950">PRESENTACIÓN DE PITCH.</span>
-            <span class="text-xs font-black uppercase text-poster-greenDark tracking-wider bg-white px-2.5 py-0.5 rounded-full border border-slate-900 mt-1">
-              ★ 10 Equipos • 5 min cada uno ante Jurado
-            </span>
-          </div>
-        </div>
-
-        <!-- 15:50 - 16:00 (MAGENTA) -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
-          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
-            15:50 - 16:00 HRS.
-          </div>
-          <div class="text-base sm:text-xl font-black schedule-title-magenta text-left sm:text-right flex-1">
-            DESCANSO Y DELIBERACIÓN JURADO
-          </div>
-        </div>
-
-        <!-- 16:00 - 16:30 (BLACK) -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
-          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
-            16:00 - 16:30 HRS.
-          </div>
-          <div class="text-base sm:text-xl font-black schedule-title-black text-left sm:text-right flex-1">
-            PREMIACIÓN Y PALABRAS FINALES.
-          </div>
-        </div>
-
-        <!-- 16:30 (MAGENTA) -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 gap-2">
-          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
-            16:30 HRS.
-          </div>
-          <div class="text-base sm:text-xl font-black schedule-title-magenta text-left sm:text-right flex-1">
-            CIERRE.
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Action: Lightbox for afiche-cronograma -->
-      <div class="mt-8 text-center">
-        <button onclick="openLightbox('assets/afiche-cronograma.jpg', 'Cronograma Oficial Speakers en Verde')"
-                class="px-6 py-3 rounded-2xl bg-white text-slate-900 border-2 border-slate-900 font-extrabold text-sm shadow-[4px_4px_0px_0px_#db2777] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#db2777] transition inline-flex items-center gap-2">
-          <i data-lucide="zoom-in" class="w-4 h-4 text-poster-magentaPop"></i>
-          <span>Ver imagen oficial del cronograma</span>
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION: TRAYECTORIA HISTÓRICA (2019 - 2026) -->
-  <section id="trayectoria" class="py-16 md:py-24 bg-slate-100 border-t-4 border-slate-900">
+  <!-- SECTION: TRAYECTORIA HISTÓRICA DEL PROGRAMA (2019 - 2026) -->
+  <section id="trayectoria" class="py-16 md:py-24 bg-slate-50 border-t-4 border-slate-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
-        <div class="inline-block px-4 py-1 rounded-full bg-poster-magentaPop text-white text-xs font-black uppercase tracking-wider">
+        <div class="inline-block px-4 py-1.5 rounded-full bg-poster-magenta text-white text-xs font-black uppercase tracking-wider">
           Trayectoria Regional
         </div>
         <h2 class="text-3xl sm:text-5xl font-black font-display text-slate-900 tracking-tight">
           El Recorrido de Speakers en Verde
         </h2>
         <p class="text-slate-600 text-sm sm:text-base font-medium">
-          Desde 2019 construyendo alianzas interinstitucionales para potenciar el talento de las nuevas generaciones.
+          Desde 2019 creando puentes entre la educación escolar y la sustentabilidad en la Región de Antofagasta.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- 2019 -->
-        <div class="card-pop p-6 space-y-3 border-2 border-slate-900 shadow-[6px_6px_0px_0px_#22c55e]">
-          <div class="w-12 h-12 rounded-2xl bg-poster-green text-slate-950 font-black text-xl font-display flex items-center justify-center border-2 border-black">
+        <!-- 2019 Card -->
+        <div class="card-luminous card-green-accent p-6 space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-poster-green text-slate-950 font-black text-xl font-display flex items-center justify-center border-2 border-slate-900">
             2019
           </div>
-          <h3 class="text-xl font-black text-slate-900">Nacimiento en la Región</h3>
+          <h3 class="text-xl font-black text-slate-900 font-display">Inicios del Programa</h3>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Speakers en Verde se ejecuta en la Región de Antofagasta desde el año 2019, abarcando distintas comunas y generando las primeras alianzas formativas con centros educativos.
+            Speakers en Verde se ejecuta en la Región de Antofagasta desde el año 2019, abarcando distintas comunas y alianzas interinstitucionales para promover la innovación ambiental en etapas tempranas.
           </p>
         </div>
 
-        <!-- 2022 (FME & Corfo) -->
-        <div class="card-pop p-6 space-y-3 border-2 border-slate-900 shadow-[6px_6px_0px_0px_#db2777] bg-gradient-to-b from-white to-pink-50">
-          <div class="w-12 h-12 rounded-2xl bg-poster-magentaPop text-white font-black text-xl font-display flex items-center justify-center border-2 border-black">
+        <!-- 2022 Card (FME & Corfo) -->
+        <div class="card-luminous card-magenta-accent p-6 space-y-3 bg-pink-50/50">
+          <div class="w-12 h-12 rounded-2xl bg-poster-magenta text-white font-black text-xl font-display flex items-center justify-center border-2 border-slate-900">
             2022
           </div>
-          <div class="flex items-center gap-1.5 text-xs font-black text-poster-magentaPop uppercase">
+          <div class="flex items-center gap-1.5 text-xs font-black text-poster-magenta uppercase">
             <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
-            <span>Hito de Colaboración FME</span>
+            <span>Hito Fundación Minera Escondida</span>
           </div>
-          <h3 class="text-xl font-black text-slate-900">Impulso Corfo y Fundación Minera Escondida</h3>
+          <h3 class="text-xl font-black text-slate-900 font-display">Impulso Corfo y Presencia de FME</h3>
           <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
-            En la edición 2022 impulsada por <strong class="text-slate-900">Corfo</strong>, <strong class="text-poster-magentaDark">Fundación Minera Escondida (FME)</strong> ya nos acompañó como parte del jurado (representada por <strong>Jenny</strong>), fortaleciendo la evaluación y el acompañamiento formativo.
+            En la edición 2022 (impulsada por Corfo), <strong class="text-poster-magentaDark">Fundación Minera Escondida (FME)</strong> ya nos acompañó como parte del jurado (representada por <strong>Jenny</strong>), consolidando la relevancia de la iniciativa.
           </p>
         </div>
 
-        <!-- 2026 (Tocopilla) -->
-        <div class="card-pop p-6 space-y-3 border-2 border-slate-900 shadow-[6px_6px_0px_0px_#38bdf8] bg-gradient-to-b from-white to-sky-50">
-          <div class="w-12 h-12 rounded-2xl bg-sky-400 text-slate-950 font-black text-xl font-display flex items-center justify-center border-2 border-black">
+        <!-- 2026 Card (Tocopilla) -->
+        <div class="card-luminous card-blue-accent p-6 space-y-3 bg-sky-50/50">
+          <div class="w-12 h-12 rounded-2xl bg-poster-blue text-white font-black text-xl font-display flex items-center justify-center border-2 border-slate-900">
             2026
           </div>
-          <div class="flex items-center gap-1.5 text-xs font-black text-sky-700 uppercase">
+          <div class="flex items-center gap-1.5 text-xs font-black text-poster-blue uppercase">
             <i data-lucide="bus" class="w-3.5 h-3.5"></i>
-            <span>VI Edición Tocopilla</span>
+            <span>Edición Tocopilla</span>
           </div>
-          <h3 class="text-xl font-black text-slate-900">Tocopilla Viaja a Antofagasta</h3>
+          <h3 class="text-xl font-black text-slate-900 font-display">10 Equipos y +80 Personas</h3>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Reúne a 10 equipos escolares de 9 establecimientos de Tocopilla, comprendida por una delegación de más de 80 personas que se trasladarán a Usqai UCN en Antofagasta.
+            Esta versión reúne a 10 equipos escolares de 9 establecimientos educacionales de Tocopilla, con una delegación de más de 80 personas que se trasladarán a Usqai UCN en Antofagasta.
           </p>
         </div>
 
@@ -500,8 +264,8 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
-        <div class="inline-block px-4 py-1 rounded-full bg-poster-green text-slate-950 text-xs font-black uppercase tracking-wider border border-black">
-          Metodología Pedagógica
+        <div class="inline-block px-4 py-1.5 rounded-full bg-poster-green text-slate-950 text-xs font-black uppercase tracking-wider border border-slate-900">
+          Metodología del Proyecto
         </div>
         <h2 class="text-3xl sm:text-5xl font-black font-display text-slate-900 tracking-tight">
           ¿Cómo se prepararon los equipos?
@@ -511,83 +275,83 @@
         </p>
       </div>
 
-      <!-- Sustento de investigación (Kauffman, GEM, ERI) -->
-      <div class="mb-12 p-6 rounded-3xl bg-amber-50 border-2 border-slate-900 shadow-[5px_5px_0px_0px_#f59e0b] grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Sustento de investigación (Fundación Kauffman, GEM, ERI) -->
+      <div class="mb-12 p-6 rounded-3xl bg-amber-50 border-2 border-amber-300 grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
-          <div class="text-xs font-black text-amber-800 uppercase tracking-wider mb-1">Fundación Kauffman</div>
+          <div class="text-xs font-black text-amber-900 uppercase tracking-wider mb-1">Fundación Kauffman</div>
           <p class="text-xs text-slate-700 font-medium">
-            Jóvenes que participan en programas de emprendimiento tienen mayor probabilidad de desarrollar creatividad, resiliencia y resolución crítica de problemas.
+            Los jóvenes que participan en programas de emprendimiento tienen mayor probabilidad de desarrollar habilidades críticas como creatividad, resiliencia y resolución de problemas.
           </p>
         </div>
         <div>
-          <div class="text-xs font-black text-amber-800 uppercase tracking-wider mb-1">Informe GEM Chile & ERI</div>
+          <div class="text-xs font-black text-amber-900 uppercase tracking-wider mb-1">Informe GEM Chile & ERI</div>
           <p class="text-xs text-slate-700 font-medium">
-            Cierra brechas de innovación regional declaradas en la ERI mediante el desarrollo de talentos locales desde el aula escolar.
+            Aborda directamente las brechas detectadas en la región y los lineamientos de la Estrategia Regional de Innovación mediante talentos escolares.
           </p>
         </div>
         <div>
-          <div class="text-xs font-black text-amber-800 uppercase tracking-wider mb-1">Metodología Verdical</div>
+          <div class="text-xs font-black text-amber-900 uppercase tracking-wider mb-1">Metodología Verdical</div>
           <p class="text-xs text-slate-700 font-medium">
-            Mentorías personalizadas en comunicación efectiva, expresión escénica, modelo de negocios y oratoria de alto impacto.
+            Educación ambiental, modelo de negocios escolar, expresión escénica, tolerancia a la frustración y oratoria de alto impacto.
           </p>
         </div>
       </div>
 
-      <!-- 9 Actividades -->
+      <!-- The 9 Stages Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         
-        <div class="p-5 rounded-2xl bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_#22c55e]">
+        <div class="card-luminous card-green-accent p-5">
           <span class="text-xs font-black text-poster-greenDark uppercase">Actividad 1</span>
-          <h4 class="text-base font-black text-slate-900 mt-1">Planificación y Difusión</h4>
-          <p class="text-xs text-slate-600 mt-1 font-medium">Primeras reuniones informativas y entrega de bases en escuelas de Tocopilla.</p>
+          <h4 class="text-base font-black text-slate-900 font-display mt-1">Planificación inicial y difusión</h4>
+          <p class="text-xs text-slate-600 mt-1 font-medium">Plan de trabajo, estado del arte y primeras reuniones con los colegios de Tocopilla para entregar las bases.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_#22c55e]">
+        <div class="card-luminous card-green-accent p-5">
           <span class="text-xs font-black text-poster-greenDark uppercase">Actividad 2</span>
-          <h4 class="text-base font-black text-slate-900 mt-1">Charla de Lanzamiento</h4>
-          <p class="text-xs text-slate-600 mt-1 font-medium">Presentación de los alcances, objetivos y detalles del programa a los beneficiarios.</p>
+          <h4 class="text-base font-black text-slate-900 font-display mt-1">Ceremonia / charla de lanzamiento</h4>
+          <p class="text-xs text-slate-600 mt-1 font-medium">Dar a conocer los alcances, objetivos y detalles del programa a los grupos beneficiarios.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_#22c55e]">
+        <div class="card-luminous card-green-accent p-5">
           <span class="text-xs font-black text-poster-greenDark uppercase">Actividad 3</span>
-          <h4 class="text-base font-black text-slate-900 mt-1">Convocatoria Escolar</h4>
-          <p class="text-xs text-slate-600 mt-1 font-medium">Llamado abierto para jóvenes entre 6° básico y 4° año medio de Tocopilla.</p>
+          <h4 class="text-base font-black text-slate-900 font-display mt-1">Proceso de convocatoria</h4>
+          <p class="text-xs text-slate-600 mt-1 font-medium">Llamado abierto para equipos de Tocopilla entre sexto básico y cuarto año medio.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_#db2777]">
-          <span class="text-xs font-black text-poster-magentaPop uppercase">Actividad 4</span>
-          <h4 class="text-base font-black text-slate-900 mt-1">Selección Inicial</h4>
-          <p class="text-xs text-slate-600 mt-1 font-medium">Evaluación según bases, priorizando soluciones ambientales locales nacidas en el aula.</p>
+        <div class="card-luminous card-magenta-accent p-5">
+          <span class="text-xs font-black text-poster-magenta uppercase">Actividad 4</span>
+          <h4 class="text-base font-black text-slate-900 font-display mt-1">Proceso de selección inicial</h4>
+          <p class="text-xs text-slate-600 mt-1 font-medium">Selección de proyectos de acuerdo a criterios de bases, priorizando soluciones ambientales locales nacidas en el aula.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_#db2777]">
-          <span class="text-xs font-black text-poster-magentaPop uppercase">Actividad 5</span>
-          <h4 class="text-base font-black text-slate-900 mt-1">Compra y Aportes</h4>
-          <p class="text-xs text-slate-600 mt-1 font-medium">Entrega de materiales, insumos y fletes directamente en cada escuela para prototipar.</p>
+        <div class="card-luminous card-magenta-accent p-5">
+          <span class="text-xs font-black text-poster-magenta uppercase">Actividad 5</span>
+          <h4 class="text-base font-black text-slate-900 font-display mt-1">Compra y entrega de aportes</h4>
+          <p class="text-xs text-slate-600 mt-1 font-medium">Acuerdo y compra de materiales, insumos y fletes directamente entregados en cada escuela para prototipar.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_#db2777]">
-          <span class="text-xs font-black text-poster-magentaPop uppercase">Actividad 6</span>
-          <h4 class="text-base font-black text-slate-900 mt-1">Mentoreo Presencial</h4>
-          <p class="text-xs text-slate-600 mt-1 font-medium">Talleres presenciales en comunicación efectiva, resolución de problemas y oratoria.</p>
+        <div class="card-luminous card-magenta-accent p-5">
+          <span class="text-xs font-black text-poster-magenta uppercase">Actividad 6</span>
+          <h4 class="text-base font-black text-slate-900 font-display mt-1">Proceso de mentoreo presencial</h4>
+          <p class="text-xs text-slate-600 mt-1 font-medium">Talleres en comunicación efectiva, resolución de problemas, modelo de negocios y expresión escénica.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_#38bdf8]">
-          <span class="text-xs font-black text-sky-700 uppercase">Actividad 7</span>
-          <h4 class="text-base font-black text-slate-900 mt-1">Acompañamiento</h4>
-          <p class="text-xs text-slate-600 mt-1 font-medium">Seguimiento continuo presencial y remoto junto a profesores líderes de equipo.</p>
+        <div class="card-luminous card-blue-accent p-5">
+          <span class="text-xs font-black text-poster-blue uppercase">Actividad 7</span>
+          <h4 class="text-base font-black text-slate-900 font-display mt-1">Proceso de seguimiento</h4>
+          <p class="text-xs text-slate-600 mt-1 font-medium">Acompañamiento presencial y remoto junto a profesores líderes para resolución de dudas técnicas.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_#38bdf8]">
-          <span class="text-xs font-black text-sky-700 uppercase">Actividad 8</span>
-          <h4 class="text-base font-black text-slate-900 mt-1">Preselección de Equipos</h4>
-          <p class="text-xs text-slate-600 mt-1 font-medium">Evaluación de incorporación de herramientas para clasificar a la jornada final.</p>
+        <div class="card-luminous card-blue-accent p-5">
+          <span class="text-xs font-black text-poster-blue uppercase">Actividad 8</span>
+          <h4 class="text-base font-black text-slate-900 font-display mt-1">Preselección de equipos</h4>
+          <p class="text-xs text-slate-600 mt-1 font-medium">Evaluación de incorporación de herramientas para seleccionar a los clasificados a la final comunal.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-poster-yellow border-2 border-slate-900 shadow-[5px_5px_0px_0px_#000]">
-          <span class="text-xs font-black text-slate-900 uppercase">Actividad 9 • Cumbre</span>
-          <h4 class="text-base font-black text-slate-900 mt-1">Final Comunal</h4>
-          <p class="text-xs text-slate-900 mt-1 font-bold">13 de Noviembre en Usqai UCN: Presentación de Pitch (5 min) y premiación.</p>
+        <div class="card-luminous card-yellow-accent p-5 bg-amber-50/50">
+          <span class="text-xs font-black text-amber-700 uppercase">Actividad 9 • La Cumbre</span>
+          <h4 class="text-base font-black text-slate-900 font-display mt-1">Final comunal Speaker En Verde</h4>
+          <p class="text-xs text-slate-800 mt-1 font-bold">13 de Noviembre en Usqai UCN: Presentación de pitch de 5 minutos ante jurado calificador y premiación.</p>
         </div>
 
       </div>
@@ -595,39 +359,39 @@
     </div>
   </section>
 
-  <!-- SECTION: LOS 10 PROYECTOS ESCOLARES 2026 -->
+  <!-- SECTION: LOS 10 PROYECTOS ESCOLARES PARTICIPANTES -->
   <section id="proyectos" class="py-16 md:py-24 bg-slate-50 border-t-4 border-slate-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto space-y-3 mb-10">
-        <div class="inline-block px-4 py-1 rounded-full bg-poster-magentaPop text-white text-xs font-black uppercase tracking-wider">
-          Innovación desde las aulas de Tocopilla
+        <div class="inline-block px-4 py-1.5 rounded-full bg-poster-magenta text-white text-xs font-black uppercase tracking-wider">
+          Innovación Escolar
         </div>
         <h2 class="text-3xl sm:text-5xl font-black font-display text-slate-900 tracking-tight">
           Los 10 Proyectos Finalistas
         </h2>
         <p class="text-slate-600 text-sm sm:text-base font-medium">
-          Conoce cada una de las iniciativas desarrolladas por las comunidades escolares.
+          Conoce cada una de las iniciativas desarrolladas por las escuelas de Tocopilla.
         </p>
       </div>
 
-      <!-- Filter toolbar -->
+      <!-- Filters Toolbar -->
       <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 pb-4">
         
         <div class="flex flex-wrap items-center gap-2" id="filterContainer">
-          <button class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition" data-category="all">
+          <button class="filter-btn active" data-category="all">
             Todos (10)
           </button>
-          <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition" data-category="circular">
+          <button class="filter-btn" data-category="circular">
             Economía Circular & Reciclaje
           </button>
-          <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition" data-category="tech">
+          <button class="filter-btn" data-category="tech">
             Tecnología & Robótica 3D
           </button>
-          <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition" data-category="bio">
+          <button class="filter-btn" data-category="bio">
             Biotecnología & Salud
           </button>
-          <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition" data-category="inclusion">
+          <button class="filter-btn" data-category="inclusion">
             Inclusión & NEE
           </button>
         </div>
@@ -640,7 +404,7 @@
 
       </div>
 
-      <!-- Projects Grid -->
+      <!-- Projects Grid (Injected dynamically by app.js) -->
       <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Rendered by app.js -->
       </div>
@@ -648,81 +412,202 @@
     </div>
   </section>
 
-  <!-- SECTION: ALIANZAS & INVITACIÓN ESPECIAL FME -->
-  <section id="colaboradores" class="py-16 md:py-24 bg-white border-t-4 border-slate-900">
+  <!-- SECTION: PROGRAMA JORNADA FINAL (EXACT MATCH CON AFICHE 2) -->
+  <section id="programa" class="py-16 md:py-24 bg-white border-t-4 border-slate-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Cronograma Title Graphic from Poster 2 -->
+      <div class="mb-10 text-center">
+        <div class="rounded-3xl overflow-hidden border-4 border-slate-900 shadow-xl bg-white max-w-2xl mx-auto">
+          <img src="assets/cronograma-title.png" 
+               alt="Programa Jornada Final Speakers en Verde" 
+               class="w-full h-auto object-cover">
+        </div>
+      </div>
+
+      <!-- Schedule Table (Matching the exact bold black & magenta style of Poster 2) -->
+      <div class="bg-white rounded-3xl border-4 border-slate-900 p-6 sm:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] space-y-4">
+        
+        <!-- 10:30 - 10:50 -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
+          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
+            10:30 - 10:50 HRS.
+          </div>
+          <div class="text-base sm:text-xl font-black schedule-black text-left sm:text-right flex-1">
+            RECEPCIÓN Y ENTREGA DE COLACIONES.
+          </div>
+        </div>
+
+        <!-- 10:50 - 11:00 (MAGENTA) -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
+          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
+            10:50 - 11:00 HRS.
+          </div>
+          <div class="text-base sm:text-xl font-black schedule-magenta text-left sm:text-right flex-1">
+            PALABRAS DE BIENVENIDA.
+          </div>
+        </div>
+
+        <!-- 11:00 - 12:30 (BLACK) -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
+          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
+            11:00 - 12:30 HRS.
+          </div>
+          <div class="text-base sm:text-xl font-black schedule-black text-left sm:text-right flex-1">
+            DINÁMICA DE TRABAJO "SOY SPEAKER".
+          </div>
+        </div>
+
+        <!-- 12:30 - 13:45 (MAGENTA) -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
+          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
+            12:30 - 13:45 HRS.
+          </div>
+          <div class="text-base sm:text-xl font-black schedule-magenta text-left sm:text-right flex-1">
+            ALMUERZO.
+          </div>
+        </div>
+
+        <!-- 13:45 - 14:00 (BLACK) -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
+          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
+            13:45 - 14:00 HRS.
+          </div>
+          <div class="text-base sm:text-xl font-black schedule-black text-left sm:text-right flex-1">
+            REGRESO A LA ZONA DE TRABAJO.
+          </div>
+        </div>
+
+        <!-- 14:00 - 14:20 (MAGENTA) -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
+          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
+            14:00 - 14:20 HRS.
+          </div>
+          <div class="text-base sm:text-xl font-black schedule-magenta text-left sm:text-right flex-1">
+            ACTIVACIÓN PREVIO AL PITCH.
+          </div>
+        </div>
+
+        <!-- 14:20 - 15:50 (MOMENTO CUMBRE PITCH) -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-4 px-4 rounded-2xl bg-amber-100 border-2 border-slate-900 shadow-[4px_4px_0px_0px_#000] gap-2">
+          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
+            14:20 - 15:50 HRS.
+          </div>
+          <div class="text-lg sm:text-2xl font-black schedule-black text-left sm:text-right flex-1 flex flex-col sm:items-end">
+            <span>PRESENTACIÓN DE PITCH.</span>
+            <span class="text-xs font-black uppercase text-poster-greenDark tracking-wider bg-white px-2.5 py-0.5 rounded-full border border-slate-900 mt-1">
+              ★ 10 Equipos • 5 minutos cada uno frente al Jurado
+            </span>
+          </div>
+        </div>
+
+        <!-- 15:50 - 16:00 (MAGENTA) -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
+          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
+            15:50 - 16:00 HRS.
+          </div>
+          <div class="text-base sm:text-xl font-black schedule-magenta text-left sm:text-right flex-1">
+            DESCANSO Y DELIBERACIÓN JURADO
+          </div>
+        </div>
+
+        <!-- 16:00 - 16:30 (BLACK) -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b-2 border-slate-100 gap-2">
+          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
+            16:00 - 16:30 HRS.
+          </div>
+          <div class="text-base sm:text-xl font-black schedule-black text-left sm:text-right flex-1">
+            PREMIACIÓN Y PALABRAS FINALES.
+          </div>
+        </div>
+
+        <!-- 16:30 (MAGENTA) -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 gap-2">
+          <div class="text-xl sm:text-2xl font-black schedule-time sm:w-60 shrink-0">
+            16:30 HRS.
+          </div>
+          <div class="text-base sm:text-xl font-black schedule-magenta text-left sm:text-right flex-1">
+            CIERRE.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action Lightbox Button for schedule -->
+      <div class="mt-8 text-center">
+        <button onclick="openLightbox('assets/afiche-cronograma.jpg', 'Cronograma Oficial Speakers en Verde')"
+                class="px-6 py-3 rounded-2xl bg-white text-slate-900 border-2 border-slate-900 font-extrabold text-sm shadow-[4px_4px_0px_0px_#db2777] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#db2777] transition inline-flex items-center gap-2">
+          <i data-lucide="zoom-in" class="w-4 h-4 text-poster-magenta"></i>
+          <span>Ver afiche original del cronograma</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: ALIANZAS & RECONOCIMIENTO A FME -->
+  <section id="colaboradores" class="py-16 md:py-24 bg-slate-50 border-t-4 border-slate-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
-        <div class="inline-block px-4 py-1 rounded-full bg-poster-green text-slate-950 text-xs font-black uppercase tracking-wider border border-black">
-          Colaboración Institucional
+        <div class="inline-block px-4 py-1.5 rounded-full bg-poster-green text-slate-950 text-xs font-black uppercase tracking-wider border border-slate-900">
+          Alianzas Institucionales
         </div>
         <h2 class="text-3xl sm:text-5xl font-black font-display text-slate-900 tracking-tight">
-          Ecosistema Speakers en Verde
+          Ecosistema Colaborador
         </h2>
         <p class="text-slate-600 text-sm sm:text-base font-medium">
-          Unión de voluntades para transformar la educación medioambiental.
+          Impulsando el ecoemprendimiento y el talento escolar de la Región de Antofagasta.
         </p>
       </div>
 
-      <!-- Main Partners Grid (Identical to the footer logos of the poster) -->
+      <!-- Partner Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
         
-        <!-- SQM -->
-        <div class="card-pop p-6 text-center space-y-3 border-2 border-slate-900 shadow-[5px_5px_0px_0px_#22c55e]">
-          <div class="text-[11px] font-black uppercase tracking-wider text-slate-400">Proyecto apoyado por</div>
-          <div class="h-20 flex items-center justify-center">
-            <div class="w-16 h-16 rounded-full bg-emerald-50 border-2 border-emerald-600 flex items-center justify-center font-black text-xl text-emerald-700">
-              SQM
-            </div>
+        <div class="card-luminous card-green-accent p-6 text-center space-y-2">
+          <span class="text-[11px] font-black uppercase text-slate-400">Proyecto apoyado por</span>
+          <div class="h-16 flex items-center justify-center">
+            <span class="text-2xl font-black text-emerald-700">SQM</span>
           </div>
-          <h4 class="text-lg font-black text-slate-900">SQM</h4>
-          <p class="text-xs text-slate-600 font-medium">Impulsa activamente el talento y las soluciones sustentables de Tocopilla.</p>
+          <h4 class="text-base font-black text-slate-900">SQM</h4>
+          <p class="text-xs text-slate-600 font-medium">Impulsa activamente soluciones sustentables en la región.</p>
         </div>
 
-        <!-- Fundación En Verde -->
-        <div class="card-pop p-6 text-center space-y-3 border-2 border-slate-900 shadow-[5px_5px_0px_0px_#22c55e]">
-          <div class="text-[11px] font-black uppercase tracking-wider text-slate-400">Ejecutado por</div>
-          <div class="h-20 flex items-center justify-center">
-            <div class="w-16 h-16 rounded-2xl bg-green-50 border-2 border-green-600 flex items-center justify-center font-black text-sm text-green-700 font-display">
-              En Verde
-            </div>
+        <div class="card-luminous card-green-accent p-6 text-center space-y-2">
+          <span class="text-[11px] font-black uppercase text-slate-400">Ejecutado por</span>
+          <div class="h-16 flex items-center justify-center">
+            <span class="text-xl font-black text-green-700">Fundación En Verde</span>
           </div>
-          <h4 class="text-lg font-black text-slate-900">Fundación En Verde</h4>
-          <p class="text-xs text-slate-600 font-medium">Liderazgo territorial y vinculación directa con las escuelas de la comuna.</p>
+          <h4 class="text-base font-black text-slate-900">Fundación En Verde</h4>
+          <p class="text-xs text-slate-600 font-medium">Liderazgo territorial y acompañamiento en Tocopilla.</p>
         </div>
 
-        <!-- Verdical -->
-        <div class="card-pop p-6 text-center space-y-3 border-2 border-slate-900 shadow-[5px_5px_0px_0px_#f59e0b]">
-          <div class="text-[11px] font-black uppercase tracking-wider text-slate-400">Diseñado por</div>
-          <div class="h-20 flex items-center justify-center">
-            <div class="w-16 h-16 rounded-2xl bg-amber-50 border-2 border-amber-600 flex items-center justify-center font-black text-sm text-amber-700 font-display">
-              Verdical
-            </div>
+        <div class="card-luminous card-yellow-accent p-6 text-center space-y-2">
+          <span class="text-[11px] font-black uppercase text-slate-400">Diseñado por</span>
+          <div class="h-16 flex items-center justify-center">
+            <span class="text-xl font-black text-amber-700">Verdical</span>
           </div>
-          <h4 class="text-lg font-black text-slate-900">Verdical</h4>
-          <p class="text-xs text-slate-600 font-medium">Diseño metodológico, talleres formativos y mentoría en oratoria y ecoemprendimiento.</p>
+          <h4 class="text-base font-black text-slate-900">Verdical</h4>
+          <p class="text-xs text-slate-600 font-medium">Diseño metodológico y mentoría experta en oratoria.</p>
         </div>
 
-        <!-- Usqai UCN -->
-        <div class="card-pop p-6 text-center space-y-3 border-2 border-slate-900 shadow-[5px_5px_0px_0px_#38bdf8]">
-          <div class="text-[11px] font-black uppercase tracking-wider text-slate-400">Colabora</div>
-          <div class="h-20 flex items-center justify-center">
-            <div class="w-16 h-16 rounded-2xl bg-sky-50 border-2 border-sky-600 flex items-center justify-center font-black text-sm text-sky-700 font-display">
-              USQAI
-            </div>
+        <div class="card-luminous card-blue-accent p-6 text-center space-y-2">
+          <span class="text-[11px] font-black uppercase text-slate-400">Colabora</span>
+          <div class="h-16 flex items-center justify-center">
+            <span class="text-xl font-black text-sky-700">USQAI UCN</span>
           </div>
-          <h4 class="text-lg font-black text-slate-900">Usqai UCN</h4>
-          <p class="text-xs text-slate-600 font-medium">Laboratorio de Emprendimiento UCN, anfitriones de la jornada final.</p>
+          <h4 class="text-base font-black text-slate-900">Usqai UCN</h4>
+          <p class="text-xs text-slate-600 font-medium">Laboratorio de Emprendimiento UCN, anfitriones de la final.</p>
         </div>
 
       </div>
 
-      <!-- SPECIAL INVITATION BANNER TO FME -->
-      <div class="rounded-3xl bg-gradient-to-r from-pink-50 via-white to-purple-50 border-4 border-slate-900 p-8 sm:p-10 shadow-[8px_8px_0px_0px_#db2777]">
+      <!-- Special Dedicated Invitation to Fundación Minera Escondida (FME) -->
+      <div class="rounded-3xl bg-white border-4 border-slate-900 p-8 sm:p-10 shadow-[8px_8px_0px_0px_#db2777]">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
           
           <div class="lg:col-span-8 space-y-3">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-poster-magentaPop text-white text-xs font-black uppercase tracking-wider">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-poster-magenta text-white text-xs font-black uppercase tracking-wider">
               <i data-lucide="award" class="w-4 h-4"></i>
               <span>Invitado de Honor • Alianza Histórica</span>
             </div>
@@ -730,19 +615,19 @@
               Fundación Minera Escondida (FME)
             </h3>
             <p class="text-slate-700 text-sm sm:text-base leading-relaxed font-medium">
-              Estaríamos muy complacidos de incorporar formalmente la presencia e imagen de <strong>FME</strong> en esta instancia final (presencia de marca en gráficas y videos de la jornada), si ustedes así lo requieren. Su histórica participación en 2022 con Jenny en el jurado forma parte del ADN de este programa.
+              Estaríamos muy complacidos de incorporar formalmente la presencia e imagen de <strong>FME</strong> en esta instancia final (presencia de marca en gráficas y videos de la jornada), si ustedes así lo requieren. Su recordada participación en el jurado 2022 con Jenny enaltece este proceso.
             </p>
             <div class="pt-2 flex flex-wrap gap-2 text-xs font-bold text-poster-magentaDark">
-              <span class="bg-white px-3 py-1 rounded-xl border border-slate-300">★ Presencia en Jurado</span>
-              <span class="bg-white px-3 py-1 rounded-xl border border-slate-300">★ Marca en Videos & Gráficas</span>
-              <span class="bg-white px-3 py-1 rounded-xl border border-slate-300">★ Compromiso con Tocopilla</span>
+              <span class="bg-pink-50 px-3 py-1 rounded-xl border border-pink-200">★ Participación en Jurado</span>
+              <span class="bg-pink-50 px-3 py-1 rounded-xl border border-pink-200">★ Presencia en Gráficas & Video</span>
+              <span class="bg-pink-50 px-3 py-1 rounded-xl border border-pink-200">★ Compromiso con la Juventud</span>
             </div>
           </div>
 
           <div class="lg:col-span-4 flex justify-center">
-            <div class="w-32 h-32 rounded-3xl bg-white border-4 border-slate-900 shadow-[5px_5px_0px_0px_#db2777] flex flex-col items-center justify-center p-4 text-center">
-              <span class="text-3xl font-black font-display text-poster-magentaPop">FME</span>
-              <span class="text-[11px] font-bold text-slate-600 mt-1 uppercase">Fundación Minera Escondida</span>
+            <div class="w-32 h-32 rounded-3xl bg-pink-50 border-4 border-slate-900 shadow-[5px_5px_0px_0px_#db2777] flex flex-col items-center justify-center p-4 text-center">
+              <span class="text-3xl font-black font-display text-poster-magenta">FME</span>
+              <span class="text-[11px] font-black text-slate-700 mt-1 uppercase">Fundación Minera Escondida</span>
             </div>
           </div>
 
@@ -752,14 +637,14 @@
     </div>
   </section>
 
-  <!-- FOOTER WITH THE TOCOPILLA LANDSCAPE STYLE -->
-  <footer class="bg-white border-t-4 border-slate-900 py-10 text-slate-800 relative">
+  <!-- FOOTER -->
+  <footer class="bg-white border-t-4 border-slate-900 py-10 text-slate-800">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pb-6 border-b border-slate-200">
         <div class="flex items-center gap-3">
-          <div class="bg-white p-2 rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_#22c55e]">
-            <span class="text-xl font-black font-display text-slate-900">SV</span>
+          <div class="w-10 h-10 rounded-xl bg-poster-green/20 border-2 border-poster-green flex items-center justify-center font-black text-lg text-poster-greenDark">
+            SV
           </div>
           <div>
             <div class="text-base font-black text-slate-900 font-display">SPEAKERS EN VERDE TOCOPILLA 2026</div>
@@ -783,7 +668,7 @@
   </footer>
 
   <!-- PROJECT DETAIL MODAL DIALOG -->
-  <div id="projectModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+  <div id="projectModal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="relative w-full max-w-2xl bg-white border-4 border-slate-900 rounded-3xl p-6 sm:p-8 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] overflow-y-auto max-h-[90vh] space-y-6 animate-scaleUp">
       
       <button onclick="closeProjectModal()" class="absolute top-5 right-5 p-2 rounded-xl text-slate-500 hover:text-black hover:bg-slate-100 transition">

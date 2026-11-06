@@ -1,135 +1,93 @@
 /* ==========================================================================
-   Speakers en Verde Tocopilla 2026 - Official Visual Identity Stylesheet
-   Based on the official event posters & graphics
+   Speakers en Verde Tocopilla 2026 - Official Luminous Visual Identity
+   100% White Canvas with Official Poster Palette (Magenta, Green, Yellow, Blue)
    ========================================================================== */
 
 :root {
-  --sv-magenta-deep: #4d0042;
-  --sv-magenta-rich: #850675;
-  --sv-magenta-pop: #d91b8a;
-  --sv-magenta-light: #f472b6;
-  
-  --sv-yellow: #fde047;
-  --sv-yellow-bright: #feee00;
-  --sv-green: #22c55e;
-  --sv-green-dark: #15803d;
-  
-  --sv-bubble-blue: #e0f2fe;
-  --sv-bubble-stroke: #0284c7;
-  --sv-dark: #18181b;
-  --sv-desert-gold: #f59e0b;
-  --sv-desert-sand: #fef08a;
+  --poster-magenta: #db2777;
+  --poster-magenta-deep: #850675;
+  --poster-green: #22c55e;
+  --poster-green-dark: #15803d;
+  --poster-yellow: #facc15;
+  --poster-yellow-light: #fef08a;
+  --poster-blue: #0284c7;
+  --poster-blue-light: #e0f2fe;
 }
 
-/* Pop Headline Typography */
-.font-pop {
-  font-family: 'Outfit', -apple-system, sans-serif;
-  font-weight: 900;
-  letter-spacing: -0.02em;
+body {
+  background-color: #ffffff !important;
+  color: #1e293b;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
 }
 
-/* "SPEAKERS" Yellow Pop Text with Black Shadow */
-.text-pop-speakers {
+/* Typography */
+.font-display {
   font-family: 'Outfit', sans-serif;
-  font-weight: 900;
-  color: #feee00;
-  text-transform: uppercase;
-  -webkit-text-stroke: 2px #000000;
-  text-shadow: 
-    3px 3px 0 #000000,
-    -1px -1px 0 #000000,  
-    1px -1px 0 #000000,
-    -1px 1px 0 #000000,
-    1px 1px 0 #000000;
 }
 
-/* "TOCOPILLA 2026!" Bubble 3D Blue/White text */
-.text-pop-tocopilla {
+.font-condensed {
   font-family: 'Outfit', sans-serif;
-  font-weight: 900;
-  color: #ffffff;
-  text-transform: uppercase;
-  -webkit-text-stroke: 4px #0284c7;
-  text-shadow: 
-    0px 5px 0px #0369a1,
-    0px 7px 0px #0c4a6e,
-    3px 8px 10px rgba(0, 0, 0, 0.2);
-  letter-spacing: 0.03em;
+  letter-spacing: -0.01em;
 }
 
-/* Magenta Wavy Canopy Background (like the top of the poster) */
-.canopy-waves {
-  background: 
-    radial-gradient(ellipse at 50% -20%, #e11d48 0%, #a21caf 35%, #701a75 65%, #4a044e 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.canopy-waves::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: 
-    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 80% 20%, rgba(254, 240, 138, 0.2) 0%, transparent 40%),
-    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.04) 0px, rgba(255, 255, 255, 0.04) 2px, transparent 2px, transparent 16px);
-  pointer-events-none;
-}
-
-/* Curved Arch Divider */
-.arch-mask {
-  border-bottom-left-radius: 50% 30px;
-  border-bottom-right-radius: 50% 30px;
-}
-
-/* Schedule Items Typography matching Poster 2 */
+/* Schedule typography matching Poster 2 */
 .schedule-time {
   font-family: 'Outfit', sans-serif;
   font-weight: 900;
-  letter-spacing: -0.01em;
-  color: #111827;
+  color: #0f172a;
 }
 
-.schedule-title-magenta {
+.schedule-magenta {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
   color: #db2777;
-  letter-spacing: -0.01em;
 }
 
-.schedule-title-black {
+.schedule-black {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
-  color: #18181b;
-  letter-spacing: -0.01em;
+  color: #0f172a;
 }
 
-/* Card Styling - Bright, Crisp, Pop with subtle 3D border */
-.card-pop {
-  background: #ffffff;
+/* Luminous Card Styles with Color Accents */
+.card-luminous {
+  background-color: #ffffff;
   border: 2px solid #e2e8f0;
-  border-radius: 1.5rem;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 1.25rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card-pop:hover {
-  transform: translateY(-4px);
-  border-color: #22c55e;
-  box-shadow: 0 20px 25px -5px rgba(22, 163, 74, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+.card-luminous:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
 }
 
-.card-pop-magenta:hover {
-  border-color: #db2777;
-  box-shadow: 0 20px 25px -5px rgba(219, 39, 119, 0.15);
+.card-green-accent {
+  border-left: 6px solid #22c55e;
+}
+
+.card-magenta-accent {
+  border-left: 6px solid #db2777;
+}
+
+.card-blue-accent {
+  border-left: 6px solid #0284c7;
+}
+
+.card-yellow-accent {
+  border-left: 6px solid #f59e0b;
 }
 
 /* Filter Buttons */
 .filter-btn {
-  background-color: #f1f5f9;
+  background-color: #f8fafc;
   color: #475569;
   border: 2px solid #e2e8f0;
   font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
 }
 
 .filter-btn:hover {
@@ -139,56 +97,14 @@
 }
 
 .filter-btn.active {
-  background: #22c55e;
-  color: #ffffff;
+  background-color: #22c55e;
+  color: #052e16;
   border-color: #16a34a;
-  box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3);
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(34, 197, 94, 0.25);
 }
 
-/* Animations */
-@keyframes floatSlow {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(2deg);
-  }
-}
-
-.animate-float {
-  animation: floatSlow 4s ease-in-out infinite;
-}
-
-@keyframes floatReverse {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(8px) rotate(-2deg);
-  }
-}
-
-.animate-float-reverse {
-  animation: floatReverse 4.5s ease-in-out infinite;
-}
-
-/* Modal Animation */
-@keyframes scaleUp {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.animate-scaleUp {
-  animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Custom badges */
+/* Badges */
 .badge-circular {
   background-color: #dcfce7;
   color: #15803d;
@@ -211,4 +127,20 @@
   background-color: #fce7f3;
   color: #9d174d;
   border: 1px solid #f472b6;
+}
+
+/* Modal Animation */
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
