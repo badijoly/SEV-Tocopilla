@@ -498,7 +498,7 @@ function openProjectModal(projectId) {
   const modalTitle = document.getElementById('modalTitle');
   const modalSchool = document.getElementById('modalSchool');
   const modalBadges = document.getElementById('modalBadges');
-  const modalHeaderImg = document.getElementById('modalHeaderImage');
+  const modalHeaderImg = document.getElementById('modalHeaderImage') || document.getElementById('modalHeaderImg');
   const modalBody = document.getElementById('modalBody');
   const modalImpact = document.getElementById('modalImpact');
 
