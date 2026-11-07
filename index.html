@@ -50,7 +50,7 @@
     }
   </script>
   
-  <link rel="stylesheet" href="styles.css?v=20261107_1550">
+  <link rel="stylesheet" href="styles.css?v=20261107_1605">
 </head>
 <body class="bg-white text-slate-800 font-sans antialiased selection:bg-sev-green selection:text-white overflow-x-hidden">
 
@@ -265,10 +265,16 @@
 
         </div>
 
-        <!-- Right: Official Logo Only (Optimized space without clutter) -->
-        <div class="lg:col-span-5 flex items-center justify-center">
-          <div class="relative w-full max-w-sm sm:max-w-md flex items-center justify-center p-2">
-            <img src="assets/logo-speakers-bubble.png" alt="Speakers en Verde" class="w-full max-w-[340px] sm:max-w-[400px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300">
+        <!-- Right: Official Logo + Estudiante Speaker en Escena -->
+        <div class="lg:col-span-5 flex items-center justify-center relative">
+          <div class="relative w-full max-w-sm sm:max-w-md lg:max-w-lg flex items-center justify-center pt-2 pb-0">
+            <!-- Logo Bubble as Background Emblem -->
+            <img src="assets/logo-speakers-bubble.png" alt="Speakers en Verde" 
+                 class="w-full max-w-[270px] sm:max-w-[320px] lg:max-w-[350px] h-auto object-contain drop-shadow-xl transform -translate-x-6 sm:-translate-x-10 -translate-y-4">
+            
+            <!-- Estudiante Speaker con Micrófono Orgánicamente Integrada -->
+            <img src="assets/speaker-nina.png" alt="Estudiante Speaker en Escena" 
+                 class="absolute right-0 sm:-right-2 bottom-0 max-h-[310px] sm:max-h-[380px] lg:max-h-[420px] w-auto object-contain drop-shadow-2xl pointer-events-none transform translate-y-4 hover:scale-105 transition-transform duration-300">
           </div>
         </div>
 
@@ -2210,7 +2216,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Application Logic -->
-  <script src="app.js?v=20261107_1550"></script>
+  <script src="app.js?v=20261107_1605"></script>
 
 </body>
 </html>
