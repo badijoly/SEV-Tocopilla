@@ -88,7 +88,7 @@ const projects = [
   {
     id: 'ecopuntos',
     title: 'EcoPuntos Escolares',
-    school: 'Escuela Bernardo O´Higgins (con Esc. Pedro Aguirre Cerda)',
+    school: 'Escuela Bernardo O´Higgins',
     category: 'circular',
     categoryLabel: 'Economía Circular & ABP',
     icon: 'box',
@@ -97,9 +97,9 @@ const projects = [
     lng: -70.1893,
     address: 'Avenida 18 de Septiembre 2850, Villa Ayquina',
     shortDesc: 'Transformación de contenedores en desuso de SQM en modernos puntos limpios inclusivos mediante ABP escolar.',
-    fullDesc: 'Proyecto basado en Aprendizaje Basado en Proyectos (ABP) desarrollado por estudiantes de 6° básico en Lenguaje y Ciencias, junto a la Escuela Pedro Aguirre Cerda y los párvulos del establecimiento. La iniciativa aborda la falta de puntos de reciclaje en escuelas y espacios públicos de Tocopilla, reutilizando contenedores en desuso de SQM para transformarlos en puntos limpios que fomenten el reciclaje y el cuidado ambiental.',
-    impact: 'Instalación de infraestructura de reciclaje colaborativa, educación ambiental intergeneracional y fomento de la corresponsabilidad en Tocopilla.',
-    tags: ['Upcycling', 'SQM Contenedores', 'ABP Intercolegial', 'ODS 11 & 12']
+    fullDesc: 'Proyecto basado en Aprendizaje Basado en Proyectos (ABP) desarrollado por estudiantes de 6° básico en Lenguaje y Ciencias. La iniciativa aborda la falta de puntos de reciclaje en escuelas y espacios públicos de Tocopilla, reutilizando contenedores en desuso de SQM para transformarlos en puntos limpios que fomenten el reciclaje y el cuidado ambiental.',
+    impact: 'Instalación de infraestructura de reciclaje colaborativa, educación ambiental y fomento de la corresponsabilidad en Tocopilla.',
+    tags: ['Upcycling', 'SQM Contenedores', 'Economía Circular', 'ODS 11 & 12']
   },
   {
     id: 'sweet-calm',
