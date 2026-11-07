@@ -573,35 +573,60 @@ function closeProjectModal() {
   }
 }
 
-// 8. Navigation & Header Behaviors
+// 8. Navigation & Header Behaviors (Dropdown de Secciones)
 function setupNavigation() {
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  const dropdownBtn = document.getElementById('sectionsDropdownBtn');
+  const dropdownMenu = document.getElementById('sectionsDropdownMenu');
+  const dropdownChevron = document.getElementById('sectionsDropdownChevron');
+  const sectionLinks = document.querySelectorAll('.section-menu-link');
   const header = document.getElementById('mainHeader');
 
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+  function toggleDropdown(show) {
+    if (!dropdownMenu) return;
+    const isHidden = dropdownMenu.classList.contains('hidden');
+    const targetState = show !== undefined ? show : isHidden;
+    
+    if (targetState) {
+      dropdownMenu.classList.remove('hidden');
+      dropdownBtn?.setAttribute('aria-expanded', 'true');
+      dropdownChevron?.classList.add('rotate-180');
+    } else {
+      dropdownMenu.classList.add('hidden');
+      dropdownBtn?.setAttribute('aria-expanded', 'false');
+      dropdownChevron?.classList.remove('rotate-180');
+    }
+  }
+
+  if (dropdownBtn && dropdownMenu) {
+    dropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleDropdown();
     });
 
-    mobileNavLinks.forEach(link => {
+    sectionLinks.forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+        toggleDropdown(false);
       });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!dropdownMenu.contains(e.target) && !dropdownBtn.contains(e.target)) {
+        toggleDropdown(false);
+      }
     });
   }
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-      header.classList.add('shadow-md');
+      header?.classList.add('shadow-md');
     } else {
-      header.classList.remove('shadow-md');
+      header?.classList.remove('shadow-md');
     }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+      toggleDropdown(false);
       closeProjectModal();
     }
   });
