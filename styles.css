@@ -155,6 +155,42 @@ h1, h2, h3, h4, .font-heading {
   border: 1px solid #f472b6;
 }
 
+/* Custom Leaflet Map Styling */
+#tocopillaMap {
+  z-index: 10;
+  border-radius: 1.5rem;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 1rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15) !important;
+  border: 2px solid #581c87 !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.leaflet-popup-tip {
+  background: #581c87 !important;
+}
+
+.custom-map-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-map-pin:hover {
+  transform: scale(1.2) translateY(-4px);
+  z-index: 999 !important;
+}
+
 /* Smooth modal animation */
 @keyframes modalScale {
   from {

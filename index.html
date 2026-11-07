@@ -12,6 +12,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
+  <!-- Leaflet CSS for Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -74,8 +77,9 @@
           <a href="#iniciativa" class="px-3 py-2 rounded-lg hover:text-sev-purple hover:bg-purple-50 transition">La Iniciativa</a>
           <a href="#trayectoria" class="px-3 py-2 rounded-lg hover:text-sev-purple hover:bg-purple-50 transition">Trayectoria</a>
           <a href="#ruta" class="px-3 py-2 rounded-lg hover:text-sev-purple hover:bg-purple-50 transition">Ruta Formativa</a>
-          <a href="#proyectos" class="px-3.5 py-2 rounded-lg text-sev-greenDark hover:bg-emerald-50 transition flex items-center gap-1.5 font-extrabold">
-            <span>10 Proyectos</span>
+          <a href="#mapa-proyectos" class="px-3.5 py-2 rounded-lg text-sev-greenDark hover:bg-emerald-50 transition flex items-center gap-1.5 font-extrabold">
+            <i data-lucide="map" class="w-4 h-4"></i>
+            <span>Mapa & 10 Proyectos</span>
             <span class="px-2 py-0.5 text-xs font-extrabold bg-sev-green text-white rounded-full">Final</span>
           </a>
           <a href="#final" class="px-3 py-2 rounded-lg hover:text-sev-purple hover:bg-purple-50 transition">Gran Final</a>
@@ -89,10 +93,10 @@
             <i data-lucide="file-text" class="w-4 h-4 text-sev-purple"></i>
             <span>Bases Oficiales</span>
           </a>
-          <a href="#proyectos" 
+          <a href="#mapa-proyectos" 
              class="px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-sev-green hover:bg-sev-greenDark text-white shadow-md shadow-emerald-600/20 transition flex items-center gap-2">
-            <i data-lucide="sparkles" class="w-4 h-4"></i>
-            <span>Explorar Proyectos</span>
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            <span>Ver Mapa de Tocopilla</span>
           </a>
         </div>
 
@@ -109,8 +113,8 @@
       <a href="#iniciativa" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-100">¿Qué es Speakers en Verde?</a>
       <a href="#trayectoria" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-100">Trayectoria Histórica (2019-2026)</a>
       <a href="#ruta" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-100">Ruta Formativa (9 Etapas)</a>
-      <a href="#proyectos" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-sev-greenDark hover:bg-emerald-50 flex items-center justify-between">
-        <span>Los 10 Proyectos Escolares</span>
+      <a href="#mapa-proyectos" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-sev-greenDark hover:bg-emerald-50 flex items-center justify-between">
+        <span>Mapa y los 10 Proyectos</span>
         <span class="px-2 py-0.5 text-xs bg-sev-green text-white rounded-full">10 Equipos</span>
       </a>
       <a href="#final" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-100">Programa de la Gran Final</a>
@@ -185,10 +189,10 @@
 
           <!-- Action Buttons -->
           <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <a href="#proyectos" 
+            <a href="#mapa-proyectos" 
                class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-extrabold bg-sev-green hover:bg-sev-greenDark text-white shadow-lg shadow-emerald-600/30 hover:scale-[1.02] active:scale-[0.98] transition flex items-center justify-center gap-2">
-              <i data-lucide="rocket" class="w-5 h-5"></i>
-              <span>Conoce los 10 Proyectos</span>
+              <i data-lucide="map" class="w-5 h-5"></i>
+              <span>Explorar Mapa & Proyectos</span>
             </a>
             <a href="#iniciativa" 
                class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition flex items-center justify-center gap-2">
@@ -203,12 +207,10 @@
         <div class="lg:col-span-5 flex justify-center">
           <div class="relative w-full max-w-md">
             
-            <!-- Soft glowing background pill -->
             <div class="absolute inset-0 bg-gradient-to-tr from-purple-200 via-pink-100 to-emerald-100 rounded-3xl blur-2xl opacity-70 transform rotate-1"></div>
 
             <div class="relative bg-white border-2 border-slate-200 rounded-3xl p-8 sm:p-10 shadow-xl text-center space-y-6">
               
-              <!-- Official Speech Bubble Logo -->
               <div class="flex justify-center">
                 <img src="assets/logo-speakers-bubble.png" 
                      alt="Logo Oficial Speakers en Verde" 
@@ -224,7 +226,6 @@
                 </p>
               </div>
 
-              <!-- Quick highlight pills -->
               <div class="grid grid-cols-2 gap-2 pt-2 text-left">
                 <div class="p-3 rounded-xl bg-purple-50 border border-purple-200">
                   <div class="text-xs font-bold text-sev-purple uppercase">Inclusión & Voz</div>
@@ -243,7 +244,7 @@
 
       </div>
 
-      <!-- Quick Metrics Ribbon -->
+      <!-- Metrics Ribbon -->
       <div class="mt-16 pt-10 border-t border-slate-200 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
         <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
           <div class="text-3xl sm:text-4xl font-black font-display text-sev-purple">6 Años</div>
@@ -271,7 +272,6 @@
   <section id="iniciativa" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sev-green/10 text-sev-greenDark text-xs font-bold uppercase tracking-wider">
           <i data-lucide="compass" class="w-3.5 h-3.5"></i>
@@ -285,10 +285,8 @@
         </p>
       </div>
 
-      <!-- 3 Core Pillars -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         
-        <!-- Pillar 1 -->
         <div class="story-card p-8 space-y-4 bg-white">
           <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-sev-green flex items-center justify-center font-bold">
             <i data-lucide="leaf" class="w-7 h-7"></i>
@@ -299,7 +297,6 @@
           </p>
         </div>
 
-        <!-- Pillar 2 -->
         <div class="story-card p-8 space-y-4 bg-white">
           <div class="w-14 h-14 rounded-2xl bg-purple-100 text-sev-purple flex items-center justify-center font-bold">
             <i data-lucide="mic" class="w-7 h-7"></i>
@@ -310,7 +307,6 @@
           </p>
         </div>
 
-        <!-- Pillar 3 -->
         <div class="story-card p-8 space-y-4 bg-white">
           <div class="w-14 h-14 rounded-2xl bg-sky-100 text-sev-blue flex items-center justify-center font-bold">
             <i data-lucide="heart-handshake" class="w-7 h-7"></i>
@@ -376,15 +372,13 @@
         </p>
       </div>
 
-      <!-- Vertical Timeline -->
       <div class="relative">
         
-        <!-- Center Connecting Line -->
         <div class="timeline-line"></div>
 
         <div class="space-y-12">
           
-          <!-- Milestone 1: 2019 -->
+          <!-- 2019 -->
           <div class="relative flex flex-col md:flex-row items-center gap-6">
             <div class="md:w-1/2 text-left md:text-right space-y-2 order-2 md:order-1 pl-16 md:pl-0">
               <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-sev-greenDark text-xs font-black uppercase">
@@ -408,7 +402,7 @@
             </div>
           </div>
 
-          <!-- Milestone 2: 2022 (Corfo & FME) -->
+          <!-- 2022 (Corfo & FME) -->
           <div class="relative flex flex-col md:flex-row items-center gap-6">
             <div class="md:w-1/2 order-3 md:order-1 pl-16 md:pl-0">
               <div class="p-6 rounded-2xl bg-purple-50/80 border-2 border-purple-200 text-xs text-slate-700 space-y-2 shadow-sm">
@@ -437,7 +431,7 @@
             </div>
           </div>
 
-          <!-- Milestone 3: 2026 (Tocopilla) -->
+          <!-- 2026 (Tocopilla) -->
           <div class="relative flex flex-col md:flex-row items-center gap-6">
             <div class="md:w-1/2 text-left md:text-right space-y-2 order-2 md:order-1 pl-16 md:pl-0">
               <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-sev-greenDark text-xs font-black uppercase">
@@ -472,7 +466,6 @@
   <section id="ruta" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sev-purple/10 text-sev-purple text-xs font-bold uppercase tracking-wider">
           <i data-lucide="layers" class="w-3.5 h-3.5"></i>
@@ -486,10 +479,8 @@
         </p>
       </div>
 
-      <!-- 9 Stages Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         
-        <!-- Act 1 -->
         <div class="story-card p-6 bg-white space-y-3">
           <div class="flex items-center justify-between">
             <span class="px-2.5 py-1 rounded-md bg-purple-100 text-sev-purple text-xs font-extrabold uppercase">Actividad 01</span>
@@ -501,7 +492,6 @@
           </p>
         </div>
 
-        <!-- Act 2 -->
         <div class="story-card p-6 bg-white space-y-3">
           <div class="flex items-center justify-between">
             <span class="px-2.5 py-1 rounded-md bg-purple-100 text-sev-purple text-xs font-extrabold uppercase">Actividad 02</span>
@@ -513,7 +503,6 @@
           </p>
         </div>
 
-        <!-- Act 3 -->
         <div class="story-card p-6 bg-white space-y-3">
           <div class="flex items-center justify-between">
             <span class="px-2.5 py-1 rounded-md bg-purple-100 text-sev-purple text-xs font-extrabold uppercase">Actividad 03</span>
@@ -525,7 +514,6 @@
           </p>
         </div>
 
-        <!-- Act 4 -->
         <div class="story-card p-6 bg-white space-y-3">
           <div class="flex items-center justify-between">
             <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-sev-greenDark text-xs font-extrabold uppercase">Actividad 04</span>
@@ -537,7 +525,6 @@
           </p>
         </div>
 
-        <!-- Act 5 -->
         <div class="story-card p-6 bg-emerald-50/50 border-emerald-300 space-y-3">
           <div class="flex items-center justify-between">
             <span class="px-2.5 py-1 rounded-md bg-sev-green text-white text-xs font-extrabold uppercase">Actividad 05 • Clave</span>
@@ -549,7 +536,6 @@
           </p>
         </div>
 
-        <!-- Act 6 -->
         <div class="story-card p-6 bg-purple-50/50 border-purple-300 space-y-3">
           <div class="flex items-center justify-between">
             <span class="px-2.5 py-1 rounded-md bg-sev-purple text-white text-xs font-extrabold uppercase">Actividad 06 • Núcleo</span>
@@ -561,7 +547,6 @@
           </p>
         </div>
 
-        <!-- Act 7 -->
         <div class="story-card p-6 bg-white space-y-3">
           <div class="flex items-center justify-between">
             <span class="px-2.5 py-1 rounded-md bg-sky-100 text-sev-blue text-xs font-extrabold uppercase">Actividad 07</span>
@@ -573,7 +558,6 @@
           </p>
         </div>
 
-        <!-- Act 8 -->
         <div class="story-card p-6 bg-white space-y-3">
           <div class="flex items-center justify-between">
             <span class="px-2.5 py-1 rounded-md bg-sky-100 text-sev-blue text-xs font-extrabold uppercase">Actividad 08</span>
@@ -585,7 +569,6 @@
           </p>
         </div>
 
-        <!-- Act 9 -->
         <div class="story-card p-6 bg-gradient-to-tr from-purple-900 to-sev-purple text-white space-y-3 shadow-lg">
           <div class="flex items-center justify-between">
             <span class="px-2.5 py-1 rounded-md bg-sev-green text-white text-xs font-extrabold uppercase">Actividad 09 • La Cumbre</span>
@@ -602,58 +585,102 @@
     </div>
   </section>
 
-  <!-- 5. LOS 10 PROYECTOS ESCOLARES DE TOCOPILLA (CATÁLOGO INTERACTIVO) -->
-  <section id="proyectos" class="py-20 md:py-28 bg-white border-t border-slate-200">
+  <!-- 5. MAPA INTERACTIVO Y LOS 10 PROYECTOS ESCOLARES -->
+  <section id="mapa-proyectos" class="py-20 md:py-28 bg-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-10">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-sev-greenDark text-xs font-bold uppercase tracking-wider">
-          <i data-lucide="rocket" class="w-3.5 h-3.5"></i>
-          <span>El Talento en Acción</span>
+          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+          <span>Geografía del Ecoemprendimiento</span>
         </div>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-slate-900">
-          Los 10 Proyectos Finalistas
+          Mapa Interactivo de Tocopilla
         </h2>
         <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
-          Propuestas ecológicas e innovadoras creadas por las comunidades escolares de Tocopilla. Haz clic en cada proyecto para conocer la ficha técnica completa.
+          Haz clic en cualquier punto del mapa para descubrir el colegio participante y abrir la ficha de su proyecto. También puedes hacer clic en las escuelas del selector rápido o en las tarjetas inferiores.
         </p>
       </div>
 
-      <!-- Filters & Search Toolbar -->
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 pb-6 border-b border-slate-200">
+      <!-- MAP CONTAINER CARD -->
+      <div class="bg-white border-2 border-slate-200 rounded-3xl p-4 sm:p-6 shadow-xl space-y-4 mb-12">
         
-        <!-- Category Buttons -->
-        <div class="flex flex-wrap items-center gap-2" id="filterContainer">
-          <button class="filter-btn active" data-category="all">
-            Todos (10)
-          </button>
-          <button class="filter-btn" data-category="circular">
-            Economía Circular & Suelos
-          </button>
-          <button class="filter-btn" data-category="tech">
-            Tecnología & Robótica 3D
-          </button>
-          <button class="filter-btn" data-category="bio">
-            Biotecnología & Salud
-          </button>
-          <button class="filter-btn" data-category="inclusion">
-            Inclusión & NEE
-          </button>
+        <!-- Map Toolbar / School Quick-Fly Buttons -->
+        <div class="flex items-center justify-between flex-wrap gap-2 pb-2 border-b border-slate-100">
+          <div class="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-sev-green"></span>
+            <span>Centrar en una escuela:</span>
+          </div>
+          <div class="flex items-center gap-1.5 text-xs text-sev-purple font-semibold">
+            <i data-lucide="info" class="w-3.5 h-3.5"></i>
+            <span>Toca un pin para abrir la ficha</span>
+          </div>
         </div>
 
-        <!-- Search Bar -->
-        <div class="relative w-full md:w-72">
-          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
-          <input type="text" id="projectSearch" placeholder="Buscar escuela o proyecto..." 
-                 class="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 font-medium focus:outline-none focus:border-sev-green focus:bg-white transition">
+        <!-- School Quick Pills -->
+        <div class="flex flex-wrap items-center gap-1.5 py-1" id="schoolPillsContainer">
+          <!-- Dynamically populated or rendered -->
+        </div>
+
+        <!-- Interactive Map Element -->
+        <div id="tocopillaMap" class="w-full h-[450px] sm:h-[520px] rounded-2xl border border-slate-200 relative"></div>
+
+        <!-- Map Footer Note -->
+        <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2 pt-2">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1.5 font-medium">
+              <span class="w-3 h-3 rounded-full bg-sev-purple inline-block"></span>
+              9 Establecimientos Educacionales
+            </span>
+            <span class="flex items-center gap-1.5 font-medium">
+              <span class="w-3 h-3 rounded-full bg-sev-green inline-block"></span>
+              10 Proyectos Finalistas
+            </span>
+          </div>
+          <div>Comuna de Tocopilla, Región de Antofagasta</div>
         </div>
 
       </div>
 
-      <!-- Projects Grid -->
-      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Rendered dynamically by app.js -->
+      <!-- Projects Grid Header & Toolbar -->
+      <div class="space-y-6 pt-6">
+        
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 pb-4 border-b border-slate-200">
+          
+          <!-- Category Filter Buttons -->
+          <div class="flex flex-wrap items-center gap-2" id="filterContainer">
+            <button class="filter-btn active" data-category="all">
+              Todos los Proyectos (10)
+            </button>
+            <button class="filter-btn" data-category="circular">
+              Economía Circular & Suelos
+            </button>
+            <button class="filter-btn" data-category="tech">
+              Tecnología & Robótica 3D
+            </button>
+            <button class="filter-btn" data-category="bio">
+              Biotecnología & Nutrición
+            </button>
+            <button class="filter-btn" data-category="inclusion">
+              Inclusión & NEE
+            </button>
+          </div>
+
+          <!-- Real-time Search Input -->
+          <div class="relative w-full md:w-72">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+            <input type="text" id="projectSearch" placeholder="Buscar escuela o proyecto..." 
+                   class="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 font-medium focus:outline-none focus:border-sev-green focus:bg-white transition">
+          </div>
+
+        </div>
+
+        <!-- Projects Cards Grid (Injected by app.js) -->
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Dynamically populated by app.js -->
+        </div>
+
       </div>
 
     </div>
@@ -848,7 +875,6 @@
   <section id="alianzas" class="py-20 md:py-28 bg-white border-t border-slate-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sev-green/10 text-sev-greenDark text-xs font-bold uppercase tracking-wider">
           <i data-lucide="handshake" class="w-3.5 h-3.5"></i>
@@ -991,7 +1017,7 @@
           <a href="#iniciativa" class="hover:text-sev-purple transition">La Iniciativa</a>
           <a href="#trayectoria" class="hover:text-sev-purple transition">Trayectoria</a>
           <a href="#ruta" class="hover:text-sev-purple transition">Ruta Formativa</a>
-          <a href="#proyectos" class="hover:text-sev-purple transition">10 Proyectos</a>
+          <a href="#mapa-proyectos" class="hover:text-sev-purple transition">Mapa & Proyectos</a>
           <a href="#final" class="hover:text-sev-purple transition">Gran Final</a>
         </div>
       </div>
@@ -1038,7 +1064,8 @@
     </div>
   </div>
 
-  <!-- SCRIPTS -->
+  <!-- LEAFLET JS & APP SCRIPT -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
