@@ -76,7 +76,7 @@ const projects = [
     category: 'tech',
     categoryLabel: 'Tecnología & Gamificación',
     icon: 'sparkles',
-    image: null,
+    image: 'assets/foto-liceo-politecnico-equipo-2.jpg',
     lat: -22.0844,
     lng: -70.1947,
     address: 'Pasaje 104 / Calle Washington, Tocopilla',
