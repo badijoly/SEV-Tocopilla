@@ -50,7 +50,7 @@
     }
   </script>
   
-  <link rel="stylesheet" href="styles.css?v=20261107_0030">
+  <link rel="stylesheet" href="styles.css?v=20261107_1330">
 </head>
 <body class="bg-white text-slate-800 font-sans antialiased selection:bg-sev-green selection:text-white overflow-x-hidden">
 
@@ -72,17 +72,20 @@
           </div>
         </a>
 
-        <!-- Desktop Navigation: Exactly matching user requested narrative order -->
+        <!-- Desktop Navigation: Prioritizing Gran Final 2026 & Current Teams -->
         <nav class="hidden xl:flex items-center gap-1 text-sm font-bold text-slate-600">
-          <a href="#iniciativa" class="px-3 py-2 rounded-lg hover:text-sev-purple hover:bg-purple-50 transition">¿Qué es?</a>
-          <a href="#impacto" class="px-3 py-2 rounded-lg hover:text-sev-greenDark hover:bg-emerald-50 transition">Impacto Histórico</a>
-          <a href="#mapa-proyectos" class="px-3 py-2 rounded-lg text-sev-greenDark hover:bg-emerald-50 transition flex items-center gap-1.5 font-extrabold">
+          <a href="#final" class="px-3.5 py-2 rounded-lg text-sev-purple hover:bg-purple-50 transition flex items-center gap-1.5 font-extrabold">
+            <i data-lucide="trophy" class="w-4 h-4 text-sev-yellow"></i>
+            <span>La Gran Final 2026</span>
+          </a>
+          <a href="#mapa-proyectos" class="px-3.5 py-2 rounded-lg text-sev-greenDark hover:bg-emerald-50 transition flex items-center gap-1.5 font-extrabold">
             <i data-lucide="map" class="w-4 h-4"></i>
-            <span>Proyectos 2026</span>
+            <span>Los 10 Equipos</span>
             <span class="px-2 py-0.5 text-xs font-extrabold bg-sev-green text-white rounded-full">Final</span>
           </a>
           <a href="#ruta" class="px-3 py-2 rounded-lg hover:text-sev-purple hover:bg-purple-50 transition">Ruta Formativa</a>
-          <a href="#final" class="px-3 py-2 rounded-lg hover:text-sev-purple hover:bg-purple-50 transition">Gran Final</a>
+          <a href="#iniciativa" class="px-3 py-2 rounded-lg hover:text-sev-purple hover:bg-purple-50 transition">¿Qué es?</a>
+          <a href="#impacto" class="px-3 py-2 rounded-lg hover:text-sev-greenDark hover:bg-emerald-50 transition">Impacto</a>
           <a href="#trayectoria" class="px-3 py-2 rounded-lg hover:text-sev-purple hover:bg-purple-50 transition">Trayectoria</a>
           <a href="#memoria-historica" class="px-3 py-2 rounded-lg hover:text-sev-magenta hover:bg-pink-50 transition flex items-center gap-1.5 font-extrabold text-sev-magenta">
             <i data-lucide="video" class="w-4 h-4"></i>
@@ -98,10 +101,10 @@
             <i data-lucide="file-text" class="w-4 h-4 text-sev-purple"></i>
             <span>Bases Oficiales</span>
           </a>
-          <a href="#mapa-proyectos" 
-             class="px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-sev-green hover:bg-sev-greenDark text-white shadow-md shadow-emerald-600/20 transition flex items-center gap-2">
-            <i data-lucide="map-pin" class="w-4 h-4"></i>
-            <span>Ver Mapa de Tocopilla</span>
+          <a href="#final" 
+             class="px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-sev-purple hover:bg-sev-purpleDark text-white shadow-md shadow-purple-900/20 transition flex items-center gap-2">
+            <i data-lucide="calendar" class="w-4 h-4 text-sev-yellow"></i>
+            <span>Programa Gran Final</span>
           </a>
         </div>
 
@@ -115,20 +118,23 @@
 
     <!-- Mobile Dropdown Menu -->
     <div id="mobileMenu" class="hidden xl:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-2 shadow-lg">
-      <a href="#iniciativa" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-100">1. ¿Qué es Speakers en Verde?</a>
-      <a href="#impacto" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-sev-greenDark hover:bg-emerald-50">2. Resumen de Impacto Histórico</a>
-      <a href="#mapa-proyectos" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-sev-purple hover:bg-purple-50 flex items-center justify-between">
-        <span>3. Proyectos Actuales 2026 (Mapa & Fichas)</span>
+      <a href="#final" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-sev-purple hover:bg-purple-50 flex items-center justify-between">
+        <span>1. La Gran Final 2026 (13 de Noviembre)</span>
+        <span class="px-2 py-0.5 text-xs bg-sev-purple text-white rounded-full">Sede UCN</span>
+      </a>
+      <a href="#mapa-proyectos" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-sev-greenDark hover:bg-emerald-50 flex items-center justify-between">
+        <span>2. Los 10 Equipos & Mapa Tocopilla</span>
         <span class="px-2 py-0.5 text-xs bg-sev-green text-white rounded-full">10 Equipos</span>
       </a>
-      <a href="#ruta" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-100">4. Ruta Formativa 2026 (9 Etapas)</a>
-      <a href="#final" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-100">5. Programa de la Gran Final (13 de Noviembre)</a>
+      <a href="#ruta" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-100">3. Ruta Formativa (9 Etapas de Preparación)</a>
+      <a href="#iniciativa" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-100">4. ¿Qué es Speakers en Verde?</a>
+      <a href="#impacto" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-100">5. Resumen de Impacto Histórico</a>
       <a href="#trayectoria" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-100">6. Recorrido Histórico (2019-2026)</a>
       <a href="#memoria-historica" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-sev-magenta hover:bg-pink-50 flex items-center gap-2">
         <i data-lucide="video" class="w-4 h-4"></i>
         <span>7. Memoria Histórica & Gran Vitrina de Videos</span>
       </a>
-      <a href="#alianzas" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-100">8. Ecosistema & Alianzas</a>
+      <a href="#alianzas" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-100">8. Ecosistema de Alianzas</a>
       <div class="pt-3">
         <a href="https://docs.google.com/document/d/1ISSrXh3nnkgypkSGl6MjmsjYKpG5VzMCnXW1omyr0KQ/edit?tab=t.0" target="_blank" rel="noopener noreferrer" 
            class="w-full text-center block py-2.5 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 border border-slate-300">
@@ -138,7 +144,7 @@
     </div>
   </header>
 
-  <!-- 1. HERO SECTION -->
+  <!-- 1. HERO SECTION (FOCALIZADO EN LA FINAL 2026 Y LOS 10 EQUIPOS) -->
   <section id="inicio" class="relative pt-12 pb-20 md:pt-20 md:pb-28 bg-gradient-to-b from-purple-50/50 via-white to-white overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -146,9 +152,9 @@
         <!-- Left: Narrative Introduction -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sev-green/10 text-sev-greenDark text-xs sm:text-sm font-extrabold uppercase tracking-wider border border-sev-green/20">
-            <span class="w-2 h-2 rounded-full bg-sev-green animate-ping"></span>
-            <span>Concurso Comunal Tocopilla 2026</span>
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sev-purple/10 text-sev-purple text-xs sm:text-sm font-extrabold uppercase tracking-wider border border-sev-purple/20">
+            <span class="w-2 h-2 rounded-full bg-sev-purple animate-ping"></span>
+            <span>Gran Final Comunal Tocopilla • 13 de Noviembre en Usqai UCN</span>
           </div>
 
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-display tracking-tight text-slate-900 leading-[1.1]">
@@ -157,45 +163,46 @@
           </h1>
 
           <p class="text-lg sm:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
-            <strong>Speakers en Verde</strong> es una plataforma de formación que empodera a las y los estudiantes escolares en <strong>ecoemprendimiento, habilidades de comunicación y liderazgo temprano</strong>, conectando el cuidado del medioambiente con soluciones reales para su comuna.
+            <strong>10 equipos finalistas</strong> de 9 establecimientos educativos y una delegación de más de <strong>80 personas</strong> viajan a Antofagasta para defender sus soluciones sustentables en la <strong>Gran Final 2026</strong>.
           </p>
 
           <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#iniciativa" class="px-7 py-3.5 rounded-2xl bg-sev-purple hover:bg-sev-purpleLight text-white font-extrabold text-sm sm:text-base shadow-lg shadow-purple-900/20 transition flex items-center gap-2">
-              <span>¿Qué es el Programa?</span>
+            <a href="#final" class="px-7 py-3.5 rounded-2xl bg-sev-purple hover:bg-sev-purpleLight text-white font-extrabold text-sm sm:text-base shadow-lg shadow-purple-900/20 transition flex items-center gap-2">
+              <i data-lucide="trophy" class="w-4 h-4 text-sev-yellow"></i>
+              <span>Ver Programa de la Final</span>
               <i data-lucide="arrow-down" class="w-4 h-4"></i>
             </a>
 
-            <a href="#impacto" class="px-6 py-3.5 rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-sev-greenDark border border-emerald-300 font-extrabold text-sm sm:text-base transition flex items-center gap-2">
-              <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
-              <span>Impacto Histórico</span>
+            <a href="#mapa-proyectos" class="px-6 py-3.5 rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-sev-greenDark border border-emerald-300 font-extrabold text-sm sm:text-base transition flex items-center gap-2">
+              <i data-lucide="map" class="w-4 h-4 text-sev-green"></i>
+              <span>Conocer a los 10 Equipos</span>
             </a>
 
-            <a href="#mapa-proyectos" class="px-6 py-3.5 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm sm:text-base border border-slate-300 transition flex items-center gap-2">
-              <i data-lucide="map" class="w-4 h-4 text-sev-green"></i>
-              <span>Proyectos 2026</span>
+            <a href="#ruta" class="px-6 py-3.5 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm sm:text-base border border-slate-300 transition flex items-center gap-2">
+              <i data-lucide="layers" class="w-4 h-4 text-sev-purple"></i>
+              <span>¿Cómo se Prepararon?</span>
             </a>
           </div>
 
           <!-- Quick badges -->
           <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs font-bold text-slate-500">
             <div class="flex items-center gap-1.5">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-sev-green"></i>
-              <span>6 Años de Trayectoria (2019 - 2026)</span>
+              <i data-lucide="calendar" class="w-4 h-4 text-sev-purple"></i>
+              <span>Viernes 13 de Noviembre</span>
             </div>
             <div class="flex items-center gap-1.5">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-sev-purple"></i>
-              <span>10 Equipos Finalistas 2026</span>
+              <i data-lucide="map-pin" class="w-4 h-4 text-sev-green"></i>
+              <span>Sede USQAI UCN (Antofagasta)</span>
             </div>
             <div class="flex items-center gap-1.5">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-sev-magenta"></i>
-              <span>Usqai UCN Antofagasta</span>
+              <i data-lucide="mic" class="w-4 h-4 text-sev-magenta"></i>
+              <span>Ronda de Pitch: 5 minutos</span>
             </div>
           </div>
 
         </div>
 
-        <!-- Right: Official Graphic Card -->
+        <!-- Right: Official Graphic Card with Updated Tight Logo -->
         <div class="lg:col-span-5 flex justify-center">
           <div class="relative w-full max-w-md bg-white rounded-3xl p-6 shadow-xl border border-slate-200 group">
             
@@ -203,7 +210,8 @@
               <div class="absolute -top-12 -right-12 w-40 h-40 bg-sev-green/30 rounded-full blur-2xl"></div>
               <div class="absolute -bottom-12 -left-12 w-40 h-40 bg-sev-purpleLight/40 rounded-full blur-2xl"></div>
               
-              <img src="assets/logo-speakers-bubble.png" alt="Logo Speakers en Verde" class="h-28 mx-auto mb-4 drop-shadow-md">
+              <!-- Tightly-cropped Logo without excess margin -->
+              <img src="assets/logo-speakers-bubble.png" alt="Logo Speakers en Verde" class="h-32 w-auto mx-auto mb-4 drop-shadow-md transform group-hover:scale-105 transition-transform duration-300">
               
               <h2 class="text-2xl font-black font-display tracking-tight text-white">
                 SPEAKERS EN VERDE
@@ -255,418 +263,8 @@
     </div>
   </section>
 
-  <!-- 2. ¿QUÉ ES EL PROGRAMA SPEAKERS EN VERDE? (DETALLE NARRATIVO Y PROPÓSITO) -->
-  <section id="iniciativa" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sev-green/10 text-sev-greenDark text-xs font-bold uppercase tracking-wider">
-          <i data-lucide="compass" class="w-3.5 h-3.5"></i>
-          <span>El Propósito Formativo</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-slate-900">
-          ¿Qué es el programa Speakers en Verde?
-        </h2>
-        <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
-          Más que una competencia escolar, es una <strong>plataforma integral de formación</strong> que busca promover habilidades, actitudes y competencias que incentiven el <strong>emprendimiento como herramienta de desarrollo de talentos</strong>, articulando la conciencia medioambiental con el liderazgo y la oratoria temprana.
-        </p>
-      </div>
-
-      <!-- 3 Pilares Fundamentales -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        
-        <div class="story-card p-8 space-y-4 bg-white border border-slate-200">
-          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-sev-green flex items-center justify-center font-bold">
-            <i data-lucide="leaf" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-bold font-display text-slate-900">Ecoemprendimiento Escolar</h3>
-          <p class="text-sm text-slate-600 leading-relaxed font-medium">
-            Incentivamos a estudiantes entre <strong>6° básico y 4° medio</strong> a observar con mirada crítica problemáticas reales de su comuna (escasez hídrica, residuos plásticos y textiles, eficiencia energética, inclusión de estudiantes con NEE) y formular soluciones sostenibles con modelo de valor.
-          </p>
-        </div>
-
-        <div class="story-card p-8 space-y-4 bg-white border border-slate-200">
-          <div class="w-14 h-14 rounded-2xl bg-purple-100 text-sev-purple flex items-center justify-center font-bold">
-            <i data-lucide="mic" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-bold font-display text-slate-900">Voz, Oratoria y Expresión</h3>
-          <p class="text-sm text-slate-600 leading-relaxed font-medium">
-            Una gran idea necesita ser comunicada con pasión y asertividad. Capacitamos a cada estudiante en dominio del escenario, expresión corporal, estructura de pitch de 5 minutos, manejo de objeciones y argumentación frente a un jurado calificador de alto nivel.
-          </p>
-        </div>
-
-        <div class="story-card p-8 space-y-4 bg-white border border-slate-200">
-          <div class="w-14 h-14 rounded-2xl bg-sky-100 text-sev-blue flex items-center justify-center font-bold">
-            <i data-lucide="package-check" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-bold font-display text-slate-900">Acompañamiento & Insumos en Aula</h3>
-          <p class="text-sm text-slate-600 leading-relaxed font-medium">
-            Entregamos <strong>financiamiento directo de materiales, fletes e insumos técnicos</strong> a cada establecimiento educativo para que las ideas no se queden en el papel, acompañando de forma presencial y cercana a los profesores líderes durante todo el proceso.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Sustento Metodológico y Científico -->
-      <div class="rounded-3xl bg-white border-2 border-slate-200 p-8 sm:p-10 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        
-        <div class="lg:col-span-8 space-y-3">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider">
-            <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
-            <span>Sustento Metodológico y Evidencia Científica</span>
-          </div>
-          <h3 class="text-2xl font-black font-display text-slate-900">
-            Formación con impacto pedagógico comprobado
-          </h3>
-          <p class="text-slate-600 text-sm leading-relaxed font-medium">
-            Un estudio de la <strong>Fundación Kauffman</strong> demuestra que los jóvenes que participan en programas tempranos de emprendimiento tienen una mayor probabilidad de desarrollar habilidades críticas como creatividad, resiliencia y resolución de problemas. En nuestra región, estas herramientas responden directamente a las brechas formativas detectadas por el <strong>informe GEM (Global Entrepreneurship Monitor) para Chile</strong> y se alinean con las prioridades de la <strong>Estrategia Regional de Innovación (ERI)</strong> de la Región de Antofagasta.
-          </p>
-        </div>
-
-        <div class="lg:col-span-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 text-xs text-slate-600 font-semibold">
-          <div class="flex items-center gap-2 text-sev-greenDark font-bold">
-            <i data-lucide="check-circle" class="w-4 h-4"></i>
-            <span>Desarrollo de talentos locales</span>
-          </div>
-          <div class="flex items-center gap-2 text-sev-purple font-bold">
-            <i data-lucide="check-circle" class="w-4 h-4"></i>
-            <span>Tolerancia a la frustración</span>
-          </div>
-          <div class="flex items-center gap-2 text-sev-blue font-bold">
-            <i data-lucide="check-circle" class="w-4 h-4"></i>
-            <span>Trabajo colaborativo e interdisciplinario</span>
-          </div>
-          <div class="flex items-center gap-2 text-sev-magenta font-bold">
-            <i data-lucide="check-circle" class="w-4 h-4"></i>
-            <span>Compromiso ciudadano y ambiental</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 3. RESUMEN DE NÚMEROS DE IMPACTO HISTÓRICO DEL PROGRAMA -->
-  <section id="impacto" class="py-20 md:py-28 bg-white border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100 text-sev-purple text-xs font-bold uppercase tracking-wider">
-          <i data-lucide="bar-chart-3" class="w-3.5 h-3.5"></i>
-          <span>Trayectoria & Trascendencia Regional</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-slate-900">
-          Impacto Histórico en Números
-        </h2>
-        <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
-          A lo largo de sus 6 años de vida institucional, Speakers en Verde ha tejido una red de impacto social, formativo y ambiental que perdura en las comunidades educativas del Norte Grande.
-        </p>
-      </div>
-
-      <!-- Grid de Grandes Métricas -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        
-        <!-- Métrica 1 -->
-        <div class="p-8 rounded-3xl bg-gradient-to-br from-purple-50 to-white border-2 border-purple-200 shadow-sm space-y-3">
-          <div class="w-12 h-12 rounded-2xl bg-sev-purple text-white flex items-center justify-center font-bold">
-            <i data-lucide="calendar" class="w-6 h-6"></i>
-          </div>
-          <div class="text-4xl sm:text-5xl font-black font-display text-sev-purple">6 Años</div>
-          <h4 class="text-lg font-bold text-slate-900">De Trayectoria Continua</h4>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Desde 2019 hasta 2026, fortaleciendo ininterrumpidamente la formación escolar en innovación, sustentabilidad y oratoria en la región.
-          </p>
-        </div>
-
-        <!-- Métrica 2 -->
-        <div class="p-8 rounded-3xl bg-gradient-to-br from-emerald-50 to-white border-2 border-emerald-200 shadow-sm space-y-3">
-          <div class="w-12 h-12 rounded-2xl bg-sev-green text-white flex items-center justify-center font-bold">
-            <i data-lucide="lightbulb" class="w-6 h-6"></i>
-          </div>
-          <div class="text-4xl sm:text-5xl font-black font-display text-sev-greenDark">+30 Proyectos</div>
-          <h4 class="text-lg font-bold text-slate-900">Formulados por Estudiantes</h4>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Soluciones aplicadas en desalación solar, lombricultura, jabonería sustentable, prótesis robótica 3D, domótica verde y bienestar escolar.
-          </p>
-        </div>
-
-        <!-- Métrica 3 -->
-        <div class="p-8 rounded-3xl bg-gradient-to-br from-sky-50 to-white border-2 border-sky-200 shadow-sm space-y-3">
-          <div class="w-12 h-12 rounded-2xl bg-sev-blue text-white flex items-center justify-center font-bold">
-            <i data-lucide="map-pin" class="w-6 h-6"></i>
-          </div>
-          <div class="text-4xl sm:text-5xl font-black font-display text-sev-blue">3 Comunas</div>
-          <h4 class="text-lg font-bold text-slate-900">Tocopilla, María Elena y Antofagasta</h4>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Vinculación territorial activa conectando centros escolares urbanos y del desierto con los principales polos de innovación regional.
-          </p>
-        </div>
-
-        <!-- Métrica 4 -->
-        <div class="p-8 rounded-3xl bg-gradient-to-br from-pink-50 to-white border-2 border-pink-200 shadow-sm space-y-3">
-          <div class="w-12 h-12 rounded-2xl bg-sev-magenta text-white flex items-center justify-center font-bold">
-            <i data-lucide="users" class="w-6 h-6"></i>
-          </div>
-          <div class="text-4xl sm:text-5xl font-black font-display text-sev-magenta">+500</div>
-          <h4 class="text-lg font-bold text-slate-900">Estudiantes y Docentes Líderes</h4>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Niños, niñas y jóvenes de 6° básico a 4° medio capacitados en pitch, oratoria, modelo de negocios escolar y Aprendizaje Basado en Proyectos.
-          </p>
-        </div>
-
-        <!-- Métrica 5 -->
-        <div class="p-8 rounded-3xl bg-gradient-to-br from-amber-50 to-white border-2 border-amber-200 shadow-sm space-y-3">
-          <div class="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center font-bold">
-            <i data-lucide="check-check" class="w-6 h-6"></i>
-          </div>
-          <div class="text-4xl sm:text-5xl font-black font-display text-amber-600">100%</div>
-          <h4 class="text-lg font-bold text-slate-900">Financiado & Gratuito en Aula</h4>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Entrega directa de insumos, herramientas y fletes a cada colegio para que el factor económico nunca sea una barrera para crear.
-          </p>
-        </div>
-
-        <!-- Métrica 6 -->
-        <div class="p-8 rounded-3xl bg-gradient-to-br from-teal-50 to-white border-2 border-teal-200 shadow-sm space-y-3">
-          <div class="w-12 h-12 rounded-2xl bg-teal-600 text-white flex items-center justify-center font-bold">
-            <i data-lucide="hammer" class="w-6 h-6"></i>
-          </div>
-          <div class="text-4xl sm:text-5xl font-black font-display text-teal-700">Realidad</div>
-          <h4 class="text-lg font-bold text-slate-900">Proyectos Materializados</h4>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Iniciativas como el <em>Jardín Acuático Terapéutico</em> (Esc. Arturo Prat) y los jabones <em>Herencia Viva</em> (Esc. Bernardo O'Higgins) son hoy infraestructura viva y emprendimientos en los colegios.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Alianzas Estratégicas en la Historia -->
-      <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="space-y-1 text-center md:text-left">
-          <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Gobernanza & Alianzas Institucionales</span>
-          <h4 class="text-xl font-bold font-display text-slate-900">Un ecosistema articulado para las juventudes del norte</h4>
-          <p class="text-xs sm:text-sm text-slate-600 font-medium max-w-2xl">
-            Programa impulsado por <strong>SQM Yodo Nutrición Vegetal</strong> y ejecutado por <strong>Fundación En Verde</strong> con el diseño de <strong>Verdical</strong>, con la colaboración de <strong>Usqai UCN</strong>, el respaldo del <strong>Gobierno Regional de Antofagasta (FIC-R)</strong>, <strong>Comité Corfo Antofagasta</strong>, <strong>DAEM Tocopilla</strong> y la <strong>Municipalidad de Tocopilla</strong>.
-          </p>
-        </div>
-        <a href="#alianzas" class="px-5 py-2.5 rounded-xl bg-white border border-slate-300 hover:border-sev-purple text-xs font-bold text-slate-700 hover:text-sev-purple transition shrink-0 shadow-sm">
-          Conocer Ecosistema Completo
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 4. LOS PROYECTOS ACTUALES: MAPA INTERACTIVO & FICHAS TOCOPILLA 2026 -->
-  <section id="mapa-proyectos" class="py-20 md:py-28 bg-white border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto space-y-4 mb-10">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-sev-greenDark text-xs font-bold uppercase tracking-wider">
-          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
-          <span>Geografía del Ecoemprendimiento</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-slate-900">
-          Proyectos Actuales • Tocopilla 2026
-        </h2>
-        <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
-          Explora en el <strong>mapa interactivo de Tocopilla</strong> la ubicación exacta de los 10 proyectos finalistas, conoce a los equipos en terreno con sus fotografías y descubre las propuestas que viajarán a la Gran Final.
-        </p>
-      </div>
-
-      <!-- Quick School Selector Buttons Bar -->
-      <div class="mb-4 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none text-xs" id="schoolPillsContainer">
-        <!-- Dynamically populated by app.js -->
-      </div>
-
-      <!-- Interactive Map Card -->
-      <div class="rounded-3xl border-2 border-slate-200 overflow-hidden shadow-lg bg-slate-100 mb-12 relative">
-        <div id="tocopillaMap" class="w-full h-[450px] sm:h-[550px] z-10"></div>
-        
-        <!-- Legend Overlay in Corner -->
-        <div class="absolute bottom-4 left-4 z-20 bg-white/90 backdrop-blur-md px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 shadow-md flex items-center gap-3">
-          <div class="flex items-center gap-1.5">
-            <span class="w-3 h-3 rounded-full bg-sev-purple"></span>
-            <span>9 Establecimientos</span>
-          </div>
-          <div class="flex items-center gap-1.5">
-            <span class="w-3 h-3 rounded-full bg-sev-green"></span>
-            <span>10 Proyectos Finalistas</span>
-          </div>
-          <span class="text-slate-400 hidden sm:inline">• Tocopilla, Región de Antofagasta</span>
-        </div>
-      </div>
-
-      <!-- Projects Catalog & Search Filter Controls -->
-      <div class="space-y-8">
-        
-        <div class="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-6">
-          
-          <!-- Category Filters -->
-          <div class="flex flex-wrap items-center gap-2" id="categoryFilters">
-            <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold bg-sev-purple text-white transition shadow-sm" data-category="all">
-              Todos los Proyectos (10)
-            </button>
-            <button onclick="filterProjects('circular')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition" data-category="circular">
-              Economía Circular & Residuos
-            </button>
-            <button onclick="filterProjects('tech')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition" data-category="tech">
-              Tecnología & Robótica 3D
-            </button>
-            <button onclick="filterProjects('bio')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition" data-category="bio">
-              Biotecnología & Suelos
-            </button>
-            <button onclick="filterProjects('inclusion')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition" data-category="inclusion">
-              Inclusión & NEE
-            </button>
-          </div>
-
-          <!-- Real-time Search Input -->
-          <div class="relative w-full md:w-72">
-            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
-            <input type="text" id="projectSearch" placeholder="Buscar escuela o proyecto..." 
-                   class="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 font-medium focus:outline-none focus:border-sev-green focus:bg-white transition">
-          </div>
-
-        </div>
-
-        <!-- Projects Cards Grid (Injected by app.js with edge-to-edge Cabecera Photo) -->
-        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Dynamically populated by app.js -->
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 5. DETALLES DEL PROGRAMA 2026: RUTA FORMATIVA (LAS 9 ETAPAS DE PREPARACIÓN) -->
-  <section id="ruta" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sev-purple/10 text-sev-purple text-xs font-bold uppercase tracking-wider">
-          <i data-lucide="layers" class="w-3.5 h-3.5"></i>
-          <span>El Proceso Formativo 2026</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-slate-900">
-          ¿Cómo se prepararon los equipos?
-        </h2>
-        <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
-          Los estudiantes no llegaron a la final por casualidad: transitaron una ruta rigurosa de <strong>9 etapas pedagógicas</strong> de aprendizaje experiencial, prototipado real y mentorías de oratoria intensivas.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <div class="story-card p-6 bg-white space-y-3 border border-slate-200">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded-md bg-purple-100 text-sev-purple text-xs font-extrabold uppercase">Actividad 01</span>
-            <i data-lucide="file-text" class="w-5 h-5 text-slate-400"></i>
-          </div>
-          <h4 class="text-lg font-bold font-display text-slate-900">Planificación y Difusión</h4>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Elaboración del plan de trabajo, diagnóstico territorial y primeras reuniones presenciales con los directores y docentes de Tocopilla para coordinar su integración.
-          </p>
-        </div>
-
-        <div class="story-card p-6 bg-white space-y-3 border border-slate-200">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded-md bg-purple-100 text-sev-purple text-xs font-extrabold uppercase">Actividad 02</span>
-            <i data-lucide="megaphone" class="w-5 h-5 text-slate-400"></i>
-          </div>
-          <h4 class="text-lg font-bold font-display text-slate-900">Charla de Lanzamiento</h4>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Jornada inicial de motivación e inducción para dar a conocer los alcances, objetivos pedagógicos y detalles del programa a los estudiantes y docentes beneficiarios.
-          </p>
-        </div>
-
-        <div class="story-card p-6 bg-white space-y-3 border border-slate-200">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded-md bg-purple-100 text-sev-purple text-xs font-extrabold uppercase">Actividad 03</span>
-            <i data-lucide="users" class="w-5 h-5 text-slate-400"></i>
-          </div>
-          <h4 class="text-lg font-bold font-display text-slate-900">Proceso de Convocatoria</h4>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Convocatoria abierta para centros educativos municipales y particulares subvencionados de Tocopilla, dirigida a niños, niñas y jóvenes entre 6° básico y 4° año medio.
-          </p>
-        </div>
-
-        <div class="story-card p-6 bg-white space-y-3 border border-slate-200">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-sev-greenDark text-xs font-extrabold uppercase">Actividad 04</span>
-            <i data-lucide="filter" class="w-5 h-5 text-slate-400"></i>
-          </div>
-          <h4 class="text-lg font-bold font-display text-slate-900">Selección Inicial</h4>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Evaluación técnica según las bases del certamen, seleccionando aquellas propuestas ecológicas y sociales nacidas en el aula escolar que resuelven dolores de su entorno inmediato.
-          </p>
-        </div>
-
-        <div class="story-card p-6 bg-emerald-50/50 border-emerald-300 space-y-3">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded-md bg-sev-green text-white text-xs font-extrabold uppercase">Actividad 05 • Clave</span>
-            <i data-lucide="package-check" class="w-5 h-5 text-sev-greenDark"></i>
-          </div>
-          <h4 class="text-lg font-bold font-display text-slate-900">Compra y Entrega de Insumos</h4>
-          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
-            Acuerdo de insumos específicos con cada profesor líder y despacho directo a cada colegio (incluyendo traslados y fletes) para que los estudiantes pudieran construir sus prototipos reales.
-          </p>
-        </div>
-
-        <div class="story-card p-6 bg-purple-50/50 border-purple-300 space-y-3">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded-md bg-sev-purple text-white text-xs font-extrabold uppercase">Actividad 06 • Núcleo</span>
-            <i data-lucide="sparkles" class="w-5 h-5 text-sev-purple"></i>
-          </div>
-          <h4 class="text-lg font-bold font-display text-slate-900">Mentorías Presenciales</h4>
-          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
-            Talleres intensivos para estudiantes y profesores en comunicación efectiva, resolución de problemas, oratoria, modelo de negocios escolar y expresión escénica.
-          </p>
-        </div>
-
-        <div class="story-card p-6 bg-white space-y-3 border border-slate-200">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded-md bg-sky-100 text-sev-blue text-xs font-extrabold uppercase">Actividad 07</span>
-            <i data-lucide="line-chart" class="w-5 h-5 text-slate-400"></i>
-          </div>
-          <h4 class="text-lg font-bold font-display text-slate-900">Seguimiento Continuo</h4>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Acompañamiento en paralelo presencial y remoto con los líderes de equipo para orientar avances, resolver inquietudes y afinar la narrativa del proyecto.
-          </p>
-        </div>
-
-        <div class="story-card p-6 bg-white space-y-3 border border-slate-200">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded-md bg-sky-100 text-sev-blue text-xs font-extrabold uppercase">Actividad 08</span>
-            <i data-lucide="check-check" class="w-5 h-5 text-slate-400"></i>
-          </div>
-          <h4 class="text-lg font-bold font-display text-slate-900">Preselección de Equipos</h4>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Evaluación integral de la incorporación de las herramientas formativas y cumplimiento de requisitos para ratificar a la delegación que defenderá su pitch en Antofagasta.
-          </p>
-        </div>
-
-        <div class="story-card p-6 bg-gradient-to-tr from-purple-900 to-sev-purple text-white space-y-3 shadow-lg">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded-md bg-sev-green text-white text-xs font-extrabold uppercase">Actividad 09 • La Cumbre</span>
-            <i data-lucide="trophy" class="w-5 h-5 text-yellow-300"></i>
-          </div>
-          <h4 class="text-lg font-bold font-display text-white">Gran Final Comunal</h4>
-          <p class="text-xs sm:text-sm text-purple-100 leading-relaxed font-medium">
-            13 de Noviembre en Usqai UCN: Presentación de pitch de 5 minutos ante jurado calificador, deliberación, premiación valorada y reconocimiento regional.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 6. DETALLES DEL PROGRAMA 2026: PROGRAMA DE LA GRAN FINAL (13 DE NOVIEMBRE) -->
-  <section id="final" class="py-20 md:py-28 bg-white border-t border-slate-200">
+  <!-- 2. LA GRAN FINAL TOCOPILLA 2026 (EL HITO CENTRAL ACTUAL) -->
+  <section id="final" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -674,17 +272,17 @@
         <!-- Left: Summary & Sede -->
         <div class="lg:col-span-5 space-y-6">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100 text-sev-purple text-xs font-bold uppercase tracking-wider">
-            <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
-            <span>Viernes 13 de Noviembre</span>
+            <i data-lucide="trophy" class="w-3.5 h-3.5 text-sev-yellow"></i>
+            <span>Viernes 13 de Noviembre • La Cumbre del Programa</span>
           </div>
 
           <h2 class="text-3xl sm:text-4xl font-black font-display tracking-tight text-slate-900 leading-tight">
             Programa Oficial de la <br>
-            <span class="text-gradient-sev">Jornada Final</span>
+            <span class="text-gradient-sev">Gran Final 2026</span>
           </h2>
 
           <p class="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-            Una jornada completa pensada para empoderar a los estudiantes tocopillanos, fomentar la camaradería regional y culminar con la ronda de presentaciones ante el jurado calificador e invitados especiales.
+            Una jornada completa pensada para empoderar a los estudiantes tocopillanos, fomentar la camaradería regional y culminar con la ronda de presentaciones ante el jurado calificador e invitados especiales en la Universidad Católica del Norte.
           </p>
 
           <!-- Climax Highlight Card -->
@@ -714,7 +312,7 @@
           </div>
 
           <!-- Evaluation Rubric Mini Card -->
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 text-xs text-slate-600">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 space-y-3 text-xs text-slate-600 shadow-sm">
             <h4 class="font-extrabold text-slate-900 uppercase tracking-wider text-[11px] flex items-center gap-1.5">
               <i data-lucide="scale" class="w-4 h-4 text-sev-purple"></i>
               <span>Criterios del Jurado Evaluador:</span>
@@ -841,8 +439,412 @@
     </div>
   </section>
 
+  <!-- 3. LOS 10 EQUIPOS & PROYECTOS 2026 (MAPA INTERACTIVO & FICHAS) -->
+  <section id="mapa-proyectos" class="py-20 md:py-28 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-sev-greenDark text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+          <span>Geografía del Ecoemprendimiento</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-slate-900">
+          Los 10 Equipos Finalistas • Tocopilla 2026
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
+          Explora en el <strong>mapa interactivo de Tocopilla</strong> la ubicación de cada establecimiento educativo, conoce a los estudiantes en terreno con sus fotografías y descubre los prototipos reales que defenderán en la Gran Final.
+        </p>
+      </div>
+
+      <!-- Quick School Selector Buttons Bar -->
+      <div class="mb-4 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none text-xs" id="schoolPillsContainer">
+        <!-- Dynamically populated by app.js -->
+      </div>
+
+      <!-- Interactive Map Card -->
+      <div class="rounded-3xl border-2 border-slate-200 overflow-hidden shadow-lg bg-slate-100 mb-12 relative">
+        <div id="tocopillaMap" class="w-full h-[450px] sm:h-[550px] z-10"></div>
+        
+        <!-- Legend Overlay in Corner -->
+        <div class="absolute bottom-4 left-4 z-20 bg-white/90 backdrop-blur-md px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 shadow-md flex items-center gap-3">
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-sev-purple"></span>
+            <span>9 Establecimientos</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-sev-green"></span>
+            <span>10 Proyectos Finalistas</span>
+          </div>
+          <span class="text-slate-400 hidden sm:inline">• Tocopilla, Región de Antofagasta</span>
+        </div>
+      </div>
+
+      <!-- Projects Catalog & Search Filter Controls -->
+      <div class="space-y-8">
+        
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-6">
+          
+          <!-- Category Filters -->
+          <div class="flex flex-wrap items-center gap-2" id="categoryFilters">
+            <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold bg-sev-purple text-white transition shadow-sm" data-category="all">
+              Todos los Proyectos (10)
+            </button>
+            <button onclick="filterProjects('circular')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition" data-category="circular">
+              Economía Circular & Residuos
+            </button>
+            <button onclick="filterProjects('tech')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition" data-category="tech">
+              Tecnología & Robótica 3D
+            </button>
+            <button onclick="filterProjects('bio')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition" data-category="bio">
+              Biotecnología & Suelos
+            </button>
+            <button onclick="filterProjects('inclusion')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition" data-category="inclusion">
+              Inclusión & NEE
+            </button>
+          </div>
+
+          <!-- Real-time Search Input -->
+          <div class="relative w-full md:w-72">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+            <input type="text" id="projectSearch" placeholder="Buscar escuela o proyecto..." 
+                   class="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 font-medium focus:outline-none focus:border-sev-green focus:bg-white transition">
+          </div>
+
+        </div>
+
+        <!-- Projects Cards Grid (Injected by app.js with edge-to-edge Cabecera Photo) -->
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Dynamically populated by app.js -->
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. LA RUTA FORMATIVA 2026 (¿CÓMO SE PREPARARON LOS EQUIPOS?) -->
+  <section id="ruta" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sev-purple/10 text-sev-purple text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+          <span>El Proceso Formativo 2026</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-slate-900">
+          ¿Cómo se prepararon los equipos?
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
+          Los estudiantes no llegaron a la final por casualidad: transitaron una ruta rigurosa de <strong>9 etapas pedagógicas</strong> de aprendizaje experiencial, prototipado real en aula y mentorías de oratoria intensivas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="story-card p-6 bg-white space-y-3 border border-slate-200">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md bg-purple-100 text-sev-purple text-xs font-extrabold uppercase">Actividad 01</span>
+            <i data-lucide="file-text" class="w-5 h-5 text-slate-400"></i>
+          </div>
+          <h4 class="text-lg font-bold font-display text-slate-900">Planificación y Difusión</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            Elaboración del plan de trabajo, diagnóstico territorial y primeras reuniones presenciales con directores y docentes de Tocopilla para coordinar su integración.
+          </p>
+        </div>
+
+        <div class="story-card p-6 bg-white space-y-3 border border-slate-200">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md bg-purple-100 text-sev-purple text-xs font-extrabold uppercase">Actividad 02</span>
+            <i data-lucide="megaphone" class="w-5 h-5 text-slate-400"></i>
+          </div>
+          <h4 class="text-lg font-bold font-display text-slate-900">Charla de Lanzamiento</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            Jornada inicial de motivación e inducción para dar a conocer los alcances, objetivos pedagógicos y detalles del programa a los estudiantes y docentes beneficiarios.
+          </p>
+        </div>
+
+        <div class="story-card p-6 bg-white space-y-3 border border-slate-200">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md bg-purple-100 text-sev-purple text-xs font-extrabold uppercase">Actividad 03</span>
+            <i data-lucide="users" class="w-5 h-5 text-slate-400"></i>
+          </div>
+          <h4 class="text-lg font-bold font-display text-slate-900">Proceso de Convocatoria</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            Convocatoria abierta para centros educativos municipales y particulares subvencionados de Tocopilla, dirigida a niños, niñas y jóvenes entre 6° básico y 4° año medio.
+          </p>
+        </div>
+
+        <div class="story-card p-6 bg-white space-y-3 border border-slate-200">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-sev-greenDark text-xs font-extrabold uppercase">Actividad 04</span>
+            <i data-lucide="filter" class="w-5 h-5 text-slate-400"></i>
+          </div>
+          <h4 class="text-lg font-bold font-display text-slate-900">Selección Inicial</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            Evaluación técnica según las bases del certamen, seleccionando aquellas propuestas ecológicas y sociales nacidas en el aula escolar que resuelven dolores de su entorno inmediato.
+          </p>
+        </div>
+
+        <div class="story-card p-6 bg-emerald-50/50 border-emerald-300 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md bg-sev-green text-white text-xs font-extrabold uppercase">Actividad 05 • Clave</span>
+            <i data-lucide="package-check" class="w-5 h-5 text-sev-greenDark"></i>
+          </div>
+          <h4 class="text-lg font-bold font-display text-slate-900">Compra y Entrega de Insumos</h4>
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+            Acuerdo de insumos específicos con cada profesor líder y despacho directo a cada colegio (incluyendo traslados y fletes) para que los estudiantes pudieran construir sus prototipos reales.
+          </p>
+        </div>
+
+        <div class="story-card p-6 bg-purple-50/50 border-purple-300 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md bg-sev-purple text-white text-xs font-extrabold uppercase">Actividad 06 • Núcleo</span>
+            <i data-lucide="sparkles" class="w-5 h-5 text-sev-purple"></i>
+          </div>
+          <h4 class="text-lg font-bold font-display text-slate-900">Mentorías Presenciales</h4>
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+            Talleres intensivos para estudiantes y profesores en comunicación efectiva, resolución de problemas, oratoria, modelo de negocios escolar y expresión escénica.
+          </p>
+        </div>
+
+        <div class="story-card p-6 bg-white space-y-3 border border-slate-200">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md bg-sky-100 text-sev-blue text-xs font-extrabold uppercase">Actividad 07</span>
+            <i data-lucide="line-chart" class="w-5 h-5 text-slate-400"></i>
+          </div>
+          <h4 class="text-lg font-bold font-display text-slate-900">Seguimiento Continuo</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            Acompañamiento en paralelo presencial y remoto con los líderes de equipo para orientar avances, resolver inquietudes y afinar la narrativa del proyecto.
+          </p>
+        </div>
+
+        <div class="story-card p-6 bg-white space-y-3 border border-slate-200">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md bg-sky-100 text-sev-blue text-xs font-extrabold uppercase">Actividad 08</span>
+            <i data-lucide="check-check" class="w-5 h-5 text-slate-400"></i>
+          </div>
+          <h4 class="text-lg font-bold font-display text-slate-900">Preselección de Equipos</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            Evaluación integral de la incorporación de las herramientas formativas y cumplimiento de requisitos para ratificar a la delegación que defenderá su pitch en Antofagasta.
+          </p>
+        </div>
+
+        <div class="story-card p-6 bg-gradient-to-tr from-purple-900 to-sev-purple text-white space-y-3 shadow-lg">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md bg-sev-green text-white text-xs font-extrabold uppercase">Actividad 09 • La Cumbre</span>
+            <i data-lucide="trophy" class="w-5 h-5 text-yellow-300"></i>
+          </div>
+          <h4 class="text-lg font-bold font-display text-white">Gran Final Comunal</h4>
+          <p class="text-xs sm:text-sm text-purple-100 leading-relaxed font-medium">
+            13 de Noviembre en Usqai UCN: Presentación de pitch de 5 minutos ante jurado calificador, deliberación, premiación valorada y reconocimiento regional.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. ¿QUÉ ES EL PROGRAMA SPEAKERS EN VERDE? (PROPÓSITO & SUSTENTO METODOLÓGICO) -->
+  <section id="iniciativa" class="py-20 md:py-28 bg-white border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sev-green/10 text-sev-greenDark text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+          <span>El Propósito Formativo</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-slate-900">
+          ¿Qué es el programa Speakers en Verde?
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
+          Más que una competencia escolar, es una <strong>plataforma integral de formación</strong> que busca promover habilidades, actitudes y competencias que incentiven el <strong>emprendimiento como herramienta de desarrollo de talentos</strong>, articulando la conciencia medioambiental con el liderazgo y la oratoria temprana.
+        </p>
+      </div>
+
+      <!-- 3 Pilares Fundamentales -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        
+        <div class="story-card p-8 space-y-4 bg-white border border-slate-200">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-sev-green flex items-center justify-center font-bold">
+            <i data-lucide="leaf" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold font-display text-slate-900">Ecoemprendimiento Escolar</h3>
+          <p class="text-sm text-slate-600 leading-relaxed font-medium">
+            Incentivamos a estudiantes entre <strong>6° básico y 4° medio</strong> a observar con mirada crítica problemáticas reales de su comuna (escasez hídrica, residuos plásticos y textiles, eficiencia energética, inclusión de estudiantes con NEE) y formular soluciones sostenibles con modelo de valor.
+          </p>
+        </div>
+
+        <div class="story-card p-8 space-y-4 bg-white border border-slate-200">
+          <div class="w-14 h-14 rounded-2xl bg-purple-100 text-sev-purple flex items-center justify-center font-bold">
+            <i data-lucide="mic" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold font-display text-slate-900">Voz, Oratoria y Expresión</h3>
+          <p class="text-sm text-slate-600 leading-relaxed font-medium">
+            Una gran idea necesita ser comunicada con pasión y asertividad. Capacitamos a cada estudiante en dominio del escenario, expresión corporal, estructura de pitch de 5 minutos, manejo de objeciones y argumentación frente a un jurado calificador de alto nivel.
+          </p>
+        </div>
+
+        <div class="story-card p-8 space-y-4 bg-white border border-slate-200">
+          <div class="w-14 h-14 rounded-2xl bg-sky-100 text-sev-blue flex items-center justify-center font-bold">
+            <i data-lucide="package-check" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold font-display text-slate-900">Acompañamiento & Insumos en Aula</h3>
+          <p class="text-sm text-slate-600 leading-relaxed font-medium">
+            Entregamos <strong>financiamiento directo de materiales, fletes e insumos técnicos</strong> a cada establecimiento educativo para que las ideas no se queden en el papel, acompañando de forma presencial y cercana a los profesores líderes durante todo el proceso.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Sustento Metodológico y Científico -->
+      <div class="rounded-3xl bg-white border-2 border-slate-200 p-8 sm:p-10 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-8 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+            <span>Sustento Metodológico y Evidencia Científica</span>
+          </div>
+          <h3 class="text-2xl font-black font-display text-slate-900">
+            Formación con impacto pedagógico comprobado
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed font-medium">
+            Un estudio de la <strong>Fundación Kauffman</strong> demuestra que los jóvenes que participan en programas tempranos de emprendimiento tienen una mayor probabilidad de desarrollar habilidades críticas como creatividad, resiliencia y resolución de problemas. En nuestra región, estas herramientas responden directamente a las brechas formativas detectadas por el <strong>informe GEM (Global Entrepreneurship Monitor) para Chile</strong> y se alinean con las prioridades de la <strong>Estrategia Regional de Innovación (ERI)</strong> de la Región de Antofagasta.
+          </p>
+        </div>
+
+        <div class="lg:col-span-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 text-xs text-slate-600 font-semibold">
+          <div class="flex items-center gap-2 text-sev-greenDark font-bold">
+            <i data-lucide="check-circle" class="w-4 h-4"></i>
+            <span>Desarrollo de talentos locales</span>
+          </div>
+          <div class="flex items-center gap-2 text-sev-purple font-bold">
+            <i data-lucide="check-circle" class="w-4 h-4"></i>
+            <span>Tolerancia a la frustración</span>
+          </div>
+          <div class="flex items-center gap-2 text-sev-blue font-bold">
+            <i data-lucide="check-circle" class="w-4 h-4"></i>
+            <span>Trabajo colaborativo e interdisciplinario</span>
+          </div>
+          <div class="flex items-center gap-2 text-sev-magenta font-bold">
+            <i data-lucide="check-circle" class="w-4 h-4"></i>
+            <span>Compromiso ciudadano y ambiental</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. RESUMEN DE IMPACTO HISTÓRICO EN NÚMEROS -->
+  <section id="impacto" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100 text-sev-purple text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="bar-chart-3" class="w-3.5 h-3.5"></i>
+          <span>Trayectoria & Trascendencia Regional</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-slate-900">
+          Impacto Histórico en Números
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
+          A lo largo de sus 6 años de vida institucional, Speakers en Verde ha tejido una red de impacto social, formativo y ambiental que perdura en las comunidades educativas del Norte Grande.
+        </p>
+      </div>
+
+      <!-- Grid de Grandes Métricas -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        
+        <div class="p-8 rounded-3xl bg-white border-2 border-purple-200 shadow-sm space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-sev-purple text-white flex items-center justify-center font-bold">
+            <i data-lucide="calendar" class="w-6 h-6"></i>
+          </div>
+          <div class="text-4xl sm:text-5xl font-black font-display text-sev-purple">6 Años</div>
+          <h4 class="text-lg font-bold text-slate-900">De Trayectoria Continua</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            Desde 2019 hasta 2026, fortaleciendo ininterrumpidamente la formación escolar en innovación, sustentabilidad y oratoria en la región.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border-2 border-emerald-200 shadow-sm space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-sev-green text-white flex items-center justify-center font-bold">
+            <i data-lucide="lightbulb" class="w-6 h-6"></i>
+          </div>
+          <div class="text-4xl sm:text-5xl font-black font-display text-sev-greenDark">+30 Proyectos</div>
+          <h4 class="text-lg font-bold text-slate-900">Formulados por Estudiantes</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            Soluciones aplicadas en desalación solar, lombricultura, jabonería sustentable, prótesis robótica 3D, domótica verde y bienestar escolar.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border-2 border-sky-200 shadow-sm space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-sev-blue text-white flex items-center justify-center font-bold">
+            <i data-lucide="map-pin" class="w-6 h-6"></i>
+          </div>
+          <div class="text-4xl sm:text-5xl font-black font-display text-sev-blue">3 Comunas</div>
+          <h4 class="text-lg font-bold text-slate-900">Tocopilla, María Elena y Antofagasta</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            Vinculación territorial activa conectando centros escolares urbanos y del desierto con los principales polos de innovación regional.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border-2 border-pink-200 shadow-sm space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-sev-magenta text-white flex items-center justify-center font-bold">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <div class="text-4xl sm:text-5xl font-black font-display text-sev-magenta">+500</div>
+          <h4 class="text-lg font-bold text-slate-900">Estudiantes y Docentes Líderes</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            Niños, niñas y jóvenes de 6° básico a 4° medio capacitados en pitch, oratoria, modelo de negocios escolar y Aprendizaje Basado en Proyectos.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border-2 border-amber-200 shadow-sm space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center font-bold">
+            <i data-lucide="check-check" class="w-6 h-6"></i>
+          </div>
+          <div class="text-4xl sm:text-5xl font-black font-display text-amber-600">100%</div>
+          <h4 class="text-lg font-bold text-slate-900">Financiado & Gratuito en Aula</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            Entrega directa de insumos, herramientas y fletes a cada colegio para que el factor económico nunca sea una barrera para crear.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border-2 border-teal-200 shadow-sm space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-teal-600 text-white flex items-center justify-center font-bold">
+            <i data-lucide="hammer" class="w-6 h-6"></i>
+          </div>
+          <div class="text-4xl sm:text-5xl font-black font-display text-teal-700">Realidad</div>
+          <h4 class="text-lg font-bold text-slate-900">Proyectos Materializados</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            Iniciativas como el <em>Jardín Acuático Terapéutico</em> (Esc. Arturo Prat) y los jabones <em>Herencia Viva</em> (Esc. Bernardo O'Higgins) son hoy infraestructura viva y emprendimientos en los colegios.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Alianzas Estratégicas en la Historia -->
+      <div class="p-8 rounded-3xl bg-white border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+        <div class="space-y-1 text-center md:text-left">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Gobernanza & Alianzas Institucionales</span>
+          <h4 class="text-xl font-bold font-display text-slate-900">Un ecosistema articulado para las juventudes del norte</h4>
+          <p class="text-xs sm:text-sm text-slate-600 font-medium max-w-2xl">
+            Programa impulsado por <strong>SQM Yodo Nutrición Vegetal</strong> y ejecutado por <strong>Fundación En Verde</strong> con el diseño de <strong>Verdical</strong>, con la colaboración de <strong>Usqai UCN</strong>, el respaldo del <strong>Gobierno Regional de Antofagasta (FIC-R)</strong>, <strong>Comité Corfo Antofagasta</strong>, <strong>DAEM Tocopilla</strong> y la <strong>Municipalidad de Tocopilla</strong>.
+          </p>
+        </div>
+        <a href="#alianzas" class="px-5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 hover:border-sev-purple text-xs font-bold text-slate-700 hover:text-sev-purple transition shrink-0 shadow-sm">
+          Conocer Ecosistema Completo
+        </a>
+      </div>
+
+    </div>
+  </section>
+
   <!-- 7. RECORRIDO HISTÓRICO (2019 - 2026) -->
-  <section id="trayectoria" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200">
+  <section id="trayectoria" class="py-20 md:py-28 bg-white border-t border-slate-200">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -881,7 +883,7 @@
             </div>
 
             <div class="md:w-1/2 order-3 pl-16 md:pl-0">
-              <div class="p-5 rounded-2xl bg-white border border-slate-200 text-xs text-slate-600 space-y-1 shadow-sm">
+              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-1 shadow-sm">
                 <span class="font-bold text-slate-800">Primeras Experiencias ABP:</span>
                 <p>Implementación del modelo de formulación de proyectos ambientales articulado con oratoria básica escolar.</p>
               </div>
@@ -891,7 +893,7 @@
           <!-- 2022 (Impulso Corfo) -->
           <div class="relative flex flex-col md:flex-row items-center gap-6">
             <div class="md:w-1/2 order-3 md:order-1 pl-16 md:pl-0">
-              <div class="p-5 rounded-2xl bg-white border border-slate-200 text-xs text-slate-600 space-y-1 shadow-sm">
+              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-1 shadow-sm">
                 <span class="font-bold text-slate-800">Ecosistema Regional de Innovación:</span>
                 <p>Consolidación de mesas evaluadoras y jurados expertos para retroalimentar las iniciativas escolares tempranas.</p>
               </div>
@@ -946,8 +948,7 @@
             </div>
 
             <div class="md:w-1/2 order-3 pl-16 md:pl-0 w-full">
-              <!-- Preview thumbnail to video vitrina -->
-              <div class="p-5 rounded-2xl bg-white border border-slate-200 text-xs text-slate-600 space-y-2 shadow-sm">
+              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-2 shadow-sm">
                 <span class="font-bold text-slate-800 flex items-center gap-1.5 text-sev-blue">
                   <i data-lucide="video" class="w-4 h-4"></i>
                   <span>Hitos de la Edición 2024:</span>
@@ -1043,7 +1044,7 @@
   </section>
 
   <!-- 8. MEMORIA HISTÓRICA: GRAN VITRINA AUDIOVISUAL & DETALLE AÑO POR AÑO -->
-  <section id="memoria-historica" class="py-20 md:py-28 bg-white border-t border-slate-200">
+  <section id="memoria-historica" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
@@ -1066,7 +1067,7 @@
       <div id="vitrina-videos" class="space-y-16 mb-24">
         
         <!-- Video 1 Destacado: Cierre Tocopilla 2025 -->
-        <div id="video-cierre-2025" class="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-purple-50 via-pink-50/40 to-white border-2 border-purple-200 shadow-lg">
+        <div id="video-cierre-2025" class="p-8 sm:p-10 rounded-3xl bg-white border-2 border-purple-200 shadow-lg">
           <div class="flex flex-col lg:flex-row items-center gap-8">
             <div class="lg:w-1/2 space-y-4 text-left">
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sev-purple text-white text-xs font-bold uppercase tracking-wider shadow-sm">
@@ -1101,7 +1102,7 @@
         </div>
 
         <!-- Video 2 Destacado: Video Resumen Oficial 2024 FIC-R / Verdical / GORE -->
-        <div id="video-resumen-2024" class="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-sky-50 via-slate-50 to-white border-2 border-sky-200 shadow-md">
+        <div id="video-resumen-2024" class="p-8 sm:p-10 rounded-3xl bg-white border-2 border-sky-200 shadow-md">
           <div class="flex flex-col lg:flex-row-reverse items-center gap-8">
             <div class="lg:w-1/2 space-y-4 text-left">
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sev-blue text-white text-xs font-bold uppercase tracking-wider shadow-sm">
@@ -1114,7 +1115,7 @@
               <p class="text-sm text-slate-600 leading-relaxed font-medium">
                 Speakers en Verde 2024 fue un programa de formación de cuatro meses que involucró a establecimientos educativos en Tocopilla y María Elena. Equipos de entre 5 y 7 alumnos, desde 6.º básico hasta 4.º medio, junto con un profesor o profesora guía, se embarcaron en un proceso formativo integral promoviendo habilidades de emprendimiento.
               </p>
-              <div class="p-4 rounded-2xl bg-white border border-sky-200 text-xs text-slate-600 space-y-1 font-medium">
+              <div class="p-4 rounded-2xl bg-slate-50 border border-sky-200 text-xs text-slate-600 space-y-1 font-medium">
                 <span class="font-bold text-slate-900">Alianza Estratégica 2024:</span>
                 <p>Liderado por <strong>Verdical</strong>, apoyado por el <strong>Comité Corfo Antofagasta</strong> a través de recursos <strong>FIC-R del Gobierno Regional de Antofagasta</strong> (Código BIP 40014448-0), con la colaboración de la <strong>Municipalidad de Tocopilla</strong>, el <strong>DAEM</strong> y <strong>SQM Yodo Nutrición Vegetal</strong>.</p>
               </div>
@@ -1140,7 +1141,7 @@
         </div>
 
         <!-- Muestra de 3 Pitches Escolares Destacados 2024 -->
-        <div id="pitches-2024" class="p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-6">
+        <div id="pitches-2024" class="p-8 rounded-3xl bg-white border border-slate-200 space-y-6 shadow-sm">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div class="space-y-1 text-left">
               <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-sev-blue">
@@ -1151,7 +1152,7 @@
                 3 Pitches Destacados de la Edición 2024
               </h4>
             </div>
-            <span class="text-xs font-bold text-slate-500 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shrink-0 self-start sm:self-auto">
+            <span class="text-xs font-bold text-slate-500 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200 shrink-0 self-start sm:self-auto">
               Provincia de Tocopilla • Mentorías Comunicacionales
             </span>
           </div>
@@ -1159,7 +1160,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             <!-- Pitch 1: Los Acuapónicos -->
-            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between">
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between">
               <div class="aspect-video w-full bg-slate-950">
                 <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/QNm_x_0ZYOs" title="Los Acuapónicos - Escuela Estados Unidos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
@@ -1183,7 +1184,7 @@
             </div>
 
             <!-- Pitch 2: Gym Mobile -->
-            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between">
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between">
               <div class="aspect-video w-full bg-slate-950">
                 <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/PjgozJ44yr4" title="Gym Mobile - Escuela D-7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
@@ -1207,7 +1208,7 @@
             </div>
 
             <!-- Pitch 3: Comida que ilumina -->
-            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between">
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between">
               <div class="aspect-video w-full bg-slate-950">
                 <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/-OHToiJmUUc" title="Comida que ilumina - Col. Bicentenario Sagrada Familia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
@@ -1234,7 +1235,7 @@
         </div>
 
         <!-- Vitrina de Testimonios y Casos Materializados (Instagram Reels) -->
-        <div class="p-8 rounded-3xl bg-gradient-to-r from-purple-50/70 via-pink-50/50 to-white border-2 border-pink-200 space-y-6">
+        <div class="p-8 rounded-3xl bg-white border-2 border-pink-200 space-y-6 shadow-sm">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-left">
             <div class="space-y-1">
               <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-sev-magenta">
@@ -1245,7 +1246,7 @@
                 Casos que Pasaron de la Idea a la Realidad en Tocopilla
               </h4>
             </div>
-            <span class="text-xs font-bold text-slate-500 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shrink-0 self-start sm:self-auto">
+            <span class="text-xs font-bold text-slate-500 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200 shrink-0 self-start sm:self-auto">
               Versión 2025 • Materializados
             </span>
           </div>
@@ -1253,7 +1254,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             
             <!-- Caso 1: Jardín Acuático Terapéutico (Arturo Prat) -->
-            <div class="bg-white rounded-2xl border-2 border-emerald-300 p-6 flex flex-col justify-between space-y-4 shadow-sm text-left">
+            <div class="bg-slate-50 rounded-2xl border-2 border-emerald-300 p-6 flex flex-col justify-between space-y-4 shadow-sm text-left">
               <div class="space-y-3">
                 <div class="relative w-full h-52 overflow-hidden rounded-xl bg-slate-100 border border-slate-200">
                   <img src="assets/foto-escuela-arturo-prat.jpg" alt="Jardín Acuático Terapéutico - Escuela Arturo Prat" class="w-full h-full object-cover">
@@ -1281,7 +1282,7 @@
             </div>
 
             <!-- Caso 2: Herencia Viva (Bernardo O'Higgins) -->
-            <div class="bg-white rounded-2xl border-2 border-purple-300 p-6 flex flex-col justify-between space-y-4 shadow-sm text-left">
+            <div class="bg-slate-50 rounded-2xl border-2 border-purple-300 p-6 flex flex-col justify-between space-y-4 shadow-sm text-left">
               <div class="space-y-3">
                 <div class="relative w-full h-52 overflow-hidden rounded-xl bg-slate-100 border border-slate-200">
                   <img src="assets/foto-escuela-bernardo-ohiggins.jpg" alt="Herencia Viva - Escuela Bernardo O'Higgins" class="w-full h-full object-cover">
@@ -1387,7 +1388,7 @@
           </div>
 
           <!-- 2. Sagrada Familia -->
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-emerald-200 transition">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-emerald-200 transition">
             <div class="space-y-3">
               <div class="flex items-center justify-between gap-2">
                 <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
@@ -1451,7 +1452,7 @@
           </div>
 
           <!-- 4. Escuela Estados Unidos -->
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-sky-200 transition">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-sky-200 transition">
             <div class="space-y-3">
               <div class="flex items-center justify-between gap-2">
                 <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800">
@@ -1473,7 +1474,7 @@
           </div>
 
           <!-- 5. Domingo Latrille -->
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-cyan-200 transition">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-cyan-200 transition">
             <div class="space-y-3">
               <div class="flex items-center justify-between gap-2">
                 <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-800">
@@ -1495,7 +1496,7 @@
           </div>
 
           <!-- 6. Diego Portales (Domótica Verde) -->
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-purple-200 transition">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-purple-200 transition">
             <div class="space-y-3">
               <div class="flex items-center justify-between gap-2">
                 <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-800">
@@ -1517,7 +1518,7 @@
           </div>
 
           <!-- 7. Gabriela Mistral -->
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-amber-200 transition">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-amber-200 transition">
             <div class="space-y-3">
               <div class="flex items-center justify-between gap-2">
                 <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800">
@@ -1539,7 +1540,7 @@
           </div>
 
           <!-- 8. Diego Portales (Smart Door) -->
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-slate-300 transition">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-slate-300 transition">
             <div class="space-y-3">
               <div class="flex items-center justify-between gap-2">
                 <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-200 text-slate-800">
@@ -1561,7 +1562,7 @@
           </div>
 
           <!-- 9. Pablo Neruda -->
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-teal-200 transition">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-teal-200 transition">
             <div class="space-y-3">
               <div class="flex items-center justify-between gap-2">
                 <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-teal-100 text-teal-800">
@@ -1583,7 +1584,7 @@
           </div>
 
           <!-- 10. Carlos Condell -->
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-orange-200 transition">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-orange-200 transition">
             <div class="space-y-3">
               <div class="flex items-center justify-between gap-2">
                 <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-800">
@@ -1605,7 +1606,7 @@
           </div>
 
           <!-- 11. Pedro Aguirre Cerda -->
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-emerald-200 transition">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md hover:border-emerald-200 transition">
             <div class="space-y-3">
               <div class="flex items-center justify-between gap-2">
                 <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
@@ -1633,8 +1634,8 @@
     </div>
   </section>
 
-  <!-- 9. ECOSISTEMA DE ALIANZAS & RECONOCIMIENTOS -->
-  <section id="alianzas" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200">
+  <!-- 9. ECOSISTEMA DE ALIANZAS & BASES OFICIALES -->
+  <section id="alianzas" class="py-20 md:py-28 bg-white border-t border-slate-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -1653,7 +1654,7 @@
       <!-- Partners Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
         
-        <div class="story-card p-6 bg-white flex flex-col items-center text-center space-y-4 border border-slate-200">
+        <div class="story-card p-6 bg-slate-50 flex flex-col items-center text-center space-y-4 border border-slate-200">
           <div class="h-16 flex items-center justify-center">
             <img src="assets/logo-sqm.webp" alt="SQM Yodo Nutrición Vegetal" class="max-h-12 w-auto object-contain">
           </div>
@@ -1666,7 +1667,7 @@
           </div>
         </div>
 
-        <div class="story-card p-6 bg-white flex flex-col items-center text-center space-y-4 border border-slate-200">
+        <div class="story-card p-6 bg-slate-50 flex flex-col items-center text-center space-y-4 border border-slate-200">
           <div class="h-16 flex items-center justify-center">
             <img src="assets/logo-en-verde.png" alt="Fundación En Verde" class="max-h-12 w-auto object-contain">
           </div>
@@ -1679,7 +1680,7 @@
           </div>
         </div>
 
-        <div class="story-card p-6 bg-white flex flex-col items-center text-center space-y-4 border border-slate-200">
+        <div class="story-card p-6 bg-slate-50 flex flex-col items-center text-center space-y-4 border border-slate-200">
           <div class="h-16 flex items-center justify-center">
             <img src="assets/logo-verdical.png" alt="Verdical" class="max-h-12 w-auto object-contain">
           </div>
@@ -1692,7 +1693,7 @@
           </div>
         </div>
 
-        <div class="story-card p-6 bg-white flex flex-col items-center text-center space-y-4 border border-slate-200">
+        <div class="story-card p-6 bg-slate-50 flex flex-col items-center text-center space-y-4 border border-slate-200">
           <div class="h-16 flex items-center justify-center">
             <img src="assets/logo-usqai.jpg" alt="USQAI UCN" class="max-h-12 w-auto object-contain rounded">
           </div>
@@ -1707,9 +1708,8 @@
 
       </div>
 
-
       <!-- Respaldo Público e Institucional -->
-      <div class="p-8 rounded-3xl bg-white border border-slate-200 space-y-4 text-center">
+      <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-4 text-center">
         <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Instituciones Públicas & Gobernanza</span>
         <h4 class="text-xl font-bold font-display text-slate-900">Agradecimiento al Apoyo Público y Territorial</h4>
         <p class="text-xs sm:text-sm text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed">
@@ -1766,11 +1766,11 @@
         <div class="md:col-span-3 space-y-2">
           <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300">Navegación Rápida</h5>
           <ul class="text-xs text-slate-400 space-y-1.5 font-medium">
+            <li><a href="#final" class="hover:text-white transition">La Gran Final 2026</a></li>
+            <li><a href="#mapa-proyectos" class="hover:text-white transition">Los 10 Equipos & Mapa</a></li>
+            <li><a href="#ruta" class="hover:text-white transition">Ruta Formativa (9 Etapas)</a></li>
             <li><a href="#iniciativa" class="hover:text-white transition">¿Qué es el programa?</a></li>
             <li><a href="#impacto" class="hover:text-white transition">Impacto histórico</a></li>
-            <li><a href="#mapa-proyectos" class="hover:text-white transition">Proyectos 2026 y Mapa</a></li>
-            <li><a href="#ruta" class="hover:text-white transition">Ruta Formativa (9 Etapas)</a></li>
-            <li><a href="#final" class="hover:text-white transition">Programa de la Gran Final</a></li>
             <li><a href="#trayectoria" class="hover:text-white transition">Recorrido Histórico</a></li>
             <li><a href="#memoria-historica" class="hover:text-white transition">Memoria & Gran Vitrina de Videos</a></li>
             <li><a href="#alianzas" class="hover:text-white transition">Ecosistema Institucional</a></li>
@@ -1788,7 +1788,7 @@
             </li>
             <li><span>Comuna de Tocopilla, Región de Antofagasta</span></li>
             <li><span>Gran Final en USQAI UCN (Antofagasta)</span></li>
-            <li><span class="text-sev-green font-bold">13 de Noviembre</span></li>
+            <li><span class="text-sev-green font-bold">Viernes 13 de Noviembre</span></li>
           </ul>
         </div>
 
@@ -1856,7 +1856,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Application Logic -->
-  <script src="app.js?v=20261107_0030"></script>
+  <script src="app.js?v=20261107_1330"></script>
 
 </body>
 </html>
