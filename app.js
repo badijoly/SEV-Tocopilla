@@ -316,19 +316,24 @@ function initTocopillaMap() {
   }
 }
 
-// 3. Render School Quick-Fly Pills above Map
+// 3. Render School Quick-Fly Pills above Map (Todas a la vista en filas)
 function renderSchoolPills() {
   const container = document.getElementById('schoolPillsContainer');
   if (!container) return;
 
   container.innerHTML = projects.map(p => `
     <button onclick="flyToSchool('${p.id}')" 
-            class="text-[11px] font-bold px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-sev-purple border border-slate-200 transition flex items-center gap-1.5">
-      <span class="w-1.5 h-1.5 rounded-full ${p.image ? 'bg-sev-green' : 'bg-slate-400'}"></span>
-      <span class="truncate max-w-[140px] sm:max-w-none">${p.school}</span>
-      ${p.image ? '<i data-lucide="camera" class="w-2.5 h-2.5 text-sev-green"></i>' : ''}
+            title="Ubicar ${p.school} en el mapa"
+            class="text-xs font-bold px-3 py-1.5 rounded-xl bg-slate-50 hover:bg-purple-50 text-slate-700 hover:text-sev-purple border border-slate-200 hover:border-sev-purple/40 shadow-sm hover:shadow transition flex items-center gap-1.5 active:scale-95">
+      <span class="w-2 h-2 rounded-full ${p.image ? 'bg-sev-green' : 'bg-slate-400'} shrink-0"></span>
+      <span>${p.school}</span>
+      ${p.image ? '<i data-lucide="camera" class="w-3 h-3 text-sev-green shrink-0"></i>' : ''}
     </button>
   `).join('');
+
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
 }
 
 // 4. Fly to school in map and open its popup
