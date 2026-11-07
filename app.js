@@ -39,19 +39,19 @@ const projects = [
   },
   {
     id: 'domingo-latrille',
-    title: 'Innovación Técnico-Profesional',
+    title: 'Horizonte Villanorte',
     school: 'Liceo Polivalente Domingo Latrille',
-    category: 'tech',
-    categoryLabel: 'En Preparación Activa',
+    category: 'inclusion',
+    categoryLabel: 'Costanera Activa & Sostenibilidad',
     icon: 'compass',
     image: 'assets/foto-liceo-domingo-latrille.jpg',
     lat: -22.0883,
     lng: -70.1943,
-    address: 'Calle Carrera 1305, Tocopilla',
-    shortDesc: 'Iniciativa formulada por estudiantes de educación media técnico-profesional para resolver desafíos comunitarios.',
-    fullDesc: 'El equipo del emblemático Liceo Polivalente Domingo Latrille presentará en la jornada del 13 de noviembre su solución desarrollada a lo largo del proceso formativo anual de Speakers en Verde.',
-    impact: 'Impulso al talento joven y compromiso social desde la educación técnico-profesional de Tocopilla.',
-    tags: ['En Preparación', 'Innovación Juvenil', 'Tocopilla']
+    address: 'Calle Carrera 1305, Sector Villanorte, Tocopilla',
+    shortDesc: 'Transformación de la costanera en un espacio activo, inclusivo y sostenible con máquinas de ejercicio, juegos inclusivos, arte tocopillano y energía solar.',
+    fullDesc: 'Este proyecto no busca solamente embellecer el sector: propone transformar la costanera en un espacio activo, inclusivo y sostenible, donde la infraestructura se combine con actividades que permitan la participación vecinal. La propuesta busca la instalación de máquinas para hacer ejercicio, caminar y correr, además de encuentros deportivos y actividades al aire libre. Asimismo, busca que existan juegos inclusivos, jornadas recreativas, talleres artísticos y educación ambiental acompañado de veredas mejoradas, señalética y zonas de descanso.<br><br>El equipo destaca la integración de artistas dentro de la comunidad dispuestos a colaborar en la creación de murales artísticos que reflejen una identidad tocopillana. Una parte vital de esta propuesta tiene relación con facilitar la instalación de sombreaderos para aquellas jornadas calurosas, aprovechar la energía solar con luminarias LED donde sea técnicamente posible e insertar áreas y puntos verdes de bajo consumo de agua.',
+    impact: 'Transformación del borde costero de Villanorte en un espacio activo, accesible, deportivo y energéticamente sostenible con identidad tocopillana.',
+    tags: ['Costanera Activa', 'Inclusión Social', 'Energía Solar LED', 'Identidad Tocopillana', 'ODS 11']
   },
   {
     id: 'protesis',
