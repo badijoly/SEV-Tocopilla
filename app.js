@@ -1,9 +1,9 @@
 // ==========================================================================
 // Speakers en Verde Tocopilla 2026 - Main Application Logic
-// Verified Real School GPS Coordinates in Tocopilla
+// Verified Real School GPS Coordinates in Tocopilla + Real Team Photos
 // ==========================================================================
 
-// 1. The 10 School Projects with exact verified OpenStreetMap GPS Coordinates
+// 1. The 10 School Projects with exact verified OpenStreetMap GPS Coordinates & Real Photos
 const projects = [
   {
     id: 'pablo-neruda',
@@ -12,6 +12,7 @@ const projects = [
     category: 'circular',
     categoryLabel: 'En Preparación Activa',
     icon: 'lightbulb',
+    image: null,
     lat: -22.0895,
     lng: -70.1948,
     address: 'Calle Carrera, Tocopilla',
@@ -27,6 +28,7 @@ const projects = [
     category: 'circular',
     categoryLabel: 'Economía Circular & Suelos',
     icon: 'recycle',
+    image: null,
     lat: -22.1082,
     lng: -70.2102,
     address: 'Pasaje Corbeta Covadonga 0460, Caleta Boy',
@@ -42,6 +44,7 @@ const projects = [
     category: 'tech',
     categoryLabel: 'En Preparación Activa',
     icon: 'compass',
+    image: 'assets/foto-liceo-domingo-latrille.jpg',
     lat: -22.0883,
     lng: -70.1943,
     address: 'Calle Carrera 1305, Tocopilla',
@@ -57,6 +60,7 @@ const projects = [
     category: 'tech',
     categoryLabel: 'Tecnología & Robótica 3D',
     icon: 'cpu',
+    image: 'assets/foto-liceo-politecnico-equipo-1.jpg',
     lat: -22.0850,
     lng: -70.1953,
     address: 'Pasaje 104 / Calle Washington, Tocopilla',
@@ -72,6 +76,7 @@ const projects = [
     category: 'tech',
     categoryLabel: 'Tecnología & Gamificación',
     icon: 'sparkles',
+    image: null,
     lat: -22.0844,
     lng: -70.1947,
     address: 'Pasaje 104 / Calle Washington, Tocopilla',
@@ -87,6 +92,7 @@ const projects = [
     category: 'circular',
     categoryLabel: 'Economía Circular & ABP',
     icon: 'box',
+    image: 'assets/foto-escuela-bernardo-ohiggins.jpg',
     lat: -22.0859,
     lng: -70.1893,
     address: 'Avenida 18 de Septiembre 2850, Villa Ayquina',
@@ -102,6 +108,7 @@ const projects = [
     category: 'inclusion',
     categoryLabel: 'Inclusión & NEE',
     icon: 'heart-handshake',
+    image: 'assets/foto-escuela-pedro-aguirre-cerda.jpg',
     lat: -22.0860,
     lng: -70.1888,
     address: 'Gómez Carreño, Villa Ayquina, Tocopilla',
@@ -117,6 +124,7 @@ const projects = [
     category: 'circular',
     categoryLabel: 'Economía Circular & Química Verde',
     icon: 'droplets',
+    image: null,
     lat: -22.0947,
     lng: -70.2052,
     address: 'Avenida Arturo Prat, Tocopilla',
@@ -132,6 +140,7 @@ const projects = [
     category: 'bio',
     categoryLabel: 'Biotecnología & Nutrición',
     icon: 'sprout',
+    image: 'assets/foto-escuela-arturo-prat.jpg',
     lat: -22.0891,
     lng: -70.1952,
     address: 'Avenida 18 de Septiembre 2284, Tocopilla',
@@ -147,6 +156,7 @@ const projects = [
     category: 'bio',
     categoryLabel: 'Biotecnología & Reforestación',
     icon: 'flower-2',
+    image: null,
     lat: -22.0943,
     lng: -70.2045,
     address: 'Calle Baquedano S/N, Tocopilla',
@@ -163,70 +173,96 @@ let mapMarkers = {};
 
 // 2. Initialize Interactive Relief/Topographic Map of Tocopilla
 function initTocopillaMap() {
-  const mapElement = document.getElementById('tocopillaMap');
-  if (!mapElement || typeof L === 'undefined') return;
+  const mapContainer = document.getElementById('tocopillaMap');
+  if (!mapContainer) return;
 
-  // Initialize Map
+  // Centro inicial de la ciudad de Tocopilla
   tocopillaMap = L.map('tocopillaMap', {
     scrollWheelZoom: false
-  });
+  }).setView([-22.0895, -70.198], 14);
 
-  // REAL TOPOGRAPHIC & RELIEF MAP (Esri World Topo Map - NO API KEY REQUIRED)
-  const esriTopoLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Relieve &copy; Esri, USGS, DeLorme, NOAA',
-    maxZoom: 18
+  // Free Esri World Topographic Map - High quality terrain & relief, NO API KEY REQUIRED
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Esri, USGS, DeLorme, HERE, NRCan | Tocopilla',
+    maxZoom: 18,
+    minZoom: 12
   }).addTo(tocopillaMap);
 
-  // Alternative standard layer (OpenStreetMap)
-  const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors',
-    maxZoom: 19
-  });
-
-  // Layer control toggle
-  L.control.layers({
-    'Mapa de Relieve (Topográfico)': esriTopoLayer,
-    'Mapa Callejero (OpenStreetMap)': osmLayer
-  }, null, { position: 'topright' }).addTo(tocopillaMap);
-
-  // Render School Quick-Fly Pills
-  renderSchoolPills();
-
-  // Create marker group to fit bounds
+  // Group to calculate precise bounding box covering all schools
   const markerGroup = L.featureGroup();
 
-  // Create custom pins for each project
-  projects.forEach(p => {
-    const iconHtml = `
-      <div class="custom-map-pin w-10 h-10 rounded-2xl bg-white border-2 border-sev-purple shadow-xl flex items-center justify-center text-sev-purple">
-        <div class="w-7 h-7 rounded-xl bg-purple-100 flex items-center justify-center">
-          <i data-lucide="${p.icon}" class="w-4 h-4 text-sev-purple"></i>
-        </div>
-      </div>
-    `;
+  // Color map for marker backgrounds based on category
+  const categoryColors = {
+    circular: '#16a34a',
+    tech: '#0284c7',
+    bio: '#ca8a04',
+    inclusion: '#db2777'
+  };
 
+  // Add individual pins for each project
+  projects.forEach(p => {
+    const pinColor = categoryColors[p.category] || '#581c87';
+    
+    // Modern custom HTML pin with category color, icon and drop shadow
     const customIcon = L.divIcon({
-      html: iconHtml,
+      html: `
+        <div class="custom-map-pin" style="transform: translate(-50%, -50%);">
+          <div style="
+            background: #ffffff;
+            border: 2.5px solid ${pinColor};
+            color: ${pinColor};
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.22);
+            transition: all 0.2s ease;
+          ">
+            <i data-lucide="${p.icon}" style="width: 18px; height: 18px;"></i>
+          </div>
+          <div style="
+            width: 0; 
+            height: 0; 
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid ${pinColor};
+            margin: -1px auto 0 auto;
+          "></div>
+        </div>
+      `,
       className: 'bg-transparent',
       iconSize: [40, 40],
       iconAnchor: [20, 20],
       popupAnchor: [0, -22]
     });
 
-    // Popup Content with verified address and button to open full modal
+    // Popup Content with photo (if available), verified address and button to open full modal
     const popupContent = `
-      <div class="p-4 text-left max-w-xs space-y-2 font-sans bg-white">
-        <span class="badge-${p.category} text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider inline-block">
-          ${p.categoryLabel}
-        </span>
-        <h4 class="text-base font-black text-slate-900 font-display leading-tight">${p.title}</h4>
+      <div class="p-4 text-left max-w-xs space-y-2.5 font-sans bg-white">
+        ${p.image ? `
+          <div class="relative w-full h-32 overflow-hidden rounded-xl bg-slate-100 border border-slate-200">
+            <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover">
+            <span class="absolute bottom-1.5 left-1.5 bg-slate-900/85 backdrop-blur-sm text-white text-[9px] font-bold px-2 py-0.5 rounded flex items-center gap-1 border border-white/20">
+              <i data-lucide="camera" class="w-2.5 h-2.5 text-sev-green"></i>
+              <span>Foto Real del Equipo</span>
+            </span>
+          </div>
+        ` : ''}
+        <div>
+          <span class="badge-${p.category} text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider inline-block">
+            ${p.categoryLabel}
+          </span>
+          <h4 class="text-base font-black text-slate-900 font-display leading-tight mt-1">${p.title}</h4>
+        </div>
         <div class="text-xs font-bold text-sev-greenDark flex items-center gap-1">
-          <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
-          <span>${p.school}</span>
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5 shrink-0"></i>
+          <span class="truncate">${p.school}</span>
         </div>
         <div class="text-[11px] text-slate-400 font-medium flex items-center gap-1">
-          <i data-lucide="map-pin" class="w-3 h-3"></i>
-          <span>${p.address}</span>
+          <i data-lucide="map-pin" class="w-3 h-3 shrink-0"></i>
+          <span class="truncate">${p.address}</span>
         </div>
         <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed pt-1">${p.shortDesc}</p>
         <button onclick="openProjectModal('${p.id}')" 
@@ -263,8 +299,9 @@ function renderSchoolPills() {
   container.innerHTML = projects.map(p => `
     <button onclick="flyToSchool('${p.id}')" 
             class="text-[11px] font-bold px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-sev-purple border border-slate-200 transition flex items-center gap-1.5">
-      <span class="w-1.5 h-1.5 rounded-full bg-sev-green"></span>
+      <span class="w-1.5 h-1.5 rounded-full ${p.image ? 'bg-sev-green' : 'bg-slate-400'}"></span>
       <span class="truncate max-w-[140px] sm:max-w-none">${p.school}</span>
+      ${p.image ? '<i data-lucide="camera" class="w-2.5 h-2.5 text-sev-green"></i>' : ''}
     </button>
   `).join('');
 }
@@ -298,11 +335,36 @@ function renderProjects(items) {
   if (!grid) return;
 
   grid.innerHTML = items.map(p => `
-    <div class="story-card p-6 flex flex-col justify-between space-y-4 bg-white border border-slate-200">
+    <div class="story-card p-6 flex flex-col justify-between space-y-4 bg-white border border-slate-200 group">
       <div class="space-y-3">
         
+        <!-- Team Photo or Thematic Visual Header -->
+        ${p.image ? `
+          <div class="relative w-full h-52 overflow-hidden rounded-2xl bg-slate-100 border border-slate-200 shadow-inner group/photo">
+            <img src="${p.image}" alt="${p.title} - ${p.school}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent"></div>
+            <div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-white text-[11px] font-bold">
+              <span class="bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-lg flex items-center gap-1.5 border border-white/20">
+                <i data-lucide="camera" class="w-3.5 h-3.5 text-sev-green"></i>
+                <span>Equipo en Terreno</span>
+              </span>
+              <span class="bg-sev-purple/90 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] uppercase tracking-wide">
+                Tocopilla 2026
+              </span>
+            </div>
+          </div>
+        ` : `
+          <div class="relative w-full h-44 overflow-hidden rounded-2xl bg-gradient-to-br from-purple-50 via-slate-50 to-emerald-50 border border-slate-200/80 flex flex-col items-center justify-center p-4 text-center">
+            <div class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-sev-purple mb-2 border border-slate-100">
+              <i data-lucide="${p.icon}" class="w-6 h-6"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-600">Registro Fotográfico del Proceso</span>
+            <span class="text-[10px] text-slate-400 font-medium mt-0.5">Presentación en vivo • 13 de Noviembre</span>
+          </div>
+        `}
+
         <!-- Header badge -->
-        <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center justify-between gap-2 pt-1">
           <span class="badge-${p.category} text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
             ${p.categoryLabel}
           </span>
@@ -411,6 +473,7 @@ function openProjectModal(projectId) {
   const modalTitle = document.getElementById('modalTitle');
   const modalSchool = document.getElementById('modalSchool');
   const modalBadges = document.getElementById('modalBadges');
+  const modalImgContainer = document.getElementById('modalImageContainer');
   const modalBody = document.getElementById('modalBody');
   const modalImpact = document.getElementById('modalImpact');
 
@@ -430,6 +493,23 @@ function openProjectModal(projectId) {
       ${p.categoryLabel}
     </span>
   `;
+
+  // Display Featured Team Photo if available
+  if (modalImgContainer) {
+    if (p.image) {
+      modalImgContainer.innerHTML = `
+        <div class="relative w-full h-64 sm:h-80 overflow-hidden rounded-2xl bg-slate-100 shadow-inner border border-slate-200">
+          <img src="${p.image}" alt="${p.title} - ${p.school}" class="w-full h-full object-cover">
+          <div class="absolute bottom-3 left-3 bg-slate-900/85 backdrop-blur-sm text-white text-xs font-bold px-3.5 py-1.5 rounded-xl flex items-center gap-2 border border-white/20">
+            <i data-lucide="camera" class="w-4 h-4 text-sev-green"></i>
+            <span>Equipo y Proceso en Terreno • ${p.school}</span>
+          </div>
+        </div>
+      `;
+    } else {
+      modalImgContainer.innerHTML = '';
+    }
+  }
 
   modalBody.innerHTML = `
     <p class="text-sm leading-relaxed">${p.fullDesc}</p>
@@ -493,6 +573,7 @@ function setupNavigation() {
 // Initialize on DOM Loaded
 document.addEventListener('DOMContentLoaded', () => {
   initTocopillaMap();
+  renderSchoolPills();
   renderProjects(projects);
   setupFiltersAndSearch();
   setupNavigation();
