@@ -578,6 +578,55 @@ function closeProjectModal() {
   }
 }
 
+function openPhotoModal(imgSrc, title, caption) {
+  const modal = document.getElementById('projectModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalSchool = document.getElementById('modalSchool');
+  const modalBadges = document.getElementById('modalBadges');
+  const modalHeaderImg = document.getElementById('modalHeaderImage') || document.getElementById('modalHeaderImg');
+  const modalBody = document.getElementById('modalBody');
+  const modalImpact = document.getElementById('modalImpact');
+
+  if (!modal) return;
+
+  if (modalBadges) {
+    modalBadges.innerHTML = `<span class="px-3 py-1 rounded-full text-xs font-bold bg-pink-100 text-sev-magenta">Fotografía Oficial • Archivo Histórico</span>`;
+  }
+  if (modalTitle) {
+    modalTitle.textContent = title || 'Comunidad Escolar en el Gran Cierre 2025';
+  }
+  if (modalSchool) {
+    modalSchool.innerHTML = `<span class="text-xs font-bold text-slate-500 uppercase">Teatro de Tocopilla • Speakers en Verde</span>`;
+  }
+  
+  if (modalHeaderImg) {
+    modalHeaderImg.innerHTML = `<img src="${imgSrc}" alt="${title}" class="w-full h-full object-cover object-center">`;
+  }
+
+  if (modalBody) {
+    modalBody.innerHTML = `
+      <p class="text-sm leading-relaxed text-slate-700">${caption || 'Fotografía oficial que congrega a estudiantes, docentes guías, jurados y organizadores en la culminación del programa Speakers en Verde en Tocopilla.'}</p>
+      <div class="pt-2">
+        <a href="${imgSrc}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-sev-purple hover:underline">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          <span>Abrir fotografía en alta resolución original</span>
+        </a>
+      </div>
+    `;
+  }
+
+  if (modalImpact) {
+    modalImpact.textContent = 'Registro patrimonial de participación escolar masiva y compromiso juvenil con el medio ambiente en Tocopilla.';
+  }
+
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+}
+
 // 8. Navigation & Header Behaviors (Dropdown de Secciones)
 function setupNavigation() {
   const dropdownBtn = document.getElementById('sectionsDropdownBtn');
