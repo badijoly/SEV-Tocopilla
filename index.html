@@ -50,7 +50,7 @@
     }
   </script>
   
-  <link rel="stylesheet" href="styles.css?v=20261107_1532">
+  <link rel="stylesheet" href="styles.css?v=20261107_1545">
 </head>
 <body class="bg-white text-slate-800 font-sans antialiased selection:bg-sev-green selection:text-white overflow-x-hidden">
 
@@ -2061,9 +2061,20 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-slate-950 text-white pt-16 pb-12 border-t border-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+  <!-- FOOTER CON FONDO ARTÍSTICO DE LA COMUNIDAD ESCOLAR (EDICIÓN 2025) -->
+  <footer class="relative bg-slate-950 text-white pt-20 pb-12 border-t border-slate-900 overflow-hidden">
+    
+    <!-- Imagen de Fondo Artística con Superposición Gradiente y Filtro Semitransparente -->
+    <div class="absolute inset-0 z-0 pointer-events-none select-none">
+      <img src="assets/foto-cierre-auditorio-2025.jpg" alt="Comunidad Escolar Speakers en Verde" 
+           class="w-full h-full object-cover object-center sm:object-[center_35%] opacity-25 filter contrast-110">
+      <!-- Gradientes multidireccionales para legibilidad óptima y elegancia visual -->
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/85 to-slate-950/95"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-transparent to-slate-950/90"></div>
+      <div class="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px]"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
         
@@ -2075,9 +2086,13 @@
               <span class="text-xs font-bold uppercase text-sev-green">Tocopilla 2026 • Sexta Edición</span>
             </div>
           </div>
-          <p class="text-xs text-slate-400 font-medium leading-relaxed max-w-md">
+          <p class="text-xs text-slate-300 font-medium leading-relaxed max-w-md">
             Plataforma de formación y empoderamiento escolar que desarrolla capacidades de oratoria, ecoemprendimiento y liderazgo temprano en estudiantes de la Región de Antofagasta.
           </p>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-[11px] text-slate-300 font-semibold shadow-sm">
+            <i data-lucide="users" class="w-3.5 h-3.5 text-sev-green"></i>
+            <span>Comunidades Escolares del Norte Grande en Escena</span>
+          </div>
         </div>
 
         <div class="md:col-span-3 space-y-2">
@@ -2195,7 +2210,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Application Logic -->
-  <script src="app.js?v=20261107_1540"></script>
+  <script src="app.js?v=20261107_1545"></script>
 
 </body>
 </html>
