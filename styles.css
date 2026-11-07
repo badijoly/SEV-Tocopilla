@@ -63,6 +63,8 @@ h1, h2, h3, h4, .font-heading {
   background: linear-gradient(180deg, #16a34a 0%, #db2777 50%, #581c87 100%);
   transform: translateX(-50%);
   border-radius: 9999px;
+  z-index: 0;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
