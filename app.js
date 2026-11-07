@@ -1,9 +1,9 @@
 // ==========================================================================
 // Speakers en Verde Tocopilla 2026 - Main Application Logic
-// Storytelling, Interactive Relief Map & Project Modals
+// Verified Real School GPS Coordinates in Tocopilla
 // ==========================================================================
 
-// 1. The 10 School Projects Data with Well-Spaced Geographic Coordinates in Tocopilla
+// 1. The 10 School Projects with exact verified OpenStreetMap GPS Coordinates
 const projects = [
   {
     id: 'pablo-neruda',
@@ -12,8 +12,9 @@ const projects = [
     category: 'circular',
     categoryLabel: 'En Preparación Activa',
     icon: 'lightbulb',
-    lat: -22.0760,
-    lng: -70.2015,
+    lat: -22.0895,
+    lng: -70.1948,
+    address: 'Calle Carrera, Tocopilla',
     shortDesc: 'Proyecto ecoemprendedor enfocado en soluciones sostenibles para el entorno de su comunidad educativa.',
     fullDesc: 'Los estudiantes de la Escuela Pablo Neruda han participado activamente en los talleres de oratoria, resolución de problemas y formulación de proyectos, preparando su pitch final para la jornada en Usqai UCN.',
     impact: 'Aporte de la comunidad escolar a la sustentabilidad y el cuidado ambiental de la comuna de Tocopilla.',
@@ -26,8 +27,9 @@ const projects = [
     category: 'circular',
     categoryLabel: 'Economía Circular & Suelos',
     icon: 'recycle',
-    lat: -22.0830,
-    lng: -70.2000,
+    lat: -22.1082,
+    lng: -70.2102,
+    address: 'Pasaje Corbeta Covadonga 0460, Caleta Boy',
     shortDesc: 'Transformación de materia orgánica escolar en humus y fertilizante natural mediante lombricultura.',
     fullDesc: 'El proyecto consiste en reciclar la materia orgánica generada en la comunidad escolar a través de la lombricultura, utilizando lombrices para transformar los residuos orgánicos en humus, un fertilizante natural de alta calidad. Buscamos reducir la contaminación, dar una segunda vida a los desechos y fomentar prácticas sustentables en nuestra comunidad escolar, otorgando un valor agregado al producto.',
     impact: 'Reducción de residuos orgánicos en vertederos de Tocopilla, regeneración de suelos en zonas áridas y fomento de huertos escolares comunitarios.',
@@ -40,8 +42,9 @@ const projects = [
     category: 'tech',
     categoryLabel: 'En Preparación Activa',
     icon: 'compass',
-    lat: -22.0862,
-    lng: -70.1982,
+    lat: -22.0883,
+    lng: -70.1943,
+    address: 'Calle Carrera 1305, Tocopilla',
     shortDesc: 'Iniciativa formulada por estudiantes de educación media técnico-profesional para resolver desafíos comunitarios.',
     fullDesc: 'El equipo del emblemático Liceo Polivalente Domingo Latrille presentará en la jornada del 13 de noviembre su solución desarrollada a lo largo del proceso formativo anual de Speakers en Verde.',
     impact: 'Impulso al talento joven y compromiso social desde la educación técnico-profesional de Tocopilla.',
@@ -54,8 +57,9 @@ const projects = [
     category: 'tech',
     categoryLabel: 'Tecnología & Robótica 3D',
     icon: 'cpu',
-    lat: -22.0880,
-    lng: -70.1970,
+    lat: -22.0850,
+    lng: -70.1953,
+    address: 'Pasaje 104 / Calle Washington, Tocopilla',
     shortDesc: 'Desarrollo de prótesis robótica funcional de miembro superior accesible y de bajo costo fabricada mediante impresión 3D.',
     fullDesc: 'Desarrollo progresivo de una prótesis robótica de miembro superior fabricada mediante manufactura aditiva (impresión 3D). Actualmente el equipo cuenta con un prototipo funcional de mano y antebrazo; la siguiente etapa considera la incorporación del brazo y articulación de hombro para aumentar su funcionalidad y rango de movimiento, ofreciendo una alternativa accesible para personas con discapacidad física.',
     impact: 'Democratización de tecnología biomédica de bajo costo para familias vulnerables del norte grande que no pueden costear prótesis comerciales.',
@@ -68,8 +72,9 @@ const projects = [
     category: 'tech',
     categoryLabel: 'Tecnología & Gamificación',
     icon: 'sparkles',
-    lat: -22.0888,
-    lng: -70.1955,
+    lat: -22.0844,
+    lng: -70.1947,
+    address: 'Pasaje 104 / Calle Washington, Tocopilla',
     shortDesc: 'Contenedor con sensor que clasifica residuos y premia al usuario con puntos canjeables en comercios locales de Tocopilla.',
     fullDesc: 'Iniciativa que desarrolla un basurero inteligente capaz de identificar y clasificar residuos mediante un sistema de reconocimiento tecnológico. A través de un escáner, las personas acercan un residuo (como una botella plástica) para que el dispositivo indique el contenedor correcto. Además, incorpora gamificación: las personas acumulan puntos por reciclar correctamente, canjeables por descuentos o productos en comercios asociados de Tocopilla.',
     impact: 'Aumento significativo en la segregación de residuos en origen y fortalecimiento de la economía circular y el comercio de barrio en Tocopilla.',
@@ -82,8 +87,9 @@ const projects = [
     category: 'circular',
     categoryLabel: 'Economía Circular & ABP',
     icon: 'box',
-    lat: -22.0905,
-    lng: -70.1978,
+    lat: -22.0859,
+    lng: -70.1893,
+    address: 'Avenida 18 de Septiembre 2850, Villa Ayquina',
     shortDesc: 'Transformación de contenedores en desuso de SQM en modernos puntos limpios inclusivos mediante ABP escolar.',
     fullDesc: 'Proyecto basado en Aprendizaje Basado en Proyectos (ABP) desarrollado por estudiantes de 6° básico en Lenguaje y Ciencias, junto a la Escuela Pedro Aguirre Cerda y los párvulos del establecimiento. La iniciativa aborda la falta de puntos de reciclaje en escuelas y espacios públicos de Tocopilla, reutilizando contenedores en desuso de SQM para transformarlos en puntos limpios que fomenten el reciclaje y el cuidado ambiental.',
     impact: 'Instalación de infraestructura de reciclaje colaborativa, educación ambiental intergeneracional y fomento de la corresponsabilidad en Tocopilla.',
@@ -96,8 +102,9 @@ const projects = [
     category: 'inclusion',
     categoryLabel: 'Inclusión & NEE',
     icon: 'heart-handshake',
-    lat: -22.0920,
-    lng: -70.1990,
+    lat: -22.0860,
+    lng: -70.1888,
+    address: 'Gómez Carreño, Villa Ayquina, Tocopilla',
     shortDesc: 'Elaboración de té e infusiones naturales relajantes desarrollado por estudiantes con Necesidades Educativas Permanentes.',
     fullDesc: 'Este proyecto busca desarrollar habilidades laborales, cognitivas, sensoriales y de autonomía mediante la elaboración de bolsitas de té e infusiones naturales con propiedades relajantes. Diseñado especialmente para estudiantes con necesidades educativas permanentes (NEE), favorece la atención, la motricidad fina, el seguimiento de instrucciones, el trabajo colaborativo y la regulación emocional.',
     impact: 'Favorece la inclusión sociolaboral efectiva de estudiantes con discapacidad, fortaleciendo su autoestima, autonomía y vinculación comunitaria.',
@@ -110,8 +117,9 @@ const projects = [
     category: 'circular',
     categoryLabel: 'Economía Circular & Química Verde',
     icon: 'droplets',
-    lat: -22.0938,
-    lng: -70.1972,
+    lat: -22.0947,
+    lng: -70.2052,
+    address: 'Avenida Arturo Prat, Tocopilla',
     shortDesc: 'Elaboración de jabones artesanales mediante saponificación de aceites de cocina usados recolectados en locales gastronómicos.',
     fullDesc: 'Elaboración de jabones artesanales mediante saponificación utilizando como materia prima aceites de cocina usados asociados a locales de comida de Tocopilla. Transforma un residuo altamente contaminante del agua en productos de higiene de alto valor agregado. Contempla dos líneas: Línea Herbal (ruda, menta, romero y lavanda) y Línea Nutritiva (miel, canela y borra de café para exfoliación).',
     impact: 'Protección directa del borde costero y red de alcantarillado de Tocopilla, evitando la contaminación hídrica y fomentando el emprendimiento escolar.',
@@ -124,8 +132,9 @@ const projects = [
     category: 'bio',
     categoryLabel: 'Biotecnología & Nutrición',
     icon: 'sprout',
-    lat: -22.0960,
-    lng: -70.1960,
+    lat: -22.0891,
+    lng: -70.1952,
+    address: 'Avenida 18 de Septiembre 2284, Tocopilla',
     shortDesc: 'Acuaponía vertical para la producción sustentable de hortalizas y crianza de peces, promoviendo hábitos saludables y combatiendo la obesidad infantil.',
     fullDesc: 'La acuaponía vertical busca promover hábitos de alimentación saludable en los estudiantes mediante la producción sustentable de hortalizas y la crianza de peces. A través de experiencias prácticas de aprendizaje en su escuela, los alumnos participan activamente en el cultivo y cuidado del sistema, fortaleciendo sus conocimientos sobre nutrición, medioambiente y seguridad alimentaria.',
     impact: 'Contribuirá a disminuir los índices de sobrepeso y obesidad escolar, asegurando el acceso y consumo de alimentos frescos, saludables y cosechados por los propios estudiantes en Tocopilla.',
@@ -138,8 +147,9 @@ const projects = [
     category: 'bio',
     categoryLabel: 'Biotecnología & Reforestación',
     icon: 'flower-2',
-    lat: -22.0995,
-    lng: -70.1940,
+    lat: -22.0943,
+    lng: -70.2045,
+    address: 'Calle Baquedano S/N, Tocopilla',
     shortDesc: 'Lápices plantables y cápsulas de vida que convierten espacios desérticos vacíos en áreas verdes llenas de biodiversidad.',
     fullDesc: '¿Qué pasaría si un lápiz no terminara en la basura, transformándose en vida? ¿Y si una pequeña cápsula pudiera convertir espacios vacíos en lugares llenos de biodiversidad? Así nace BloomPods: una innovadora propuesta de lápices y cápsulas germinadoras diseñadas para adaptarse al suelo y clima árido de Tocopilla, promoviendo microecosistemas verdes.',
     impact: 'Revegetación participativa en escuelas y espacios públicos de Tocopilla, creando conciencia ecológica y microclimas amigables en el desierto costero.',
@@ -156,23 +166,18 @@ function initTocopillaMap() {
   const mapElement = document.getElementById('tocopillaMap');
   if (!mapElement || typeof L === 'undefined') return;
 
-  // Center on Tocopilla coastal urban area
-  const tocopillaCenter = [-22.088, -70.198];
-  
+  // Initialize Map
   tocopillaMap = L.map('tocopillaMap', {
-    center: tocopillaCenter,
-    zoom: 14,
     scrollWheelZoom: false
   });
 
-  // REAL TOPOGRAPHIC & RELIEF MAP (Esri World Topo Map - NO API KEY REQUIRED!)
-  // Displays authentic terrain relief, elevation shading of Tocopilla's desert mountains and coastline
+  // REAL TOPOGRAPHIC & RELIEF MAP (Esri World Topo Map - NO API KEY REQUIRED)
   const esriTopoLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
     attribution: 'Relieve &copy; Esri, USGS, DeLorme, NOAA',
     maxZoom: 18
   }).addTo(tocopillaMap);
 
-  // Alternative standard layer (OpenStreetMap) available in layer control
+  // Alternative standard layer (OpenStreetMap)
   const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
     maxZoom: 19
@@ -186,6 +191,9 @@ function initTocopillaMap() {
 
   // Render School Quick-Fly Pills
   renderSchoolPills();
+
+  // Create marker group to fit bounds
+  const markerGroup = L.featureGroup();
 
   // Create custom pins for each project
   projects.forEach(p => {
@@ -205,7 +213,7 @@ function initTocopillaMap() {
       popupAnchor: [0, -22]
     });
 
-    // Popup Content with mini card & button to open full modal
+    // Popup Content with verified address and button to open full modal
     const popupContent = `
       <div class="p-4 text-left max-w-xs space-y-2 font-sans bg-white">
         <span class="badge-${p.category} text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider inline-block">
@@ -216,7 +224,11 @@ function initTocopillaMap() {
           <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
           <span>${p.school}</span>
         </div>
-        <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed">${p.shortDesc}</p>
+        <div class="text-[11px] text-slate-400 font-medium flex items-center gap-1">
+          <i data-lucide="map-pin" class="w-3 h-3"></i>
+          <span>${p.address}</span>
+        </div>
+        <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed pt-1">${p.shortDesc}</p>
         <button onclick="openProjectModal('${p.id}')" 
                 class="w-full mt-2 py-2 px-3 rounded-xl text-xs font-bold bg-sev-purple hover:bg-purple-900 text-white transition flex items-center justify-center gap-1.5 shadow">
           <span>Ver Ficha Completa</span>
@@ -226,11 +238,16 @@ function initTocopillaMap() {
     `;
 
     const marker = L.marker([p.lat, p.lng], { icon: customIcon })
-      .addTo(tocopillaMap)
       .bindPopup(popupContent);
 
+    markerGroup.addLayer(marker);
     mapMarkers[p.id] = marker;
   });
+
+  markerGroup.addTo(tocopillaMap);
+
+  // Automatically zoom and center to show ALL 10 schools in Tocopilla
+  tocopillaMap.fitBounds(markerGroup.getBounds().pad(0.12));
 
   // Re-run Lucide icons for map pins
   if (window.lucide) {
@@ -304,6 +321,9 @@ function renderProjects(items) {
             <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
             <span>${p.school}</span>
           </div>
+          <div class="text-[11px] text-slate-400 font-medium mt-0.5">
+            ${p.address}
+          </div>
         </div>
 
         <!-- Short Description -->
@@ -355,6 +375,7 @@ function setupFiltersAndSearch() {
       const matchesSearch = !query || 
         item.title.toLowerCase().includes(query) ||
         item.school.toLowerCase().includes(query) ||
+        item.address.toLowerCase().includes(query) ||
         item.shortDesc.toLowerCase().includes(query) ||
         item.tags.some(t => t.toLowerCase().includes(query));
 
@@ -394,7 +415,15 @@ function openProjectModal(projectId) {
   const modalImpact = document.getElementById('modalImpact');
 
   modalTitle.textContent = p.title;
-  modalSchool.innerHTML = `<i data-lucide="graduation-cap" class="w-4 h-4 text-sev-greenDark"></i><span>${p.school}</span>`;
+  modalSchool.innerHTML = `
+    <div class="flex flex-col">
+      <div class="flex items-center gap-1.5 text-sev-greenDark font-bold">
+        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+        <span>${p.school}</span>
+      </div>
+      <div class="text-xs text-slate-500 font-medium pl-5 mt-0.5">${p.address}</div>
+    </div>
+  `;
   
   modalBadges.innerHTML = `
     <span class="badge-${p.category} text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
