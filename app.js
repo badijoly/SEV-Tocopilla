@@ -632,6 +632,124 @@ function setupNavigation() {
   });
 }
 
+// 9. Slider Horizontal Infinito para Proyectos 2025
+function setup2025Slider() {
+  const track = document.getElementById('slider2025Track');
+  const prevBtn = document.getElementById('slider2025Prev');
+  const nextBtn = document.getElementById('slider2025Next');
+  if (!track) return;
+
+  // Duplicar las 11 tarjetas para permitir un ciclo infinito y continuo sin tope
+  const originalCards = Array.from(track.children);
+  if (originalCards.length === 0) return;
+
+  originalCards.forEach(card => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  });
+
+  // Re-inicializar iconos Lucide en los elementos clonados
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+
+  let isDown = false;
+  let startX = 0;
+  let scrollLeftStart = 0;
+  let hasDragged = false;
+  let singleLoopWidth = 0;
+
+  function updateLoopMetrics() {
+    singleLoopWidth = track.scrollWidth / 2;
+  }
+
+  // Inicializar métricas y colocar cursor un poco adelantado para poder arrastrar inmediatamente a la izquierda
+  setTimeout(() => {
+    updateLoopMetrics();
+    if (track.scrollLeft < 10) {
+      track.scrollLeft = 20;
+    }
+  }, 150);
+
+  window.addEventListener('resize', updateLoopMetrics);
+
+  // Bucle infinito transparente mediante el evento scroll
+  track.addEventListener('scroll', () => {
+    if (singleLoopWidth <= 0) updateLoopMetrics();
+    if (singleLoopWidth > 0) {
+      if (track.scrollLeft >= singleLoopWidth * 1.5) {
+        track.scrollLeft -= singleLoopWidth;
+      } else if (track.scrollLeft <= 5) {
+        track.scrollLeft += singleLoopWidth;
+      }
+    }
+  });
+
+  // Interacción de Arrastre con Mouse (Drag & Drop)
+  track.addEventListener('mousedown', (e) => {
+    isDown = true;
+    hasDragged = false;
+    track.classList.add('cursor-grabbing');
+    track.classList.remove('cursor-grab', 'scroll-smooth');
+    startX = e.pageX - track.offsetLeft;
+    scrollLeftStart = track.scrollLeft;
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!isDown) return;
+    isDown = false;
+    track.classList.remove('cursor-grabbing');
+    track.classList.add('cursor-grab', 'scroll-smooth');
+  });
+
+  track.addEventListener('mouseleave', () => {
+    if (isDown) {
+      isDown = false;
+      track.classList.remove('cursor-grabbing');
+      track.classList.add('cursor-grab', 'scroll-smooth');
+    }
+  });
+
+  track.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    if (Math.abs(walk) > 6) {
+      hasDragged = true;
+    }
+    track.scrollLeft = scrollLeftStart - walk;
+  });
+
+  // Prevenir que los links abran si el usuario estuvo arrastrando
+  track.addEventListener('click', (e) => {
+    if (hasDragged) {
+      const link = e.target.closest('a');
+      if (link) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }
+  }, true);
+
+  // Navegación con Botones de Flechas
+  const getStep = () => {
+    const firstCard = track.querySelector('.slider-card-2025');
+    return firstCard ? firstCard.offsetWidth + 24 : 380;
+  };
+
+  prevBtn?.addEventListener('click', () => {
+    track.classList.add('scroll-smooth');
+    track.scrollBy({ left: -getStep(), behavior: 'smooth' });
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    track.classList.add('scroll-smooth');
+    track.scrollBy({ left: getStep(), behavior: 'smooth' });
+  });
+}
+
 // Initialize on DOM Loaded
 document.addEventListener('DOMContentLoaded', () => {
   initTocopillaMap();
@@ -639,6 +757,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProjects(projects);
   setupFiltersAndSearch();
   setupNavigation();
+  setup2025Slider();
   if (window.lucide) {
     window.lucide.createIcons();
   }
