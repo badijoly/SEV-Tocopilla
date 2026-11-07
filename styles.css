@@ -291,3 +291,21 @@ h1, h2, h3, h4, .font-heading {
     rgba(2, 6, 23, 0.25) 100%
   );
 }
+
+/* Ambient Decorative Background Speakers */
+.deco-ambient-speaker {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.18;
+  filter: drop-shadow(0 6px 12px rgba(15, 23, 42, 0.08));
+  transition: opacity 0.4s ease;
+}
+
+@media (max-width: 767px) {
+  .deco-ambient-speaker {
+    display: none;
+  }
+}
+
