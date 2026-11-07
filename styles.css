@@ -274,13 +274,20 @@ h1, h2, h3, h4, .font-heading {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
-  opacity: 0.35;
-  filter: contrast(115%) brightness(95%);
+  object-position: center bottom;
+  opacity: 0.70;
+  filter: contrast(110%) brightness(105%);
 }
 
 .footer-artistic-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(2, 6, 23, 0.82) 0%, rgba(2, 6, 23, 0.60) 45%, rgba(2, 6, 23, 0.90) 100%);
+  background: linear-gradient(
+    180deg, 
+    rgba(2, 6, 23, 0.98) 0%, 
+    rgba(2, 6, 23, 0.85) 30%, 
+    rgba(2, 6, 23, 0.45) 60%, 
+    rgba(2, 6, 23, 0.05) 88%,
+    rgba(2, 6, 23, 0.25) 100%
+  );
 }
