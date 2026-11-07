@@ -50,7 +50,7 @@
     }
   </script>
   
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261106_2215">
 </head>
 <body class="bg-white text-slate-800 font-sans antialiased selection:bg-sev-green selection:text-white overflow-x-hidden">
 
@@ -1039,40 +1039,46 @@
   </footer>
 
   <!-- PROJECT DETAIL MODAL DIALOG -->
-  <div id="projectModal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="relative w-full max-w-2xl bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-y-auto max-h-[90vh] space-y-6 animate-modal">
+  <div id="projectModal" class="fixed inset-0 z-50 hidden bg-slate-950/65 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
+    <div class="relative w-full max-w-2xl bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden overflow-y-auto max-h-[92vh] animate-modal flex flex-col">
       
-      <button onclick="closeProjectModal()" class="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition">
-        <i data-lucide="x" class="w-6 h-6"></i>
+      <!-- Close Button with Glassmorphism floating on top-right -->
+      <button onclick="closeProjectModal()" class="absolute top-4 right-4 z-30 p-2.5 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white backdrop-blur-md transition shadow-lg">
+        <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
-      <div class="space-y-2">
-        <div class="flex flex-wrap items-center gap-2" id="modalBadges"></div>
-        <h3 id="modalTitle" class="text-2xl sm:text-3xl font-black font-display text-slate-900"></h3>
-        <div id="modalSchool" class="text-sm font-bold text-sev-greenDark flex items-center gap-2"></div>
+      <!-- CABECERA DE LA FICHA (Full-bleed Header Banner) -->
+      <div id="modalHeaderImage" class="relative w-full h-60 sm:h-72 shrink-0 bg-slate-900 overflow-hidden">
+        <!-- Rendered dynamically in app.js -->
       </div>
 
-      <!-- Featured Team Photo in Modal -->
-      <div id="modalImageContainer"></div>
+      <!-- Contenido Interior de la Ficha -->
+      <div class="p-6 sm:p-8 space-y-6">
+        <div class="space-y-2">
+          <div class="flex flex-wrap items-center gap-2" id="modalBadges"></div>
+          <h3 id="modalTitle" class="text-2xl sm:text-3xl font-black font-display text-slate-900"></h3>
+          <div id="modalSchool" class="text-sm font-bold text-sev-greenDark flex items-center gap-2"></div>
+        </div>
 
-      <div class="space-y-4 text-slate-700 text-sm leading-relaxed font-medium" id="modalBody"></div>
+        <div class="space-y-4 text-slate-700 text-sm leading-relaxed font-medium" id="modalBody"></div>
 
-      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Impacto Esperado en Tocopilla</h4>
-        <p id="modalImpact" class="text-xs sm:text-sm text-slate-800 font-semibold"></p>
-      </div>
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Impacto Esperado en Tocopilla</h4>
+          <p id="modalImpact" class="text-xs sm:text-sm text-slate-800 font-semibold"></p>
+        </div>
 
-      <div class="pt-2 flex justify-end">
-        <button onclick="closeProjectModal()" class="px-6 py-2.5 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition">
-          Cerrar
-        </button>
+        <div class="pt-2 flex justify-end">
+          <button onclick="closeProjectModal()" class="px-6 py-2.5 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition">
+            Cerrar Ficha
+          </button>
+        </div>
       </div>
 
     </div>
   </div>
 
-  <!-- LEAFLET JS & APP SCRIPT -->
+  <!-- LEAFLET JS & APP SCRIPT WITH CACHE-BUSTER -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=20261106_2215"></script>
 </body>
 </html>
