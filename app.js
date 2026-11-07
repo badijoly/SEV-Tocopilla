@@ -447,37 +447,25 @@ function renderProjects(items) {
     </div>
   `).join('');
 
-  // Cuando se muestran todos los proyectos (10), añadimos una tarjeta presentadora de 2 columnas con el niño speaker
-  // completando armoniosamente la cuadrícula de 3 columnas (10 + 2 = 12 casillas en 4 filas perfectas)
+  // Si se muestran los 10 proyectos, aprovechamos orgánicamente el espacio en blanco
+  // con el estudiante volteado horizontalmente, mirando hacia las tarjetas sobre el fondo blanco limpio.
   if (items.length === projects.length) {
     cardsHtml += `
-      <div class="story-card p-6 sm:p-8 bg-gradient-to-br from-purple-950 via-purple-900 to-sev-purple text-white rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden lg:col-span-2 shadow-xl group border-2 border-purple-400/30">
-        <div class="absolute -top-12 -right-12 w-48 h-48 bg-sev-green/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="space-y-4 max-w-md text-left z-10">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-emerald-300 text-xs font-bold uppercase tracking-wider backdrop-blur-md border border-white/10">
-            <i data-lucide="mic" class="w-3.5 h-3.5 text-sev-green"></i>
-            <span>La Voz Escolar en Escena</span>
+      <div class="col-span-1 md:col-span-2 lg:col-span-2 flex items-end justify-center lg:justify-start lg:pl-10 relative select-none pointer-events-none self-end pt-6 pb-0">
+        <div class="relative flex flex-col items-center lg:items-start">
+          
+          <!-- Burbuja sutil de diálogo orgánico -->
+          <div class="mb-4 px-4 py-2 rounded-2xl bg-white border border-slate-200 shadow-md text-xs font-bold text-slate-800 flex items-center gap-2 transform -translate-y-1">
+            <span class="w-2 h-2 rounded-full bg-sev-green animate-ping"></span>
+            <span class="text-sev-purple font-black">¡10 Soluciones Escolares</span>
+            <span class="text-slate-300">•</span>
+            <span class="text-slate-600">Nacidas en Tocopilla!</span>
           </div>
-          <h3 class="text-2xl sm:text-3xl font-black font-display text-white leading-tight">
-            Liderazgo, Oratoria & Pasión en Escena
-          </h3>
-          <p class="text-xs sm:text-sm text-purple-100 font-medium leading-relaxed">
-            Cada uno de estos 10 proyectos es defendido en vivo por sus propios creadores escolares. 5 minutos de pitch donde la ciencia, la sustentabilidad y la convicción juvenil se unen para transformar Tocopilla.
-          </p>
-          <div class="pt-1 flex flex-wrap gap-3">
-            <a href="#ruta" class="px-5 py-2.5 rounded-xl bg-sev-green hover:bg-sev-greenDark text-white text-xs font-bold transition flex items-center gap-2 shadow-md">
-              <i data-lucide="layers" class="w-4 h-4"></i>
-              <span>Ver Ruta Formativa</span>
-            </a>
-            <a href="#final" class="px-5 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 text-white text-xs font-bold transition flex items-center gap-2 border border-white/20">
-              <i data-lucide="trophy" class="w-4 h-4 text-yellow-300"></i>
-              <span>Programa de la Final</span>
-            </a>
-          </div>
-        </div>
 
-        <div class="relative shrink-0 flex items-end justify-center self-end md:self-auto -mb-6 sm:-mb-8 -mr-2 z-10">
-          <img src="assets/speaker-nino.png" alt="Estudiante Speaker en Escena" class="max-h-72 sm:max-h-80 w-auto object-contain drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-300 pointer-events-none">
+          <!-- Niño Speaker volteado horizontalmente mirando hacia la izquierda (las tarjetas) -->
+          <img src="assets/speaker-nino.png" alt="Estudiante Speaker Tocopilla" 
+               class="max-h-[340px] sm:max-h-[380px] xl:max-h-[420px] w-auto object-contain drop-shadow-xl"
+               style="transform: scaleX(-1);">
         </div>
       </div>
     `;
