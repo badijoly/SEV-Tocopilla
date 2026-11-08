@@ -359,21 +359,21 @@ function flyToSchool(projectId) {
   }, 1300);
 }
 
-// 5. Render Projects Grid Cards
+// 5. Render Projects Grid Cards (Carrusel Horizontal Infinito Arrastrable)
 function renderProjects(items) {
   const grid = document.getElementById('projectsGrid');
   if (!grid) return;
 
   let cardsHtml = items.map(p => `
-    <div class="story-card p-6 flex flex-col justify-between space-y-4 bg-white border border-slate-200 group">
+    <div class="carousel-card-standard shrink-0 p-6 rounded-3xl flex flex-col justify-between space-y-4 bg-white border border-slate-200 group shadow-sm hover:shadow-xl transition-all select-none">
       <div class="space-y-3">
         
         <!-- Team Photo or Thematic Visual Header -->
         ${p.image ? `
-          <div class="relative w-full h-52 overflow-hidden rounded-2xl bg-slate-100 border border-slate-200 shadow-inner group/photo">
-            <img src="${p.image}" alt="${p.title} - ${p.school}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent"></div>
-            <div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-white text-[11px] font-bold">
+          <div class="relative w-full h-48 overflow-hidden rounded-2xl bg-slate-100 border border-slate-200 shadow-inner group/photo">
+            <img src="${p.image}" alt="${p.title} - ${p.school}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent pointer-events-none"></div>
+            <div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-white text-[11px] font-bold pointer-events-none">
               <span class="bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-lg flex items-center gap-1.5 border border-white/20">
                 <i data-lucide="camera" class="w-3.5 h-3.5 text-sev-green"></i>
                 <span>Equipo en Terreno</span>
@@ -411,15 +411,15 @@ function renderProjects(items) {
           </h3>
           <div class="text-xs font-bold text-sev-greenDark mt-1 flex items-center gap-1.5 uppercase">
             <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
-            <span>${p.school}</span>
+            <span class="truncate">${p.school}</span>
           </div>
-          <div class="text-[11px] text-slate-400 font-medium mt-0.5">
+          <div class="text-[11px] text-slate-400 font-medium mt-0.5 truncate">
             ${p.address}
           </div>
         </div>
 
         <!-- Short Description -->
-        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+        <p class="text-xs text-slate-600 leading-relaxed font-medium line-clamp-3">
           ${p.shortDesc}
         </p>
 
@@ -436,7 +436,7 @@ function renderProjects(items) {
                 class="py-2.5 px-3 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-1 shrink-0" 
                 title="Ver en el mapa">
           <i data-lucide="map" class="w-3.5 h-3.5 text-sev-purple"></i>
-          <span class="hidden sm:inline">Mapa</span>
+          <span>Mapa</span>
         </button>
         <button onclick="openProjectModal('${p.id}')" 
                 class="flex-1 py-2.5 px-4 rounded-xl text-xs font-bold bg-sev-green hover:bg-sev-greenDark text-white transition flex items-center justify-center gap-1.5 group">
@@ -447,35 +447,14 @@ function renderProjects(items) {
     </div>
   `).join('');
 
-  // Si se muestran los 10 proyectos, aprovechamos orgánicamente el espacio en blanco
-  // con el estudiante volteado horizontalmente, mirando hacia las tarjetas sobre el fondo blanco limpio.
-  if (items.length === projects.length) {
-    cardsHtml += `
-      <div class="col-span-1 md:col-span-2 lg:col-span-2 flex items-end justify-center lg:justify-start lg:pl-10 relative select-none pointer-events-none self-end pt-6 pb-0">
-        <div class="relative flex flex-col items-center lg:items-start">
-          
-          <!-- Burbuja sutil de diálogo orgánico -->
-          <div class="mb-4 px-4 py-2 rounded-2xl bg-white border border-slate-200 shadow-md text-xs font-bold text-slate-800 flex items-center gap-2 transform -translate-y-1">
-            <span class="w-2 h-2 rounded-full bg-sev-green animate-ping"></span>
-            <span class="text-sev-purple font-black">¡10 Soluciones Escolares</span>
-            <span class="text-slate-300">•</span>
-            <span class="text-slate-600">Nacidas en Tocopilla!</span>
-          </div>
-
-          <!-- Niño Speaker volteado horizontalmente mirando hacia la izquierda (las tarjetas) -->
-          <img src="assets/speaker-nino.png" alt="Estudiante Speaker Tocopilla" 
-               class="max-h-[340px] sm:max-h-[380px] xl:max-h-[420px] w-auto object-contain drop-shadow-xl"
-               style="transform: scaleX(-1);">
-        </div>
-      </div>
-    `;
-  }
-
   grid.innerHTML = cardsHtml;
 
   if (window.lucide) {
     window.lucide.createIcons();
   }
+
+  // Inicializar o re-inicializar el carrusel horizontal arrastrable
+  setupProjects2026Slider();
 }
 
 // 6. Project Filter and Search Logic
@@ -712,24 +691,31 @@ function setupNavigation() {
   });
 }
 
-// 9. Slider Horizontal Infinito para Proyectos 2025
-function setup2025Slider() {
-  const track = document.getElementById('slider2025Track');
-  const prevBtn = document.getElementById('slider2025Prev');
-  const nextBtn = document.getElementById('slider2025Next');
+// 9. Controlador Universal de Carruseles Horizontales Infinitos Arrastrables (Drag & Drop)
+function setupInfiniteDragCarousel(trackId, prevBtnId, nextBtnId) {
+  const track = document.getElementById(trackId);
   if (!track) return;
+  const prevBtn = prevBtnId ? document.getElementById(prevBtnId) : null;
+  const nextBtn = nextBtnId ? document.getElementById(nextBtnId) : null;
 
-  // Duplicar las 11 tarjetas para permitir un ciclo infinito y continuo sin tope
+  // Si ya tiene un slider inicializado y se llama de nuevo con las mismas tarjetas, no duplicar listeners
+  if (track._sliderInitialized) return;
+
   const originalCards = Array.from(track.children);
   if (originalCards.length === 0) return;
 
-  originalCards.forEach(card => {
-    const clone = card.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    track.appendChild(clone);
-  });
+  // Duplicar tarjetas para permitir un ciclo continuo infinito sin topes
+  // Si hay 3 o menos tarjetas, duplicamos 2 veces para tener suficiente longitud de scroll
+  const repeatCount = originalCards.length < 4 ? 2 : 1;
+  for (let r = 0; r < repeatCount; r++) {
+    originalCards.forEach(card => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+  }
 
-  // Re-inicializar iconos Lucide en los elementos clonados
+  // Refrescar iconos Lucide en los clones
   if (window.lucide) {
     window.lucide.createIcons();
   }
@@ -740,11 +726,12 @@ function setup2025Slider() {
   let hasDragged = false;
   let singleLoopWidth = 0;
 
+  const totalLoops = repeatCount + 1;
   function updateLoopMetrics() {
-    singleLoopWidth = track.scrollWidth / 2;
+    singleLoopWidth = track.scrollWidth / totalLoops;
   }
 
-  // Inicializar métricas y colocar cursor un poco adelantado para poder arrastrar inmediatamente a la izquierda
+  // Inicializar métricas con un pequeño desplazamiento inicial para permitir arrastre a la izquierda inmediatamente
   setTimeout(() => {
     updateLoopMetrics();
     if (track.scrollLeft < 10) {
@@ -754,7 +741,7 @@ function setup2025Slider() {
 
   window.addEventListener('resize', updateLoopMetrics);
 
-  // Bucle infinito transparente mediante el evento scroll
+  // Bucle infinito continuo mediante el evento scroll
   track.addEventListener('scroll', () => {
     if (singleLoopWidth <= 0) updateLoopMetrics();
     if (singleLoopWidth > 0) {
@@ -802,11 +789,11 @@ function setup2025Slider() {
     track.scrollLeft = scrollLeftStart - walk;
   });
 
-  // Prevenir que los links abran si el usuario estuvo arrastrando
+  // Prevenir apertura de enlaces o modales si el usuario estuvo arrastrando
   track.addEventListener('click', (e) => {
     if (hasDragged) {
-      const link = e.target.closest('a');
-      if (link) {
+      const interactive = e.target.closest('a, button');
+      if (interactive) {
         e.preventDefault();
         e.stopPropagation();
       }
@@ -815,8 +802,8 @@ function setup2025Slider() {
 
   // Navegación con Botones de Flechas
   const getStep = () => {
-    const firstCard = track.querySelector('.slider-card-2025');
-    return firstCard ? firstCard.offsetWidth + 24 : 380;
+    const firstCard = track.children[0];
+    return firstCard ? firstCard.offsetWidth + 24 : 360;
   };
 
   prevBtn?.addEventListener('click', () => {
@@ -828,6 +815,16 @@ function setup2025Slider() {
     track.classList.add('scroll-smooth');
     track.scrollBy({ left: getStep(), behavior: 'smooth' });
   });
+
+  track._sliderInitialized = true;
+}
+
+// 10. Función especializada para los Proyectos 2026 (bajo el mapa)
+function setupProjects2026Slider() {
+  const track = document.getElementById('projectsGrid');
+  if (!track) return;
+  track._sliderInitialized = false;
+  setupInfiniteDragCarousel('projectsGrid', 'projects2026Prev', 'projects2026Next');
 }
 
 // Initialize on DOM Loaded
@@ -837,7 +834,15 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProjects(projects);
   setupFiltersAndSearch();
   setupNavigation();
-  setup2025Slider();
+
+  // Inicializar todos los carruseles horizontales infinitos
+  setupProjects2026Slider();
+  setupInfiniteDragCarousel('sliderImpactoTrack', 'sliderImpactoPrev', 'sliderImpactoNext');
+  setupInfiniteDragCarousel('sliderVideosTrack', 'sliderVideosPrev', 'sliderVideosNext');
+  setupInfiniteDragCarousel('sliderPitchesTrack', 'sliderPitchesPrev', 'sliderPitchesNext');
+  setupInfiniteDragCarousel('sliderTestimoniosTrack', 'sliderTestimoniosPrev', 'sliderTestimoniosNext');
+  setupInfiniteDragCarousel('slider2025Track', 'slider2025Prev', 'slider2025Next');
+
   if (window.lucide) {
     window.lucide.createIcons();
   }

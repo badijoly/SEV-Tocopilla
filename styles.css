@@ -261,6 +261,54 @@ h1, h2, h3, h4, .font-heading {
   }
 }
 
+/* Universal Carousel Card Sizing */
+.carousel-card-standard {
+  width: 310px;
+  min-width: 310px;
+  max-width: 310px;
+}
+@media (min-width: 640px) {
+  .carousel-card-standard {
+    width: 370px;
+    min-width: 370px;
+    max-width: 370px;
+  }
+}
+
+.carousel-card-wide {
+  width: 320px;
+  min-width: 320px;
+}
+@media (min-width: 640px) {
+  .carousel-card-wide {
+    width: 440px;
+    min-width: 440px;
+  }
+}
+@media (min-width: 1024px) {
+  .carousel-card-wide {
+    width: 520px;
+    min-width: 520px;
+  }
+}
+
+.carousel-card-video {
+  width: 320px;
+  min-width: 320px;
+}
+@media (min-width: 768px) {
+  .carousel-card-video {
+    width: 580px;
+    min-width: 580px;
+  }
+}
+@media (min-width: 1024px) {
+  .carousel-card-video {
+    width: 680px;
+    min-width: 680px;
+  }
+}
+
 /* Footer Artistic Community Background */
 .footer-artistic-bg {
   position: absolute;
@@ -274,9 +322,15 @@ h1, h2, h3, h4, .font-heading {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center bottom;
-  opacity: 0.70;
-  filter: contrast(110%) brightness(105%);
+  object-position: center 55%;
+  opacity: 0.78;
+  filter: contrast(108%) brightness(105%);
+}
+
+@media (min-width: 1024px) {
+  .footer-artistic-bg img {
+    object-position: center 50%;
+  }
 }
 
 .footer-artistic-overlay {
@@ -284,10 +338,10 @@ h1, h2, h3, h4, .font-heading {
   inset: 0;
   background: linear-gradient(
     180deg, 
-    rgba(2, 6, 23, 0.98) 0%, 
-    rgba(2, 6, 23, 0.85) 30%, 
-    rgba(2, 6, 23, 0.45) 60%, 
-    rgba(2, 6, 23, 0.05) 88%,
+    rgba(2, 6, 23, 0.95) 0%, 
+    rgba(2, 6, 23, 0.78) 22%, 
+    rgba(2, 6, 23, 0.35) 52%, 
+    rgba(2, 6, 23, 0.08) 80%,
     rgba(2, 6, 23, 0.25) 100%
   );
 }
