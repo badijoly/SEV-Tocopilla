@@ -50,7 +50,7 @@
     }
   </script>
   
-  <link rel="stylesheet" href="styles.css?v=20261107_1720">
+  <link rel="stylesheet" href="styles.css?v=20261109_0945">
 </head>
 <body class="bg-white text-slate-800 font-sans antialiased selection:bg-sev-green selection:text-white overflow-x-hidden">
 
@@ -104,7 +104,7 @@
                 </div>
               </a>
 
-              <a href="#final" class="section-menu-link flex items-center gap-3 px-3 py-2 rounded-xl bg-purple-50/60 hover:bg-purple-50 transition group">
+              <a href="#final" class="hidden md:flex section-menu-link items-center gap-3 px-3 py-2 rounded-xl bg-purple-50/60 hover:bg-purple-50 transition group">
                 <div class="w-8 h-8 rounded-lg bg-sev-purple text-white flex items-center justify-center shadow-sm shrink-0">
                   <i data-lucide="trophy" class="w-4 h-4 text-sev-yellow"></i>
                 </div>
@@ -230,7 +230,7 @@
           </p>
 
           <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#final" class="px-7 py-3.5 rounded-2xl bg-sev-purple hover:bg-sev-purpleLight text-white font-extrabold text-sm sm:text-base shadow-lg shadow-purple-900/20 transition flex items-center gap-2">
+            <a href="#final" class="hidden md:inline-flex px-7 py-3.5 rounded-2xl bg-sev-purple hover:bg-sev-purpleLight text-white font-extrabold text-sm sm:text-base shadow-lg shadow-purple-900/20 transition items-center gap-2">
               <i data-lucide="trophy" class="w-4 h-4 text-sev-yellow"></i>
               <span>Ver Programa de la Final</span>
               <i data-lucide="arrow-down" class="w-4 h-4"></i>
@@ -298,8 +298,8 @@
     </div>
   </section>
 
-  <!-- 2. LA GRAN FINAL TOCOPILLA 2026 (EL HITO CENTRAL ACTUAL) -->
-  <section id="final" class="relative overflow-hidden py-20 md:py-28 bg-slate-50 border-t border-slate-200">
+  <!-- 2. LA GRAN FINAL TOCOPILLA 2026 (EL HITO CENTRAL ACTUAL - Oculta en móviles, visible en desktop) -->
+  <section id="final" class="hidden md:block relative overflow-hidden py-20 md:py-28 bg-slate-50 border-t border-slate-200">
     
     <!-- Elemento Decorativo Integrado al Fondo: Ganador Mejor Pitch Tocopilla -->
     <div class="deco-ambient-speaker -bottom-6 -right-6 lg:right-6" aria-hidden="true">
@@ -350,32 +350,6 @@
             <p class="text-xs text-slate-600 leading-relaxed font-medium">
               Centro de Emprendimiento e Innovación UCN, Av. Angamos 0610, Antofagasta. Un espacio universitario de vanguardia que recibirá a la delegación de más de 80 personas que viajarán desde Tocopilla.
             </p>
-          </div>
-
-          <!-- Evaluation Rubric Mini Card -->
-          <div class="p-6 rounded-2xl bg-white border border-slate-200 space-y-3 text-xs text-slate-600 shadow-sm">
-            <h4 class="font-extrabold text-slate-900 uppercase tracking-wider text-[11px] flex items-center gap-1.5">
-              <i data-lucide="scale" class="w-4 h-4 text-sev-purple"></i>
-              <span>Criterios del Jurado Evaluador:</span>
-            </h4>
-            <ul class="space-y-1.5 font-medium pl-1">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-sev-green"></span>
-                <span>Claridad en el planteamiento del problema y solución</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-sev-purple"></span>
-                <span>Prototipo real, factibilidad técnica e impacto ambiental</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-sev-magenta"></span>
-                <span>Despliegue escénico, oratoria y manejo del tiempo (5 min)</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-                <span>Defensa argumentativa en la ronda de preguntas</span>
-              </li>
-            </ul>
           </div>
 
         </div>
@@ -659,15 +633,15 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         
-        <!-- Actividad 01: Charla de Lanzamiento -->
+        <!-- Actividad 01: Bootcamp de Lanzamiento -->
         <div class="story-card p-6 bg-white space-y-3 border border-slate-200">
           <div class="flex items-center justify-between">
             <span class="px-2.5 py-1 rounded-md bg-purple-100 text-sev-purple text-xs font-extrabold uppercase">Actividad 01</span>
-            <i data-lucide="megaphone" class="w-5 h-5 text-sev-purple"></i>
+            <i data-lucide="sparkles" class="w-5 h-5 text-sev-purple"></i>
           </div>
-          <h4 class="text-lg font-bold font-display text-slate-900">Charla de Lanzamiento</h4>
+          <h4 class="text-lg font-bold font-display text-slate-900">Bootcamp de Lanzamiento</h4>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            Jornada inicial de motivación e inducción para dar a conocer los alcances, objetivos pedagógicos y detalles del programa a los estudiantes y docentes beneficiarios.
+            Bootcamp intensivo donde se comenzaron a revisar estrategias para la elección de desafíos y actividades para aprender a aterrizar las ideas de proyecto, con temas fuerza en <strong>identificación y resolución de problemas</strong>.
           </p>
         </div>
 
@@ -986,18 +960,14 @@
           
           <!-- 2019 -->
           <div class="relative flex flex-col md:flex-row items-center gap-6">
-            <div class="md:w-1/2 text-left md:text-right space-y-3 order-2 md:order-1 pl-16 md:pl-0">
+            <div class="md:w-1/2 text-left md:text-right space-y-2 order-2 md:order-1 pl-16 md:pl-0">
               <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-sev-greenDark text-xs font-black uppercase">
-                2019 • Hito Inaugural • Antofagasta
+                2019 • Hito Inaugural
               </span>
-              <h3 class="text-2xl font-bold font-display text-slate-900">Carnaval de Innovación En Verde</h3>
-              <p class="text-sm text-slate-600 leading-relaxed font-medium">
-                Hito inaugural del Carnaval de Innovación En Verde, enfocado en incentivar habilidades de comunicación eficaz, emprendimiento temprano y pensamiento creativo en estudiantes y docentes para exponer iniciativas nacidas en el aula escolar.
+              <h3 class="text-xl sm:text-2xl font-bold font-display text-slate-900">Carnaval de Innovación En Verde</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                Hito fundacional del Carnaval de Innovación En Verde, diseñado y ejecutado por <strong>Verdical</strong> para impulsar la comunicación eficaz, el emprendimiento temprano y la creatividad escolar.
               </p>
-              <div class="inline-flex items-center gap-1.5 text-xs font-bold text-sev-greenDark">
-                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
-                <span>Antofagasta</span>
-              </div>
             </div>
 
             <div class="w-14 h-14 rounded-2xl bg-sev-green text-white font-black text-xl font-display flex items-center justify-center shadow-lg border-4 border-white shrink-0 z-10 order-1 md:order-2 self-start md:self-auto">
@@ -1005,18 +975,17 @@
             </div>
 
             <div class="md:w-1/2 order-3 pl-16 md:pl-0 w-full">
-              <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-700 space-y-3 shadow-sm text-left">
+              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-700 space-y-2 shadow-sm text-left">
                 <div class="flex items-center gap-2 text-sev-greenDark font-bold text-xs uppercase">
                   <i data-lucide="users" class="w-4 h-4"></i>
                   <span>Convocatoria & Alcance</span>
                 </div>
                 <p class="leading-relaxed font-medium">
-                  Primera versión del programa con <strong>más de 2.000 estudiantes y 20 proyectos</strong> de emprendimiento e innovación escolar participantes.
+                  Primera versión del programa con <strong>más de 2.000 estudiantes y 20 proyectos</strong> escolares de innovación y sustentabilidad.
                 </p>
-                <div class="pt-2 border-t border-slate-200/60 text-[11px] text-slate-500 font-medium space-y-1">
-                  <p><strong>Diseño & Ejecución:</strong> Diseñado y ejecutado originalmente por Verdical.</p>
-                  <p><strong>Colaboradores:</strong> Comunidades educativas locales y redes escolares de la Región de Antofagasta.</p>
-                </div>
+                <p class="text-[11px] text-slate-500 font-medium pt-1 border-t border-slate-200/60">
+                  <strong>Diseño & Ejecución:</strong> Verdical junto a comunidades educativas regionales.
+                </p>
               </div>
             </div>
           </div>
@@ -1024,26 +993,19 @@
           <!-- 2020 -->
           <div class="relative flex flex-col md:flex-row items-center gap-6">
             <div class="md:w-1/2 order-3 md:order-1 pl-16 md:pl-0 w-full">
-              <div class="p-6 rounded-2xl bg-purple-50/70 border border-purple-200 text-xs text-slate-700 space-y-3 shadow-sm text-left">
+              <div class="p-5 rounded-2xl bg-purple-50/70 border border-purple-200 text-xs text-slate-700 space-y-2.5 shadow-sm text-left">
                 <div class="flex items-center justify-between gap-2">
                   <div class="flex items-center gap-1.5 text-sev-purple font-bold text-xs uppercase">
                     <i data-lucide="award" class="w-4 h-4"></i>
-                    <span>7 Equipos Escolares Destacados</span>
+                    <span>12 Equipos Escolares Seleccionados</span>
                   </div>
-                  <span class="px-2 py-0.5 rounded-full bg-white text-[10px] font-extrabold text-sev-purple border border-purple-200">2 Ciudades</span>
+                  <span class="px-2 py-0.5 rounded-full bg-white text-[10px] font-extrabold text-sev-purple border border-purple-200">16 y 17 de Octubre</span>
                 </div>
-                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-1 text-[11px] text-slate-600 font-medium">
-                  <li>• Esc. Ecológica H. González E.</li>
-                  <li>• Liceo Domingo Herrera Rivera (B-13)</li>
-                  <li>• Escuela Bernardo O'Higgins</li>
-                  <li>• Netland School</li>
-                  <li>• Escuela Pedro Aguirre Cerda</li>
-                  <li>• Col. Bicentenario Sagrada Familia</li>
-                  <li>• Colegio Santa Teresita</li>
-                </ul>
-                <div class="pt-2 border-t border-purple-200/60 text-[11px] text-slate-500 font-medium space-y-1">
-                  <p><strong>Financiamiento:</strong> Corfo Antofagasta y Comité de Desarrollo Productivo Regional.</p>
-                  <p><strong>Alianzas:</strong> SQM, AIEP, Aguas Antofagasta, Brave Up, Seremi de Medio Ambiente y Seremi de Educación.</p>
+                <p class="leading-relaxed font-medium text-slate-600">
+                  Gran presencia de la provincia de Tocopilla con <strong>Col. Sagrada Familia</strong>, <strong>Escuela Pedro Aguirre Cerda</strong> y <strong>Liceo Politécnico Diego Portales</strong>, junto a delegaciones de Antofagasta.
+                </p>
+                <div class="pt-1.5 border-t border-purple-200/60 text-[11px] text-slate-500 font-medium">
+                  <strong>Apoyo:</strong> Comité Corfo Antofagasta y SQM.
                 </div>
               </div>
             </div>
@@ -1052,35 +1014,27 @@
               2020
             </div>
 
-            <div class="md:w-1/2 text-left space-y-3 order-2 md:order-3 pl-16 md:pl-0">
+            <div class="md:w-1/2 text-left space-y-2 order-2 md:order-3 pl-16 md:pl-0">
               <span class="inline-block px-3 py-1 rounded-full bg-purple-100 text-sev-purple text-xs font-black uppercase">
-                2020 • Adaptación 100% Digital • Pandemia
+                2020 • Formación Digital & Streaming
               </span>
-              <h3 class="text-2xl font-bold font-display text-slate-900">Formación Virtual & Pitch Streaming</h3>
-              <p class="text-sm text-slate-600 leading-relaxed font-medium">
-                Adaptación 100% online por contingencia sanitaria global. Incluyó módulos digitales interactivos y mentorías sobre construcción del relato e identificación de problemáticas socioambientales, culminando con una jornada de pitch transmitida vía streaming ante jurado de especialistas regionales.
+              <h3 class="text-xl sm:text-2xl font-bold font-display text-slate-900">Carnaval de Innovación En Verde</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                Adaptación virtual que fortaleció la construcción de relatos y soluciones socioambientales, culminando en dos jornadas de pitch transmitidas vía streaming ante un jurado regional.
               </p>
-              <div class="inline-flex items-center gap-1.5 text-xs font-bold text-sev-purple">
-                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
-                <span>Antofagasta y Tocopilla</span>
-              </div>
             </div>
           </div>
 
           <!-- 2021 -->
           <div class="relative flex flex-col md:flex-row items-center gap-6">
-            <div class="md:w-1/2 text-left md:text-right space-y-3 order-2 md:order-1 pl-16 md:pl-0">
+            <div class="md:w-1/2 text-left md:text-right space-y-2 order-2 md:order-1 pl-16 md:pl-0">
               <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-sev-blue text-xs font-black uppercase">
-                2021 • Expansión Interregional • Virtual
+                2021 • Formato Virtual • 3 Meses de Mentorías
               </span>
-              <h3 class="text-2xl font-bold font-display text-slate-900">Categorías INICIA y CRECE (8 Ciudades)</h3>
-              <p class="text-sm text-slate-600 leading-relaxed font-medium">
-                Despliegue formativo virtual estructurado en dos categorías simultáneas: <strong>INICIA</strong> (proyectos nuevos) y <strong>CRECE</strong> (proyectos en etapa de escalamiento y modelo de negocio), combinando cápsulas asincrónicas en plataforma web de aprendizaje con sesiones de retroalimentación en vivo.
+              <h3 class="text-xl sm:text-2xl font-bold font-display text-slate-900">Categorías INICIA y CRECE</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                Proceso formativo enfocado en la <strong>provincia de Tocopilla</strong> y la región, con cápsulas de aprendizaje y mentorías en vivo estructuradas en etapas de iniciación y escalamiento de proyectos.
               </p>
-              <div class="inline-flex items-center gap-1.5 text-xs font-bold text-sev-blue">
-                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
-                <span>Antofagasta, Tocopilla, Calama, María Elena, Copiapó, Villarrica, Pucón y Alto Hospicio</span>
-              </div>
             </div>
 
             <div class="w-14 h-14 rounded-2xl bg-sev-blue text-white font-black text-xl font-display flex items-center justify-center shadow-lg border-4 border-white shrink-0 z-10 order-1 md:order-2 self-start md:self-auto">
@@ -1088,34 +1042,22 @@
             </div>
 
             <div class="md:w-1/2 order-3 pl-16 md:pl-0 w-full">
-              <div class="p-6 rounded-2xl bg-sky-50/70 border border-sky-200 text-xs text-slate-700 space-y-3 shadow-sm text-left">
+              <div class="p-5 rounded-2xl bg-sky-50/70 border border-sky-200 text-xs text-slate-700 space-y-2.5 shadow-sm text-left">
                 <div class="flex items-center justify-between gap-2">
                   <div class="flex items-center gap-1.5 text-sev-blue font-bold text-xs uppercase">
-                    <i data-lucide="layers" class="w-4 h-4"></i>
-                    <span>15 Equipos Interregionales</span>
+                    <i data-lucide="trophy" class="w-4 h-4"></i>
+                    <span>Equipos Ganadores del Certamen</span>
                   </div>
-                  <span class="px-2 py-0.5 rounded-full bg-white text-[10px] font-extrabold text-sev-blue border border-sky-200">INICIA & CRECE</span>
+                  <span class="px-2 py-0.5 rounded-full bg-white text-[10px] font-extrabold text-sev-blue border border-sky-200">Final Online</span>
                 </div>
-                <div class="max-h-36 overflow-y-auto pr-1 text-[11px] text-slate-600 space-y-1 font-medium">
-                  <p>• <strong>Liceo Politécnico Villarrica:</strong> Funaltun (Fertilizante)</p>
-                  <p>• <strong>Esc. Manuel Baquedano F-78:</strong> Ecotienda</p>
-                  <p>• <strong>Esc. Ignacio Carrera Pinto (Quillagua):</strong> Huerto Escolar</p>
-                  <p>• <strong>Esc. Las Canteras (Copiapó):</strong> Huerto Las Canteras</p>
-                  <p>• <strong>Esc. El Claro (Pucón):</strong> Convivencia y Medio Ambiente</p>
-                  <p>• <strong>ICEDUC Antofagasta:</strong> Starlink y astronomía</p>
-                  <p>• <strong>COSAFA Tocopilla:</strong> Agentes creando cambios</p>
-                  <p>• <strong>Esc. Especial Pedro Aguirre Cerda F-9:</strong> Desayunos Chug-Chug</p>
-                  <p>• <strong>Col. Santa Teresita:</strong> Fasebac / RESCATE</p>
-                  <p>• <strong>Esc. Ecológica H. González E.:</strong> Plástico biodegradable</p>
-                  <p>• <strong>Col. Ecológico Montessori:</strong> WARMI / CHIWI-CRIK</p>
-                  <p>• <strong>Esc. República de Grecia D-35:</strong> Reciclando y decorando</p>
-                  <p>• <strong>Liceo Mario Bahamonde:</strong> Ambientador Ecológico</p>
-                  <p>• <strong>Liceo Domingo Herrera (B-13):</strong> Reciclar, Reducir, Reutilizar</p>
-                  <p>• <strong>Col. Metodista Robert Johnson:</strong> Pequeños Compostadores</p>
+                <div class="text-[11px] text-slate-600 space-y-1 font-medium">
+                  <p>• <strong>1° Lugar Categoría Crece:</strong> COSAFA Tocopilla (Col. Sagrada Familia) con <em>"Agentes creando cambios"</em>.</p>
+                  <p>• <strong>1° Lugar Categoría Inicia:</strong> Col. Ecológico Montessori con <em>"Chiwi-Crick"</em>.</p>
+                  <p class="text-slate-500">• <strong>Destacados:</strong> Starlink (ICEDUC), Esc. Manuel Baquedano y Esc. El Claro.</p>
                 </div>
-                <div class="pt-2 border-t border-sky-200/60 text-[11px] text-slate-500 font-medium">
-                  <p><strong>Ejecución & Redes:</strong> Verdical, DAEMs comunales y SLEP Atacama.</p>
-                </div>
+                <p class="text-[11px] text-slate-500 font-medium pt-1.5 border-t border-sky-200/60">
+                  <strong>Ejecución:</strong> Verdical junto a redes escolares y DAEMs provinciales.
+                </p>
               </div>
             </div>
           </div>
@@ -1123,34 +1065,20 @@
           <!-- 2022 -->
           <div class="relative flex flex-col md:flex-row items-center gap-6">
             <div class="md:w-1/2 order-3 md:order-1 pl-16 md:pl-0 w-full">
-              <div class="p-6 rounded-2xl bg-amber-50/70 border border-amber-200 text-xs text-slate-700 space-y-3 shadow-sm text-left">
+              <div class="p-5 rounded-2xl bg-amber-50/70 border border-amber-200 text-xs text-slate-700 space-y-2.5 shadow-sm text-left">
                 <div class="flex items-center justify-between gap-2">
                   <div class="flex items-center gap-1.5 text-amber-800 font-bold text-xs uppercase">
                     <i data-lucide="landmark" class="w-4 h-4"></i>
-                    <span>15 Equipos en Ruinas de Huanchaca</span>
+                    <span>30 Equipos & 10 Finalistas</span>
                   </div>
-                  <span class="px-2 py-0.5 rounded-full bg-white text-[10px] font-extrabold text-amber-800 border border-amber-200">FNDR 7%</span>
+                  <span class="px-2 py-0.5 rounded-full bg-white text-[10px] font-extrabold text-amber-800 border border-amber-200">FNDR 7% GORE</span>
                 </div>
-                <div class="max-h-36 overflow-y-auto pr-1 text-[11px] text-slate-600 space-y-1 font-medium">
-                  <p>• <strong>Esc. Manuel Baquedano:</strong> Tienda Sustentable</p>
-                  <p>• <strong>Col. Sagrada Familia (Tocopilla):</strong> Bolsas biodegradables</p>
-                  <p>• <strong>Col. Ecológico Montessori (Calama):</strong> WARMI</p>
-                  <p>• <strong>Esc. Pedro Aguirre Cerda (Tocopilla):</strong> Desayunos Chug Chug</p>
-                  <p>• <strong>Col. Santa Teresita:</strong> Fasebac</p>
-                  <p>• <strong>Col. Bet-El:</strong> Betel 1 Security y Pura Aqua</p>
-                  <p>• <strong>Harvest Christian School:</strong> Mi mascota verde</p>
-                  <p>• <strong>Liceo Mario Bahamonde:</strong> Desodorizador ambiental</p>
-                  <p>• <strong>Esc. Padre Alberto Hurtado:</strong> Áreas verdes</p>
-                  <p>• <strong>Liceo Cesáreo Aguirre (Calama):</strong> Arranque verde</p>
-                  <p>• <strong>Col. Providencia:</strong> Reciclaje 3D y Aguas potables</p>
-                  <p>• <strong>Liceo Radomiro Tomic Romero (Calama)</strong></p>
-                  <p>• <strong>Escuela República de los Estados Unidos (Tocopilla)</strong></p>
-                  <p>• <strong>Escuela Carlos Condell de la Haza (Tocopilla)</strong></p>
-                  <p>• <strong>Escuela Pablo Neruda</strong></p>
-                </div>
-                <div class="pt-2 border-t border-amber-200/60 text-[11px] text-slate-500 font-medium space-y-1">
-                  <p><strong>Financiamiento Oficial:</strong> Gobierno Regional de Antofagasta a través del <strong>FNDR 7% Proyectos de Interés Regional 2022</strong> (CORE).</p>
-                  <p><strong>Colaboran:</strong> Museo Ruinas de Huanchaca y Colectivo Absurda Consecuencia.</p>
+                <p class="text-[11px] leading-relaxed text-slate-600 font-medium">
+                  Gran protagonismo de la provincia de Tocopilla (Col. Sagrada Familia, Esc. Pedro Aguirre Cerda, Esc. Estados Unidos y Esc. Carlos Condell) junto a equipos de Antofagasta y Calama.
+                </p>
+                <div class="pt-1.5 border-t border-amber-200/60 text-[11px] text-slate-500 font-medium space-y-0.5">
+                  <p><strong>Speakers Invitadas:</strong> Catalina Silva (@chica.rosadita) y Fran Astrónoma (@fran.astronoma).</p>
+                  <p><strong>Financiamiento:</strong> FNDR 7% de Interés Regional del Gobierno Regional de Antofagasta.</p>
                 </div>
               </div>
             </div>
@@ -1159,46 +1087,31 @@
               2022
             </div>
 
-            <div class="md:w-1/2 text-left space-y-3 order-2 md:order-3 pl-16 md:pl-0">
+            <div class="md:w-1/2 text-left space-y-2 order-2 md:order-3 pl-16 md:pl-0">
               <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-black uppercase">
                 2022 • Retorno Presencial • Ruinas de Huanchaca
               </span>
-              <h3 class="text-2xl font-bold font-display text-slate-900">Carnaval de Innovación & Fondo Regional FNDR</h3>
-              <p class="text-sm text-slate-600 leading-relaxed font-medium">
-                Retorno a eventos presenciales masivos con la realización del Carnaval de Innovación en las Ruinas de Huanchaca, donde los participantes expusieron sus pitches ante el público en un entorno integrado con divulgación científica y cultura.
+              <h3 class="text-xl sm:text-2xl font-bold font-display text-slate-900">Carnaval de Innovación en Escena</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                Masivo retorno presencial celebrado el 18 de noviembre en el emblemático monumento Ruinas de Huanchaca, uniendo divulgación científica, cultura y pitches en vivo ante cientos de asistentes.
               </p>
-              <div class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800">
-                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
-                <span>Antofagasta, Tocopilla y Calama</span>
-              </div>
             </div>
           </div>
 
           <!-- 2024 -->
           <div class="relative flex flex-col md:flex-row items-center gap-6">
-            <div class="md:w-1/2 text-left md:text-right space-y-3 order-2 md:order-1 pl-16 md:pl-0">
+            <div class="md:w-1/2 text-left md:text-right space-y-2 order-2 md:order-1 pl-16 md:pl-0">
               <span class="inline-block px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-black uppercase">
-                2024 • Vínculo Territorial Provincia de Tocopilla • FIC-R
+                2024 • Provincia de Tocopilla • Corfo
               </span>
-              <h3 class="text-2xl font-bold font-display text-slate-900">Programa Formativo & Sostenibilidad</h3>
+              <h3 class="text-xl sm:text-2xl font-bold font-display text-slate-900">Programa Formativo & Sostenibilidad</h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-                Programa de 4 meses enfocado en educación ambiental y sostenibilidad que involucró a establecimientos de <strong>Tocopilla y María Elena</strong>. Equipos de entre 5 y 7 alumnos (desde 6.° básico hasta 4.° medio) con sus profesores guías desarrollaron talleres en aula, experiencia de electromovilidad y la Gran Final en el histórico Teatro Andrés Pérez de Tocopilla.
+                Programa formativo enfocado exclusivamente en la <strong>provincia de Tocopilla</strong> (Tocopilla y María Elena). Cuatro meses de talleres en aula, mentorías de oratoria, experiencia de electromovilidad y Gran Final en el histórico Teatro Andrés Pérez.
               </p>
-              
-              <div class="p-4 rounded-2xl bg-sky-50/80 border border-sky-200 text-xs text-slate-700 space-y-1.5 text-left font-medium">
-                <span class="font-bold text-slate-900 flex items-center gap-1.5">
-                  <i data-lucide="award" class="w-3.5 h-3.5 text-sev-blue"></i>
-                  <span>Gobernanza y Financiamiento Edición 2024:</span>
-                </span>
-                <p class="text-[11px] leading-relaxed text-slate-600">
-                  Iniciativa liderada por <strong>Verdical</strong>, apoyada por el <strong>Comité Corfo Antofagasta</strong> a través de recursos <strong>FIC-R del Gobierno Regional de Antofagasta</strong> (Código BIP 40014448-0), con la colaboración activa de la <strong>Ilustre Municipalidad de Tocopilla</strong>, el <strong>DAEM Tocopilla</strong>, <strong>SQM Yodo Nutrición Vegetal</strong> y <strong>Eliseo E-Karts</strong>.
-                </p>
-              </div>
-
               <div class="pt-1 flex flex-wrap gap-3 md:justify-end">
-                <a href="#memoria-historica" class="inline-flex items-center gap-1.5 text-xs font-bold text-sev-purple hover:underline">
+                <a href="#memoria-historica" class="inline-flex items-center gap-1.5 text-xs font-bold text-sev-blue hover:underline">
                   <i data-lucide="video" class="w-3.5 h-3.5"></i>
-                  <span>Ver Video y Pitches en la Vitrina Audiovisual ↓</span>
+                  <span>Ver Video Oficial 2024 ↓</span>
                 </a>
               </div>
             </div>
@@ -1208,22 +1121,19 @@
             </div>
 
             <div class="md:w-1/2 order-3 pl-16 md:pl-0 w-full">
-              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-3 shadow-sm text-left">
-                <span class="font-bold text-slate-800 flex items-center gap-1.5 text-sev-blue">
-                  <i data-lucide="video" class="w-4 h-4"></i>
-                  <span>Equipos & Proyectos Emblemáticos 2024:</span>
-                </span>
-                <ul class="space-y-1.5 text-xs text-slate-700 font-medium">
-                  <li>• <strong>"Los Acuapónicos":</strong> Escuela República de los Estados Unidos (F-6).</li>
-                  <li>• <strong>"Gym Mobile":</strong> Escuela Carlos Condell de la Haza.</li>
-                  <li>• <strong>"Comida que ilumina":</strong> Colegio Bicentenario Sagrada Familia.</li>
-                  <li>• <strong>Escuela Arturo Prat</strong> de Tocopilla.</li>
-                </ul>
-                <div class="pt-2 border-t border-slate-200">
-                  <a href="#vitrina-videos" class="text-xs font-bold text-sev-blue hover:underline flex items-center gap-1">
-                    <span>Reproducir videos destacados en la Vitrina Audiovisual</span>
-                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
-                  </a>
+              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-700 space-y-2.5 shadow-sm text-left">
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-1.5 text-sev-blue font-bold text-xs uppercase">
+                    <i data-lucide="award" class="w-4 h-4"></i>
+                    <span>Financiamiento Corfo & Ecosistema</span>
+                  </div>
+                  <span class="px-2 py-0.5 rounded-full bg-white text-[10px] font-extrabold text-sev-blue border border-sky-200">Teatro Andrés Pérez</span>
+                </div>
+                <p class="text-[11px] leading-relaxed text-slate-600 font-medium">
+                  Iniciativa apoyada por el <strong>Comité Corfo Antofagasta</strong> y liderada por <strong>Verdical</strong>, con la colaboración activa de <strong>SQM Yodo Nutrición Vegetal</strong>, la <strong>Ilustre Municipalidad de Tocopilla</strong> y el <strong>DAEM Tocopilla</strong>.
+                </p>
+                <div class="pt-1.5 border-t border-slate-200/60 text-[11px] text-slate-600 space-y-0.5 font-medium">
+                  <p><strong>Proyectos Destacados:</strong> <em>Los Acuapónicos</em> (Esc. EE.UU.), <em>Gym Mobile</em> (Esc. Carlos Condell), <em>Comida que ilumina</em> (Col. Sagrada Familia) y Esc. Arturo Prat.</p>
                 </div>
               </div>
             </div>
@@ -1232,37 +1142,23 @@
           <!-- 2025 -->
           <div class="relative flex flex-col md:flex-row items-center gap-6">
             <div class="md:w-1/2 order-3 md:order-1 pl-16 md:pl-0 w-full">
-              <div class="p-6 rounded-2xl bg-pink-50/80 border-2 border-pink-200 text-xs text-slate-700 space-y-3 shadow-sm text-left">
+              <div class="p-5 rounded-2xl bg-pink-50/80 border-2 border-pink-200 text-xs text-slate-700 space-y-2.5 shadow-sm text-left">
                 <div class="flex items-center justify-between gap-2">
                   <div class="flex items-center gap-1.5 text-sev-magenta font-bold text-xs uppercase">
                     <i data-lucide="sparkles" class="w-4 h-4 text-sev-magenta"></i>
-                    <span>11 Equipos Finalistas Evaluados</span>
+                    <span>11 Equipos de Tocopilla en Escena</span>
                   </div>
-                  <span class="px-2.5 py-0.5 rounded-full bg-white border border-pink-200 text-[10px] font-extrabold text-sev-magenta">
-                    11 Equipos de Tocopilla
+                  <span class="px-2 py-0.5 rounded-full bg-white border border-pink-200 text-[10px] font-extrabold text-sev-magenta">
+                    Teatro Municipal
                   </span>
                 </div>
-                <div class="max-h-36 overflow-y-auto pr-1 text-[11px] text-slate-600 space-y-1 font-medium">
-                  <p>1. <strong>Liceo Politécnico Diego Portales:</strong> Equipo 1</p>
-                  <p>2. <strong>Liceo Politécnico Diego Portales:</strong> Equipo 2</p>
-                  <p>3. <strong>Escuela Gabriela Mistral:</strong> Academia de Patrimonio</p>
-                  <p>4. <strong>Escuela Bernardo O'Higgins:</strong> Herencia Viva</p>
-                  <p>5. <strong>Escuela Arturo Prat:</strong> Jardín Acuático Terapéutico</p>
-                  <p>6. <strong>Escuela Pablo Neruda:</strong> Jardín de la Calma</p>
-                  <p>7. <strong>Colegio Sagrada Familia:</strong> Agrobag</p>
-                  <p>8. <strong>Liceo Domingo Latrille:</strong> Desalación Latrillana</p>
-                  <p>9. <strong>Escuela Estados Unidos:</strong> Nutricode</p>
-                  <p>10. <strong>Escuela Carlos Condell:</strong> Gloriosas Bolsas</p>
-                  <p>11. <strong>Escuela Pedro Aguirre Cerda:</strong> Hidroponía para Todos</p>
-                </div>
-                <div class="pt-2 border-t border-pink-200/60 text-[11px] text-slate-500 font-medium space-y-1">
-                  <p><strong>Gobernanza:</strong> Apoyado por Comité Corfo Antofagasta y ejecutado por Verdical.</p>
-                  <p><strong>Mentores & Jurado:</strong> Catalina Silva, Darío Rojas, Kendra Iriarte y referentes regionales.</p>
-                </div>
-                <div class="pt-1">
-                  <a href="#proyectos-2025" class="text-xs font-bold text-sev-magenta hover:underline flex items-center gap-1">
-                    <span>Explorar carrusel interactivo de los 11 proyectos abajo</span>
-                    <i data-lucide="arrow-down" class="w-3 h-3"></i>
+                <p class="text-[11px] leading-relaxed text-slate-600 font-medium">
+                  Ciclo intensivo de formulación de proyectos ecológicos y pitch en vivo. De esta generación nacieron iniciativas hoy materializadas en sus escuelas: el <strong>Jardín Acuático Terapéutico</strong> (Esc. Arturo Prat) y <strong>Herencia Viva</strong> (Esc. Bernardo O'Higgins).
+                </p>
+                <div class="pt-1.5 border-t border-pink-200/60 flex items-center justify-between text-[11px]">
+                  <span class="text-slate-500 font-medium">Apoyo: Corfo Antofagasta & Verdical</span>
+                  <a href="#proyectos-2025" class="font-bold text-sev-magenta hover:underline flex items-center gap-1">
+                    <span>Ver Proyectos 2025 ↓</span>
                   </a>
                 </div>
               </div>
@@ -1272,18 +1168,18 @@
               2025
             </div>
 
-            <div class="md:w-1/2 text-left space-y-3 order-2 md:order-3 pl-16 md:pl-0">
+            <div class="md:w-1/2 text-left space-y-2 order-2 md:order-3 pl-16 md:pl-0">
               <span class="inline-block px-3 py-1 rounded-full bg-pink-100 text-sev-magenta text-xs font-black uppercase">
                 2025 • V Edición Tocopilla
               </span>
-              <h3 class="text-2xl font-bold font-display text-slate-900">Soluciones con Identidad Territorial</h3>
-              <p class="text-sm text-slate-600 leading-relaxed font-medium">
-                Ciclo intensivo de formulación de proyectos ecológicos, pitch de impacto y jornada final de evaluación considerando propuesta de valor, originalidad y competencias escénicas frente al jurado calificador.
+              <h3 class="text-xl sm:text-2xl font-bold font-display text-slate-900">Soluciones con Identidad Territorial</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                11 establecimientos tocopillanos defendieron sus proyectos ecológicos ante jurado en el Teatro Municipal de Tocopilla, demostrando cómo la oratoria y la ciencia escolar transforman la comunidad.
               </p>
               <div class="pt-1">
                 <a href="#video-cierre-2025" class="inline-flex items-center gap-1.5 text-xs font-bold text-sev-purple hover:underline">
                   <i data-lucide="play-circle" class="w-3.5 h-3.5"></i>
-                  <span>Ver Video Oficial de Cierre 2025 en Tocopilla ↓</span>
+                  <span>Ver Video Oficial de Cierre 2025 ↓</span>
                 </a>
               </div>
             </div>
@@ -1466,12 +1362,12 @@
               </div>
             </div>
 
-            <!-- Video 2 Destacado: Video Resumen Oficial 2024 FIC-R / Verdical / GORE -->
+            <!-- Video 2 Destacado: Video Resumen Oficial 2024 Corfo / Verdical / SQM -->
             <div id="video-resumen-2024" class="carousel-card-video shrink-0 p-6 sm:p-8 rounded-3xl bg-white border-2 border-sky-200 shadow-md flex flex-col justify-between space-y-6">
               <div class="space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sev-blue text-white text-xs font-bold uppercase tracking-wider shadow-sm">
                   <i data-lucide="award" class="w-3.5 h-3.5"></i>
-                  <span>Edición 2024 • FIC-R Antofagasta</span>
+                  <span>Edición 2024 • Corfo Antofagasta</span>
                 </div>
                 <h3 class="text-xl sm:text-2xl font-black font-display text-slate-900 leading-tight">
                   Programa Formativo Integral 2024 en Tocopilla y María Elena
@@ -1484,7 +1380,7 @@
                 </div>
               </div>
               <div class="pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
-                <span class="text-xs text-slate-400 font-medium">FIC-R GORE Antofagasta</span>
+                <span class="text-xs text-slate-400 font-medium">Comité Corfo Antofagasta</span>
                 <a href="https://youtu.be/EWHU63jwWC0" target="_blank" rel="noopener noreferrer" 
                    class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold transition shadow-sm">
                   <i data-lucide="youtube" class="w-4 h-4"></i>
@@ -2189,7 +2085,7 @@
         <div class="md:col-span-3 space-y-2">
           <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300">Navegación Rápida</h5>
           <ul class="text-xs text-slate-400 space-y-1.5 font-medium">
-            <li><a href="#final" class="hover:text-white transition">La Gran Final 2026</a></li>
+            <li class="hidden md:block"><a href="#final" class="hover:text-white transition">La Gran Final 2026</a></li>
             <li><a href="#mapa-proyectos" class="hover:text-white transition">Los 10 Equipos & Mapa</a></li>
             <li><a href="#ruta" class="hover:text-white transition">Ruta Formativa (6 Etapas)</a></li>
             <li><a href="#iniciativa" class="hover:text-white transition">¿Qué es el programa?</a></li>
@@ -2266,7 +2162,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Application Logic -->
-  <script src="app.js?v=20261107_1720"></script>
+  <script src="app.js?v=20261109_0945"></script>
 
 </body>
 </html>
