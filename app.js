@@ -124,7 +124,7 @@ const projects = [
     category: 'circular',
     categoryLabel: 'Economía Circular & Química Verde',
     icon: 'droplets',
-    image: null,
+    image: 'assets/foto-colegio-sagrada-familia.jpg',
     lat: -22.0947,
     lng: -70.2052,
     address: 'Avenida Arturo Prat, Tocopilla',
