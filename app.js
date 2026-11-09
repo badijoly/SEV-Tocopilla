@@ -7,19 +7,19 @@
 const projects = [
   {
     id: 'pablo-neruda',
-    title: 'Propuesta Sustentable Escolar',
+    title: 'Tercera Colación Saludable',
     school: 'Escuela Pablo Neruda',
     category: 'circular',
-    categoryLabel: 'En Preparación Activa',
-    icon: 'lightbulb',
-    image: null,
+    categoryLabel: 'Alimentación Saludable & Cero Residuos',
+    icon: 'apple',
+    image: 'assets/foto-escuela-pablo-neruda.jpg',
     lat: -22.0895,
     lng: -70.1948,
     address: 'Calle Carrera, Tocopilla',
-    shortDesc: 'Proyecto ecoemprendedor enfocado en soluciones sostenibles para el entorno de su comunidad educativa.',
-    fullDesc: 'Los estudiantes de la Escuela Pablo Neruda han participado activamente en los talleres de oratoria, resolución de problemas y formulación de proyectos, preparando su pitch final para la jornada en Usqai UCN.',
-    impact: 'Aporte de la comunidad escolar a la sustentabilidad y el cuidado ambiental de la comuna de Tocopilla.',
-    tags: ['En Preparación', 'Pitch Final', 'Tocopilla']
+    shortDesc: 'Campaña educativa que promueve la alimentación saludable aprovechando al máximo la "Tercera Colación" y enseñando recetas que eliminen la basura orgánica familiar.',
+    fullDesc: 'El proyecto genera una campaña educativa e informativa integral para crear conciencia sobre la alimentación saludable dentro de la escuela, aprovechando al máximo el beneficio de la "Tercera Colación" (merienda adicional diaria entregada por el Programa de Alimentación Escolar a los estudiantes). La iniciativa enseña recetas deliciosas y nutritivas preparadas con alimentos saludables, fomentando hábitos de consumo consciente y técnicas culinarias que, en el mediano plazo, permitan eliminar por completo la generación de basura orgánica en los hogares y familias del establecimiento.',
+    impact: 'Promoción de hábitos nutricionales saludables en la comunidad escolar, máximo aprovechamiento de los alimentos del programa educativo y reducción progresiva del desperdicio de residuos orgánicos en las familias de Tocopilla.',
+    tags: ['Tercera Colación', 'Alimentación Saludable', 'Cero Basura Orgánica', 'Recetas Nutritivas', 'ODS 2 & 12']
   },
   {
     id: 'lombrilab',
