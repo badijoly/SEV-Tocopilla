@@ -492,6 +492,30 @@ dialog#projectModal[open]::backdrop {
   }
 }
 
+/* 3.1 Lightbox Modal for Clean Image Viewer */
+dialog#lightboxModal {
+  border: none;
+  background: transparent !important;
+  padding: 0;
+  margin: auto;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  outline: none;
+}
+
+dialog#lightboxModal::backdrop {
+  background-color: rgba(0, 0, 0, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+#lightboxImg {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
 /* 4. Modern Typography & Color Enhancements */
 h1, h2, h3, h4, .font-heading {
   text-wrap: balance;

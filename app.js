@@ -746,9 +746,17 @@ function setupNavigation() {
   });
 
   document.addEventListener('keydown', (e) => {
+    const lightbox = document.getElementById('lightboxModal');
+    const isLightboxOpen = lightbox && (lightbox.hasAttribute('open') || !lightbox.classList.contains('hidden'));
+
     if (e.key === 'Escape') {
       toggleDropdown(false);
       closeProjectModal();
+      closeLightbox();
+    } else if (isLightboxOpen && e.key === 'ArrowRight') {
+      nextLightbox();
+    } else if (isLightboxOpen && e.key === 'ArrowLeft') {
+      prevLightbox();
     }
   });
 }
@@ -1140,6 +1148,94 @@ function initFinal2026Gallery() {
   });
 
   renderGallery();
+}
+
+// 13. Visor Lightbox Limpio para la sección "Speakers en acción"
+const speakersEnAccionPhotos = [
+  'assets/galeria-final-web/accion-01.jpg',
+  'assets/galeria-final-web/accion-02.jpg',
+  'assets/galeria-final-web/accion-03.jpg',
+  'assets/galeria-final-web/accion-04.jpg',
+  'assets/galeria-final-web/accion-05.jpg',
+  'assets/galeria-final-web/accion-06.jpg',
+  'assets/galeria-final-web/accion-07.jpg',
+  'assets/galeria-final-web/accion-08.jpg',
+  'assets/galeria-final-web/accion-09.jpg',
+  'assets/galeria-final-web/accion-10.jpg',
+  'assets/galeria-final-web/accion-11.jpg',
+  'assets/galeria-final-web/accion-12.jpg',
+  'assets/galeria-final-web/accion-13.jpg',
+  'assets/galeria-final-web/accion-14.jpg',
+  'assets/galeria-final-web/accion-15.jpg'
+];
+
+let currentLightboxIndex = 0;
+
+function openLightbox(index) {
+  currentLightboxIndex = index;
+  const dialog = document.getElementById('lightboxModal');
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  const originalLink = document.getElementById('lightboxOriginalLink');
+  if (!dialog || !img) return;
+
+  const currentSrc = speakersEnAccionPhotos[currentLightboxIndex];
+  img.src = currentSrc;
+  if (counter) counter.textContent = `${currentLightboxIndex + 1} / ${speakersEnAccionPhotos.length}`;
+  if (originalLink) originalLink.href = currentSrc;
+
+  if (typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  } else {
+    dialog.setAttribute('open', '');
+    dialog.classList.remove('hidden');
+  }
+
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+}
+
+function updateLightboxImage() {
+  const img = document.getElementById('lightboxImg');
+  const counter = document.getElementById('lightboxCounter');
+  const originalLink = document.getElementById('lightboxOriginalLink');
+  if (!img) return;
+
+  img.style.opacity = '0.35';
+  img.style.transform = 'scale(0.98)';
+  setTimeout(() => {
+    const currentSrc = speakersEnAccionPhotos[currentLightboxIndex];
+    img.src = currentSrc;
+    img.style.opacity = '1';
+    img.style.transform = 'scale(1)';
+    if (counter) counter.textContent = `${currentLightboxIndex + 1} / ${speakersEnAccionPhotos.length}`;
+    if (originalLink) originalLink.href = currentSrc;
+  }, 90);
+}
+
+function nextLightbox(e) {
+  if (e) e.stopPropagation();
+  currentLightboxIndex = (currentLightboxIndex + 1) % speakersEnAccionPhotos.length;
+  updateLightboxImage();
+}
+
+function prevLightbox(e) {
+  if (e) e.stopPropagation();
+  currentLightboxIndex = (currentLightboxIndex - 1 + speakersEnAccionPhotos.length) % speakersEnAccionPhotos.length;
+  updateLightboxImage();
+}
+
+function closeLightbox() {
+  const dialog = document.getElementById('lightboxModal');
+  if (dialog) {
+    if (typeof dialog.close === 'function') {
+      dialog.close();
+    } else {
+      dialog.removeAttribute('open');
+      dialog.classList.add('hidden');
+    }
+  }
 }
 
 // Initialize on DOM Loaded
