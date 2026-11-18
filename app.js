@@ -617,13 +617,15 @@ function openPhotoModal(imgSrc, title, caption) {
   if (!modal) return;
 
   if (modalBadges) {
-    modalBadges.innerHTML = `<span class="px-3 py-1 rounded-full text-xs font-bold bg-pink-100 text-sev-magenta">Fotografía Oficial • Archivo Histórico</span>`;
+    modalBadges.innerHTML = title === 'Speakers en acción'
+      ? `<span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-sev-greenDark">Gran Final 2026 • Instantánea en Escenario</span>`
+      : `<span class="px-3 py-1 rounded-full text-xs font-bold bg-pink-100 text-sev-magenta">Fotografía Oficial • Archivo Histórico</span>`;
   }
   if (modalTitle) {
-    modalTitle.textContent = title || 'Comunidad Escolar en el Gran Cierre 2025';
+    modalTitle.textContent = title || 'Comunidad Escolar en la Gran Final 2026';
   }
   if (modalSchool) {
-    modalSchool.innerHTML = `<span class="text-xs font-bold text-slate-500 uppercase">Teatro de Tocopilla • Speakers en Verde</span>`;
+    modalSchool.innerHTML = `<span class="text-xs font-bold text-slate-500 uppercase">USQAI Universidad Católica del Norte • Speakers en Verde</span>`;
   }
   
   if (modalHeaderImg) {
@@ -633,7 +635,7 @@ function openPhotoModal(imgSrc, title, caption) {
 
   if (modalBody) {
     modalBody.innerHTML = `
-      <p class="text-sm leading-relaxed text-slate-700">${caption || 'Fotografía oficial que congrega a estudiantes, docentes guías, jurados y organizadores en la culminación del programa Speakers en Verde en Tocopilla.'}</p>
+      <p class="text-sm leading-relaxed text-slate-700">${caption || 'Instantánea en escenario que retrata el compromiso, oratoria y talento de las delegaciones escolares tocopillanas durante la Gran Final 2026.'}</p>
       <div class="pt-2">
         <a href="${imgSrc}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-sev-purple hover:underline">
           <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
@@ -644,7 +646,7 @@ function openPhotoModal(imgSrc, title, caption) {
   }
 
   if (modalImpact) {
-    modalImpact.textContent = 'Registro patrimonial de participación escolar masiva y compromiso juvenil con el medio ambiente en Tocopilla.';
+    modalImpact.textContent = 'Registro oficial de participación escolar masiva y compromiso juvenil con el medio ambiente en Tocopilla.';
   }
 
   if (typeof modal.showModal === 'function') {
