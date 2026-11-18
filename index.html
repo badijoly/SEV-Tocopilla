@@ -50,9 +50,12 @@
     }
   </script>
   
-  <link rel="stylesheet" href="styles.css?v=20261111_1522">
+  <link rel="stylesheet" href="styles.css?v=20261118_fix">
 </head>
 <body class="bg-white text-slate-800 font-sans antialiased selection:bg-sev-green selection:text-white overflow-x-hidden">
+
+  <!-- MODERN SCROLL PROGRESS INDICATOR (Driven by CSS scroll() timeline) -->
+  <div id="scrollProgress" aria-hidden="true"></div>
 
   <!-- STICKY NAVBAR: Solo Logo, Texto y Menú Desplegable -->
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300 shadow-sm" id="mainHeader">
@@ -100,19 +103,22 @@
                 </div>
                 <div class="flex-1 min-w-0">
                   <p class="text-sm font-bold text-slate-800 group-hover:text-sev-purple">Inicio</p>
-                  <p class="text-xs text-slate-600 truncate">Portada principal y convocatoria</p>
+                  <p class="text-xs text-slate-600 truncate">Portada principal y resumen</p>
                 </div>
               </a>
 
-              <a href="#final" class="hidden md:flex section-menu-link items-center gap-3 px-3 py-2 rounded-xl bg-purple-50/60 hover:bg-purple-50 transition group">
+              <a href="#final" class="flex section-menu-link items-center gap-3 px-3 py-2 rounded-xl bg-purple-50/70 hover:bg-purple-100 transition group border border-purple-200/60">
                 <div class="w-8 h-8 rounded-lg bg-sev-purple text-white flex items-center justify-center shadow-sm shrink-0">
                   <i data-lucide="trophy" class="w-4 h-4 text-sev-yellow"></i>
                 </div>
                 <div class="flex-1 min-w-0">
                   <div class="flex items-center gap-2">
-                    <p class="text-sm font-black text-sev-purple">1. La gran final 2026</p>
-                    <span class="text-[10px] font-extrabold bg-sev-purple text-white px-1.5 py-0.2 rounded-full">13 Nov</span>
+                    <p class="text-sm font-black text-sev-purple">1. Gran Final & Pitches Destacados</p>
+                    <span class="text-[10px] font-extrabold bg-amber-500 text-slate-950 px-1.5 py-0.2 rounded-full">🏆 Ganadores</span>
                   </div>
+                  <p class="text-xs text-slate-600 truncate">Pitches destacados, galería oficial y crónica</p>
+                </div>
+              </a>
                   <p class="text-xs text-slate-600 truncate">Salón USQAI UCN y cronograma</p>
                 </div>
               </a>
@@ -215,9 +221,9 @@
         <!-- Left: Narrative Introduction -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sev-purple/10 text-sev-purple text-xs sm:text-sm font-extrabold uppercase tracking-wider border border-sev-purple/20">
-            <span class="w-2 h-2 rounded-full bg-sev-purple animate-ping"></span>
-            <span>Gran final comunal Tocopilla • 13 de noviembre en USQAI UCN</span>
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-sev-purple text-xs sm:text-sm font-extrabold uppercase tracking-wider border border-purple-200">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+            <span>¡Gran final comunal realizada! • 3 Pitches Destacados reconocidos</span>
           </div>
 
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-display tracking-tight text-slate-900 leading-[1.1]">
@@ -226,13 +232,13 @@
           </h1>
 
           <p class="text-lg sm:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
-            <strong>10 equipos finalistas</strong> de 9 establecimientos educativos y una delegación de más de <strong>80 personas</strong> viajan a Antofagasta para defender sus soluciones sustentables en la <strong>Gran final 2026</strong>.
+            <strong>10 equipos finalistas</strong> de 9 establecimientos educativos y una delegación de más de <strong>80 personas</strong> viajaron a Antofagasta para defender sus soluciones sustentables en la <strong>Gran final 2026</strong> en USQAI UCN.
           </p>
 
           <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#final" class="hidden md:inline-flex px-7 py-3.5 rounded-2xl bg-sev-purple hover:bg-sev-purpleLight text-white font-extrabold text-sm sm:text-base shadow-lg shadow-purple-900/20 transition items-center gap-2">
+            <a href="#final" class="inline-flex px-7 py-3.5 rounded-2xl bg-sev-purple hover:bg-sev-purpleLight text-white font-extrabold text-sm sm:text-base shadow-lg shadow-purple-900/20 transition items-center gap-2">
               <i data-lucide="trophy" class="w-4 h-4 text-sev-yellow"></i>
-              <span>Ver programa de la final</span>
+              <span>Ver ganadores y fotos de la final</span>
               <i data-lucide="arrow-down" class="w-4 h-4"></i>
             </a>
 
@@ -249,17 +255,17 @@
 
           <!-- Quick badges -->
           <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs font-bold text-slate-500">
-            <div class="flex items-center gap-1.5">
-              <i data-lucide="calendar" class="w-4 h-4 text-sev-purple"></i>
-              <span>Viernes 13 de noviembre</span>
+            <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200">
+              <i data-lucide="award" class="w-4 h-4 text-amber-500"></i>
+              <span>3 Pitches Destacados Reconocidos</span>
             </div>
             <div class="flex items-center gap-1.5">
               <i data-lucide="map-pin" class="w-4 h-4 text-sev-green"></i>
               <span>Sede USQAI UCN (Antofagasta)</span>
             </div>
             <div class="flex items-center gap-1.5">
-              <i data-lucide="mic" class="w-4 h-4 text-sev-magenta"></i>
-              <span>Ronda de pitch: 5 minutos</span>
+              <i data-lucide="users" class="w-4 h-4 text-sev-magenta"></i>
+              <span>Delegación comunal de +80 personas</span>
             </div>
           </div>
 
@@ -298,48 +304,265 @@
     </div>
   </section>
 
-  <!-- 2. LA GRAN FINAL TOCOPILLA 2026 (EL HITO CENTRAL ACTUAL - Oculta en móviles, visible en desktop) -->
-  <section id="final" class="hidden md:block relative overflow-hidden py-20 md:py-28 bg-slate-50 border-t border-slate-200">
+  <!-- 2. LA GRAN FINAL TOCOPILLA 2026: RESULTADOS, PODIO DE HONOR & GALERÍA OFICIAL -->
+  <section id="final" class="relative overflow-hidden py-20 md:py-28 bg-slate-50 border-t border-slate-200">
     
-    <!-- Elemento Decorativo Integrado al Fondo: Ganador Mejor Pitch Tocopilla -->
+    <!-- Elemento Decorativo Integrado al Fondo -->
     <div class="deco-ambient-speaker -bottom-6 -right-6 lg:right-6" aria-hidden="true">
       <img src="assets/deco-speaker-trofeo.png" alt="" class="max-h-[290px] lg:max-h-[350px] w-auto object-contain">
     </div>
 
-    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
       
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        
-        <!-- Left: Summary & Sede -->
-        <div class="lg:col-span-5 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100 text-sev-purple text-xs font-bold uppercase tracking-wider">
-            <i data-lucide="trophy" class="w-3.5 h-3.5 text-sev-yellow"></i>
-            <span>Viernes 13 de noviembre • La cumbre del programa</span>
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-4 scroll-reveal">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-sev-purple text-xs sm:text-sm font-extrabold uppercase tracking-wider border border-purple-200">
+          <i data-lucide="trophy" class="w-4 h-4 text-amber-500 fill-amber-500"></i>
+          <span>Gran Final Concluida • Sede USQAI Universidad Católica del Norte</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-slate-900 leading-tight">
+          Resultados Oficiales & <br class="hidden sm:inline">
+          <span class="text-gradient-sev">Podio de Honor 2026</span>
+        </h2>
+        <p class="text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
+          Felicitamos a las <strong>9 escuelas</strong>, sus <strong>10 equipos</strong> y la delegación de más de <strong>80 personas</strong> que viajaron desde Tocopilla a Antofagasta. Tras una emocionante jornada de defensas orales, el jurado evaluador reconoció a los <strong>tres pitches más sobresalientes</strong> del certamen.
+        </p>
+      </div>
+
+      <!-- PODIO DE HONOR: 3 PITCHES DESTACADOS 2026 -->
+      <div class="space-y-6">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+          <div class="flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black shadow-sm">
+              <i data-lucide="award" class="w-5 h-5"></i>
+            </span>
+            <div>
+              <h3 class="text-xl sm:text-2xl font-black font-display text-slate-900">Pitches Destacados Tocopilla 2026</h3>
+              <p class="text-xs text-slate-500 font-medium">Reconocidos por su despliegue oratorio, solidez conceptual e impacto comunitario</p>
+            </div>
+          </div>
+          <span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-xs font-bold">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i>
+            <span>3 Iniciativas Reconocidas</span>
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- GANADOR 1: ESCUELA PABLO NERUDA -->
+          <div class="card-winner-podium p-6 flex flex-col justify-between space-y-4 group scroll-reveal">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <span class="badge-gold-podium px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="trophy" class="w-3.5 h-3.5 fill-current"></i>
+                  <span>Pitch Destacado</span>
+                </span>
+                <span class="badge-circular text-[11px] font-extrabold px-2.5 py-0.5 rounded-full uppercase">
+                  Alimentación
+                </span>
+              </div>
+
+              <div class="relative w-full h-48 rounded-2xl overflow-hidden bg-slate-900 shadow-md">
+                <img src="assets/foto-escuela-pablo-neruda.jpg" alt="Escuela Pablo Neruda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3 text-white">
+                  <span class="text-[10px] font-black uppercase tracking-wider text-amber-300">Escuela Pablo Neruda</span>
+                  <h4 class="text-lg font-black font-display leading-tight">Tercera Colación Saludable</h4>
+                </div>
+              </div>
+
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                Campaña integral que aprovecha al máximo la <strong>Tercera Colación</strong> diaria y enseña recetas nutritivas para <strong>erradicar la basura orgánica</strong> en los hogares tocopillanos.
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-amber-200/60 flex items-center gap-2">
+              <button onclick="flyToSchool('pablo-neruda')" class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition" title="Ver en el mapa">
+                <i data-lucide="map-pin" class="w-4 h-4 text-sev-purple"></i>
+              </button>
+              <button onclick="openProjectModal('pablo-neruda')" class="flex-1 py-2.5 px-4 rounded-xl text-xs font-black bg-sev-purple hover:bg-sev-purpleLight text-white transition flex items-center justify-center gap-1.5 shadow-sm">
+                <span>Ver Proyecto y Fotos</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
           </div>
 
-          <h2 class="text-3xl sm:text-4xl font-black font-display tracking-tight text-slate-900 leading-tight">
-            Programa oficial de la <br>
-            <span class="text-gradient-sev">Gran final 2026</span>
-          </h2>
+          <!-- GANADOR 2: ESCUELA REPÚBLICA DE LOS ESTADOS UNIDOS -->
+          <div class="card-winner-podium p-6 flex flex-col justify-between space-y-4 group scroll-reveal">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <span class="badge-gold-podium px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="trophy" class="w-3.5 h-3.5 fill-current"></i>
+                  <span>Pitch Destacado</span>
+                </span>
+                <span class="badge-circular text-[11px] font-extrabold px-2.5 py-0.5 rounded-full uppercase">
+                  Economía Circular
+                </span>
+              </div>
 
-          <p class="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-            Una jornada completa pensada para empoderar a los estudiantes tocopillanos, fomentar la camaradería regional y culminar con la ronda de presentaciones ante el jurado calificador e invitados especiales en la Universidad Católica del Norte.
-          </p>
+              <div class="relative w-full h-48 rounded-2xl overflow-hidden bg-slate-900 shadow-md">
+                <img src="assets/foto-escuela-estados-unidos.jpg" alt="Escuela Estados Unidos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3 text-white">
+                  <span class="text-[10px] font-black uppercase tracking-wider text-amber-300">Esc. Rep. Estados Unidos</span>
+                  <h4 class="text-lg font-black font-display leading-tight">LombriLab</h4>
+                </div>
+              </div>
 
-          <!-- Climax Highlight Card -->
-          <div class="p-6 rounded-2xl bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-sev-green shadow-sm space-y-2">
-            <div class="flex items-center gap-2 text-sev-greenDark font-extrabold text-xs uppercase tracking-wider">
-              <i data-lucide="zap" class="w-4 h-4 text-amber-500 fill-amber-500"></i>
-              <span>HITO CENTRAL • 14:20 HRS</span>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                Transformación de materia orgánica escolar mediante <strong>lombricultura</strong> en humus y biofertilizante natural de alta calidad para regenerar suelos desérticos e impulsar huertos.
+              </p>
             </div>
-            <h3 class="text-lg font-black text-slate-900">Inicio de la ronda de pitch</h3>
-            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
-              Cada uno de los 10 equipos escolares dispondrá de <strong>5 minutos</strong> para defender su solución frente al jurado evaluador, respondiendo preguntas y demostrando su despliegue oratorio.
+
+            <div class="pt-3 border-t border-amber-200/60 flex items-center gap-2">
+              <button onclick="flyToSchool('lombrilab')" class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition" title="Ver en el mapa">
+                <i data-lucide="map-pin" class="w-4 h-4 text-sev-purple"></i>
+              </button>
+              <button onclick="openProjectModal('lombrilab')" class="flex-1 py-2.5 px-4 rounded-xl text-xs font-black bg-sev-purple hover:bg-sev-purpleLight text-white transition flex items-center justify-center gap-1.5 shadow-sm">
+                <span>Ver Proyecto y Fotos</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- GANADOR 3: ESCUELA BERNARDO O´HIGGINS -->
+          <div class="card-winner-podium p-6 flex flex-col justify-between space-y-4 group scroll-reveal">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <span class="badge-gold-podium px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="trophy" class="w-3.5 h-3.5 fill-current"></i>
+                  <span>Pitch Destacado</span>
+                </span>
+                <span class="badge-circular text-[11px] font-extrabold px-2.5 py-0.5 rounded-full uppercase">
+                  ABP & Reciclaje
+                </span>
+              </div>
+
+              <div class="relative w-full h-48 rounded-2xl overflow-hidden bg-slate-900 shadow-md">
+                <img src="assets/foto-escuela-bernardo-ohiggins.jpg" alt="Escuela Bernardo O'Higgins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3 text-white">
+                  <span class="text-[10px] font-black uppercase tracking-wider text-amber-300">Escuela Bernardo O´Higgins</span>
+                  <h4 class="text-lg font-black font-display leading-tight">EcoPuntos Escolares</h4>
+                </div>
+              </div>
+
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                Metodología ABP en 6° básico que <strong>reutiliza contenedores en desuso de SQM</strong> para fabricar modernos puntos limpios inclusivos en escuelas y barrios de Tocopilla.
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-amber-200/60 flex items-center gap-2">
+              <button onclick="flyToSchool('ecopuntos')" class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition" title="Ver en el mapa">
+                <i data-lucide="map-pin" class="w-4 h-4 text-sev-purple"></i>
+              </button>
+              <button onclick="openProjectModal('ecopuntos')" class="flex-1 py-2.5 px-4 rounded-xl text-xs font-black bg-sev-purple hover:bg-sev-purpleLight text-white transition flex items-center justify-center gap-1.5 shadow-sm">
+                <span>Ver Proyecto y Fotos</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- GALERÍA FOTOGRÁFICA OFICIAL DE LA FINAL (USQAI UCN) -->
+      <div class="space-y-6 pt-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-4">
+          <div class="space-y-1">
+            <div class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-sev-magenta">
+              <i data-lucide="camera" class="w-4 h-4"></i>
+              <span>Registro Visual Oficial • USQAI UCN</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-black font-display text-slate-900">
+              Galería Fotográfica de la Gran Final
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 font-medium max-w-2xl">
+              Revive los hitos de la jornada en Antofagasta: la llegada de la delegación, los talleres previos, la ronda de pitches ante el jurado y la emocionante premiación.
             </p>
           </div>
 
+          <!-- Filtros de la Galería -->
+          <div class="flex flex-wrap items-center gap-1.5">
+            <button class="gallery-filter-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-sev-purple text-white transition" data-tag="all">
+              Todas (37)
+            </button>
+            <button class="gallery-filter-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition" data-tag="Pitches">
+              Pitches
+            </button>
+            <button class="gallery-filter-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition" data-tag="Talleres">
+              Talleres
+            </button>
+            <button class="gallery-filter-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition" data-tag="Delegación">
+              Delegación
+            </button>
+            <button class="gallery-filter-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition" data-tag="Premiación">
+              Premiación
+            </button>
+          </div>
+        </div>
+
+        <!-- Grid de Fotografías -->
+        <div id="finalGalleryGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <!-- Renderizado dinámicamente por app.js -->
+        </div>
+
+        <!-- Botón Ver Todas las Fotos -->
+        <div class="text-center pt-2">
+          <button id="toggleAllPhotosBtn" 
+                  class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-white border-2 border-slate-300 hover:border-sev-purple text-slate-800 font-black text-xs sm:text-sm shadow-sm hover:shadow transition">
+            <i data-lucide="grid" class="w-4 h-4 text-amber-500"></i>
+            <span>Ver todas las fotografías de la jornada (37 fotos)</span>
+            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- Dropbox CTA Card (325 RAW / Original Photos) -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-purple-900 via-indigo-950 to-slate-900 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-2 text-center md:text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-extrabold uppercase tracking-wider border border-white/10">
+              <i data-lucide="folder-archive" class="w-3.5 h-3.5"></i>
+              <span>Archivo Fotográfico Completo en Alta Resolución</span>
+            </div>
+            <h4 class="text-xl sm:text-2xl font-black font-display text-white">
+              ¿Deseas descargar el registro en resolución original?
+            </h4>
+            <p class="text-xs sm:text-sm text-purple-200 max-w-2xl font-medium leading-relaxed">
+              Ponemos a disposición de las comunidades escolares, familias y medios de comunicación la <strong>carpeta completa con las 325 fotografías originales de alta definición</strong> tomadas durante la Gran Final 2026.
+            </p>
+          </div>
+
+          <a href="https://www.dropbox.com/scl/fo/fru5uyqwqkqr95wxqiqg2/AH2w4mHMNRsdrcMI3VdUTHo?rlkey=vm8o22213q3in6lo72cnlf5sp&st=28qc0q31&dl=0" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="px-6 py-3.5 rounded-2xl bg-sev-green hover:bg-sev-greenDark text-white font-black text-sm whitespace-nowrap shadow-lg shadow-emerald-900/40 transition flex items-center gap-2 shrink-0">
+            <span>Abrir carpeta oficial en Dropbox</span>
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- CRÓNICA & CRONOGRAMA OFICIAL DE LA JORNADA -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pt-6 border-t border-slate-200">
+        
+        <!-- Left: Sede & Contexto -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100 text-sev-purple text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="clock" class="w-3.5 h-3.5 text-sev-purple"></i>
+            <span>Crónica de la Jornada • 13 de Noviembre</span>
+          </div>
+
+          <h3 class="text-2xl sm:text-3xl font-black font-display tracking-tight text-slate-900 leading-tight">
+            Así se vivió la jornada en <br>
+            <span class="text-gradient-sev">USQAI UCN</span>
+          </h3>
+
+          <p class="text-slate-600 text-sm leading-relaxed font-medium">
+            Una jornada completa pensada para empoderar a los estudiantes tocopillanos, fomentar la camaradería regional y culminar con la ronda de presentaciones ante el jurado calificador e invitados especiales en la Universidad Católica del Norte.
+          </p>
+
           <!-- Sede Info Card -->
-          <div class="p-6 rounded-2xl bg-white border border-slate-200 space-y-3">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 space-y-3 shadow-sm">
             <div class="flex items-center gap-3">
               <img src="assets/logo-usqai.jpg" alt="Logo USQAI" class="h-10 w-auto rounded border border-slate-200">
               <div>
@@ -348,149 +571,81 @@
               </div>
             </div>
             <p class="text-xs text-slate-600 leading-relaxed font-medium">
-              Centro de Emprendimiento e Innovación UCN, Av. Angamos 0610, Antofagasta. Un espacio universitario de vanguardia que recibirá a la delegación de más de 80 personas que viajarán desde Tocopilla.
+              Centro de Emprendimiento e Innovación UCN, Av. Angamos 0610, Antofagasta. Un espacio universitario de vanguardia que recibió a la delegación de más de 80 personas que viajaron desde Tocopilla.
             </p>
           </div>
-
         </div>
 
-        <!-- Right: Official Timeline of the Final Day (Exact from Official Program) -->
+        <!-- Right: Official Timeline of the Day -->
         <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
           <div class="flex items-center justify-between border-b border-slate-200 pb-4">
             <div>
-              <h3 class="text-xl font-bold font-display text-slate-900">Programa jornada final</h3>
-              <p class="text-xs text-slate-500 font-medium mt-0.5">Cronograma oficial en USQAI Universidad Católica del Norte</p>
+              <h4 class="text-xl font-bold font-display text-slate-900">Cronograma oficial ejecutado</h4>
+              <p class="text-xs text-slate-500 font-medium mt-0.5">Desarrollo de las actividades en el auditorio USQAI</p>
             </div>
             <span class="px-3 py-1 rounded-full bg-purple-100 text-sev-purple text-xs font-black">13 de noviembre</span>
           </div>
 
           <div class="space-y-3 text-left">
-            
-            <!-- 10:30 - 10:50 -->
             <div class="flex items-center gap-4 p-3 rounded-2xl hover:bg-slate-50 transition border border-slate-100">
-              <div class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-800 font-extrabold text-xs shrink-0 whitespace-nowrap">
-                10:30 - 10:50 HRS.
-              </div>
-              <div class="flex-1 min-w-0">
-                <h4 class="text-sm font-bold text-slate-900">Recepción y entrega de colaciones</h4>
-              </div>
+              <div class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-800 font-extrabold text-xs shrink-0 whitespace-nowrap">10:30 - 10:50 HRS.</div>
+              <div class="flex-1 min-w-0"><h5 class="text-sm font-bold text-slate-900">Recepción y acreditación de delegaciones</h5></div>
             </div>
 
-            <!-- 10:50 - 11:00 -->
             <div class="flex items-center gap-4 p-3 rounded-2xl bg-pink-50/50 border border-pink-100">
-              <div class="px-3 py-1.5 rounded-xl bg-pink-100 text-sev-magenta font-extrabold text-xs shrink-0 whitespace-nowrap">
-                10:50 - 11:00 HRS.
-              </div>
-              <div class="flex-1 min-w-0">
-                <h4 class="text-sm font-bold text-sev-magenta">Palabras de bienvenida</h4>
-              </div>
+              <div class="px-3 py-1.5 rounded-xl bg-pink-100 text-sev-magenta font-extrabold text-xs shrink-0 whitespace-nowrap">10:50 - 11:00 HRS.</div>
+              <div class="flex-1 min-w-0"><h5 class="text-sm font-bold text-sev-magenta">Palabras de bienvenida institucional</h5></div>
             </div>
 
-            <!-- 11:00 - 12:30 -->
             <div class="flex items-center gap-4 p-3.5 rounded-2xl bg-purple-50/60 border border-purple-200">
-              <div class="px-3 py-1.5 rounded-xl bg-sev-purple text-white font-extrabold text-xs shrink-0 whitespace-nowrap shadow-sm">
-                11:00 - 12:30 HRS.
-              </div>
-              <div class="flex-1 min-w-0">
-                <h4 class="text-sm font-black text-slate-900">Dinámica de trabajo "Soy Speaker"</h4>
-              </div>
+              <div class="px-3 py-1.5 rounded-xl bg-sev-purple text-white font-extrabold text-xs shrink-0 whitespace-nowrap shadow-sm">11:00 - 12:30 HRS.</div>
+              <div class="flex-1 min-w-0"><h5 class="text-sm font-black text-slate-900">Dinámica formativa "Soy Speaker"</h5></div>
             </div>
 
-            <!-- 12:30 - 13:45 -->
             <div class="flex items-center gap-4 p-3 rounded-2xl bg-pink-50/50 border border-pink-100">
-              <div class="px-3 py-1.5 rounded-xl bg-pink-100 text-sev-magenta font-extrabold text-xs shrink-0 whitespace-nowrap">
-                12:30 - 13:45 HRS.
-              </div>
-              <div class="flex-1 min-w-0">
-                <h4 class="text-sm font-bold text-sev-magenta">Almuerzo</h4>
-              </div>
+              <div class="px-3 py-1.5 rounded-xl bg-pink-100 text-sev-magenta font-extrabold text-xs shrink-0 whitespace-nowrap">12:30 - 13:45 HRS.</div>
+              <div class="flex-1 min-w-0"><h5 class="text-sm font-bold text-sev-magenta">Almuerzo de camaradería</h5></div>
             </div>
 
-            <!-- 13:45 - 14:00 -->
-            <div class="flex items-center gap-4 p-3 rounded-2xl hover:bg-slate-50 transition border border-slate-100">
-              <div class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-800 font-extrabold text-xs shrink-0 whitespace-nowrap">
-                13:45 - 14:00 HRS.
-              </div>
-              <div class="flex-1 min-w-0">
-                <h4 class="text-sm font-bold text-slate-900">Regreso a la zona de trabajo</h4>
-              </div>
-            </div>
-
-            <!-- 14:00 - 14:20 -->
             <div class="flex items-center gap-4 p-3 rounded-2xl bg-pink-50/50 border border-pink-100">
-              <div class="px-3 py-1.5 rounded-xl bg-pink-100 text-sev-magenta font-extrabold text-xs shrink-0 whitespace-nowrap">
-                14:00 - 14:20 HRS.
-              </div>
-              <div class="flex-1 min-w-0">
-                <h4 class="text-sm font-bold text-sev-magenta">Activación previa al pitch</h4>
-              </div>
+              <div class="px-3 py-1.5 rounded-xl bg-pink-100 text-sev-magenta font-extrabold text-xs shrink-0 whitespace-nowrap">14:00 - 14:20 HRS.</div>
+              <div class="flex-1 min-w-0"><h5 class="text-sm font-bold text-sev-magenta">Activación previa y ensayos de pitch</h5></div>
             </div>
 
-            <!-- 14:20 - 15:50 (HITO CENTRAL PITCH) -->
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-gradient-to-r from-purple-100/90 to-emerald-50 border-2 border-sev-purple shadow-sm">
               <div class="flex items-center gap-3">
-                <div class="px-3 py-1.5 rounded-xl bg-sev-purple text-white font-extrabold text-xs shrink-0 whitespace-nowrap shadow-sm">
-                  14:20 - 15:50 HRS.
-                </div>
-                <div>
-                  <h4 class="text-base font-black text-slate-900">
-                    Presentación de pitch
-                  </h4>
-                </div>
+                <div class="px-3 py-1.5 rounded-xl bg-sev-purple text-white font-extrabold text-xs shrink-0 whitespace-nowrap shadow-sm">14:20 - 15:50 HRS.</div>
+                <div><h5 class="text-base font-black text-slate-900">Ronda de Pitches de los 10 Equipos</h5></div>
               </div>
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sev-greenDark text-white text-xs font-bold whitespace-nowrap shadow-sm self-start sm:self-auto">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sev-greenDark text-white text-xs font-bold whitespace-nowrap shadow-sm">
                 <i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-300"></i>
-                <span>5 minutos por equipo</span>
+                <span>5 min por equipo</span>
               </span>
             </div>
 
-            <!-- 15:50 - 16:00 -->
-            <div class="flex items-center gap-4 p-3 rounded-2xl bg-pink-50/50 border border-pink-100">
-              <div class="px-3 py-1.5 rounded-xl bg-pink-100 text-sev-magenta font-extrabold text-xs shrink-0 whitespace-nowrap">
-                15:50 - 16:00 HRS.
-              </div>
+            <div class="flex items-center gap-4 p-3.5 rounded-2xl bg-gradient-to-r from-emerald-100/90 to-teal-50 border-2 border-sev-green shadow-sm">
+              <div class="px-3 py-1.5 rounded-xl bg-sev-green text-white font-extrabold text-xs shrink-0 whitespace-nowrap shadow-sm">16:00 - 16:30 HRS.</div>
               <div class="flex-1 min-w-0">
-                <h4 class="text-sm font-bold text-sev-magenta">Descanso y deliberación del jurado</h4>
-              </div>
-            </div>
-
-            <!-- 16:00 - 16:30 -->
-            <div class="flex items-center gap-4 p-3.5 rounded-2xl bg-gradient-to-r from-emerald-100/90 to-teal-50 border-2 border-sev-green">
-              <div class="px-3 py-1.5 rounded-xl bg-sev-green text-white font-extrabold text-xs shrink-0 whitespace-nowrap shadow-sm">
-                16:00 - 16:30 HRS.
-              </div>
-              <div class="flex-1 min-w-0">
-                <h4 class="text-sm font-black text-slate-900 flex items-center gap-2">
-                  <span>Premiación y palabras finales</span>
+                <h5 class="text-sm font-black text-slate-900 flex items-center gap-2">
+                  <span>Ceremonia de Premiación y Reconocimiento</span>
                   <i data-lucide="award" class="w-4 h-4 text-sev-greenDark"></i>
-                </h4>
+                </h5>
               </div>
             </div>
-
-            <!-- 16:30 -->
-            <div class="flex items-center gap-4 p-3 rounded-2xl bg-pink-50/50 border border-pink-100">
-              <div class="px-3 py-1.5 rounded-xl bg-pink-100 text-sev-magenta font-extrabold text-xs shrink-0 whitespace-nowrap">
-                16:30 HRS.
-              </div>
-              <div class="flex-1 min-w-0">
-                <h4 class="text-sm font-bold text-sev-magenta">Cierre</h4>
-              </div>
-            </div>
-
           </div>
 
-          <!-- Pie del Programa: Roles Institucionales del Flyer Oficial -->
+          <!-- Pie del Programa -->
           <div class="pt-4 border-t border-slate-100 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-[11px] font-medium text-slate-500">
             <div>
-              <span class="block text-[10px] uppercase font-bold text-slate-400">Proyecto apoyado por</span>
+              <span class="block text-[10px] uppercase font-bold text-slate-400">Impulsa</span>
               <span class="font-bold text-slate-800">SQM</span>
             </div>
             <div>
-              <span class="block text-[10px] uppercase font-bold text-slate-400">Ejecutado por</span>
+              <span class="block text-[10px] uppercase font-bold text-slate-400">Ejecuta</span>
               <span class="font-bold text-slate-800">Fundación En Verde</span>
             </div>
             <div>
-              <span class="block text-[10px] uppercase font-bold text-slate-400">Diseñado por</span>
+              <span class="block text-[10px] uppercase font-bold text-slate-400">Diseña</span>
               <span class="font-bold text-slate-800">Verdical</span>
             </div>
             <div>
@@ -498,7 +653,6 @@
               <span class="font-bold text-slate-800">USQAI UCN</span>
             </div>
           </div>
-
         </div>
 
       </div>
@@ -2235,12 +2389,12 @@
     </div>
   </footer>
 
-  <!-- PROJECT DETAIL MODAL DIALOG (With Header Photo) -->
-  <div id="projectModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
-    <div class="relative w-full max-w-2xl bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden overflow-y-auto max-h-[92vh] animate-modal flex flex-col">
+  <!-- NATIVE MODAL DIALOG (Modern Web Guidance compliant with closedby="any" and animate-to-from-top-layer) -->
+  <dialog id="projectModal" closedby="any" aria-labelledby="modalTitle" class="w-full max-w-2xl bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden p-0">
+    <div class="relative w-full max-h-[92vh] overflow-y-auto flex flex-col bg-white">
       
       <!-- Close Button with Glassmorphism floating on top-right -->
-      <button onclick="closeProjectModal()" class="absolute top-4 right-4 z-30 p-2.5 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white backdrop-blur-md transition shadow-lg">
+      <button type="button" onclick="closeProjectModal()" aria-label="Cerrar ventana" class="absolute top-4 right-4 z-30 p-2.5 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white backdrop-blur-md transition shadow-lg">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
@@ -2265,14 +2419,14 @@
         </div>
 
         <div class="pt-2 flex justify-end">
-          <button onclick="closeProjectModal()" class="px-6 py-2.5 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition">
+          <button type="button" onclick="closeProjectModal()" class="px-6 py-2.5 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition">
             Cerrar ficha
           </button>
         </div>
       </div>
 
     </div>
-  </div>
+  </dialog>
 
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -2281,7 +2435,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Application Logic -->
-  <script src="app.js?v=20261111_1522"></script>
+  <script src="app.js?v=20261118_fix"></script>
 
 </body>
 </html>

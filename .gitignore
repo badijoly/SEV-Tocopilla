@@ -1,0 +1,11 @@
+# Raw 3.5GB Camera Photos Archive (Keep original locally; public downloads via Dropbox)
+assets/fotos-final-2026/
+final_photos.zip
+
+# Temporary build scripts / caches
+build_gallery.ps1
+generate_review.js
+review_photos.html
+server.js
+.DS_Store
+Thumbs.db

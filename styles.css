@@ -363,3 +363,191 @@ h1, h2, h3, h4, .font-heading {
   }
 }
 
+/* ==========================================================================
+   Modern Web Guidance Enhancements (Scroll, Dialogs, Top Layer & Modern Layout)
+   ========================================================================== */
+
+/* 1. Modern Scroll Progress Indicator */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #10b981 0%, #db2777 50%, #7e22ce 100%);
+  transform-origin: 0 50%;
+  z-index: 100;
+  pointer-events: none;
+  transform: scaleX(0);
+}
+
+@supports (animation-timeline: scroll()) {
+  @keyframes grow-progress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+  #scrollProgress {
+    animation: grow-progress auto linear;
+    animation-timeline: scroll();
+  }
+}
+
+/* 2. Scroll-Driven Entry Effects */
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes scroll-reveal-up {
+      entry 0% {
+        opacity: 0;
+        transform: translateY(26px) scale(0.98);
+      }
+      entry 100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .scroll-reveal {
+      animation: scroll-reveal-up auto cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 60%;
+    }
+  }
+}
+
+/* Fallback for browsers without animation-timeline: view() */
+@supports not ((animation-timeline: view()) and (animation-range: entry)) {
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3. Native <dialog> Modal with Animate to/from Top Layer */
+dialog#projectModal {
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  padding: 0;
+  margin: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  max-width: min(44rem, calc(100vw - 1.5rem));
+  color: #1e293b;
+  outline: none;
+  opacity: 0;
+  transform: scale(0.94) translateY(12px);
+  transition-property: opacity, transform, display, overlay;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-behavior: allow-discrete;
+}
+
+dialog#projectModal:modal {
+  overscroll-behavior: contain;
+}
+
+dialog#projectModal[open] {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+
+  @starting-style {
+    opacity: 0;
+    transform: scale(0.94) translateY(12px);
+  }
+}
+
+dialog#projectModal::backdrop {
+  background-color: rgba(2, 6, 23, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  overflow: hidden;
+  overscroll-behavior: contain;
+  transition-property: background-color, backdrop-filter, display, overlay;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-behavior: allow-discrete;
+}
+
+dialog#projectModal[open]::backdrop {
+  background-color: rgba(2, 6, 23, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  @starting-style {
+    background-color: rgba(2, 6, 23, 0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  dialog#projectModal,
+  dialog#projectModal::backdrop {
+    transition-duration: 0.1s;
+    transform: none !important;
+  }
+}
+
+/* 4. Modern Typography & Color Enhancements */
+h1, h2, h3, h4, .font-heading {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* 5. Winner Project Cards (Podio de Honor 2026) */
+.card-winner-podium {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #fdfbf7 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 1.75rem;
+  box-shadow: 0 12px 30px -6px rgba(245, 158, 11, 0.22), 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-winner-podium:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -8px rgba(245, 158, 11, 0.32), 0 8px 16px rgba(0, 0, 0, 0.08);
+  border-color: #d97706;
+}
+
+.badge-gold-podium {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(217, 119, 6, 0.35);
+}
+
+/* 6. Gallery Grid Hover Zoom */
+.gallery-photo-card {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background-color: #0f172a;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.gallery-photo-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 28px -6px rgba(15, 23, 42, 0.25);
+}
+
+.gallery-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-photo-card:hover img {
+  transform: scale(1.08);
+}
+
+

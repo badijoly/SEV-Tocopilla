@@ -12,6 +12,8 @@ const projects = [
     category: 'circular',
     categoryLabel: 'Alimentación saludable y cero residuos',
     icon: 'apple',
+    isWinner: true,
+    winnerLabel: 'Pitch Destacado Gran Final 2026 🏆',
     image: 'assets/foto-escuela-pablo-neruda.jpg',
     lat: -22.0895,
     lng: -70.1948,
@@ -28,6 +30,8 @@ const projects = [
     category: 'circular',
     categoryLabel: 'Economía circular y suelos',
     icon: 'recycle',
+    isWinner: true,
+    winnerLabel: 'Pitch Destacado Gran Final 2026 🏆',
     image: 'assets/foto-escuela-estados-unidos.jpg',
     lat: -22.1082,
     lng: -70.2102,
@@ -92,6 +96,8 @@ const projects = [
     category: 'circular',
     categoryLabel: 'Economía circular y ABP',
     icon: 'box',
+    isWinner: true,
+    winnerLabel: 'Pitch Destacado Gran Final 2026 🏆',
     image: 'assets/foto-escuela-bernardo-ohiggins.jpg',
     lat: -22.0859,
     lng: -70.1893,
@@ -365,9 +371,16 @@ function renderProjects(items) {
   if (!grid) return;
 
   let cardsHtml = items.map(p => `
-    <div class="carousel-card-standard shrink-0 p-6 rounded-3xl flex flex-col justify-between space-y-4 bg-white border border-slate-200 group shadow-sm hover:shadow-xl transition-all select-none">
+    <div class="carousel-card-standard shrink-0 p-6 rounded-3xl flex flex-col justify-between space-y-4 bg-white ${p.isWinner ? 'card-winner-podium' : 'border border-slate-200'} group shadow-sm hover:shadow-xl transition-all select-none">
       <div class="space-y-3">
         
+        ${p.isWinner ? `
+          <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 font-black text-[11px] shadow-sm">
+            <i data-lucide="trophy" class="w-3.5 h-3.5 fill-slate-950"></i>
+            <span>Pitch Destacado Gran Final 2026</span>
+          </div>
+        ` : ''}
+
         <!-- Team Photo or Thematic Visual Header -->
         ${p.image ? `
           <div class="relative w-full h-48 overflow-hidden rounded-2xl bg-slate-100 border border-slate-200 shadow-inner group/photo">
@@ -531,6 +544,7 @@ function openProjectModal(projectId) {
 
   // Render Full-Bleed Cabecera at the top of the modal dialog
   if (modalHeaderImg) {
+    modalHeaderImg.className = 'relative w-full h-60 sm:h-72 shrink-0 bg-slate-900 overflow-hidden';
     if (p.image) {
       modalHeaderImg.innerHTML = `
         <img src="${p.image}" alt="${p.title} - ${p.school}" class="w-full h-full object-cover">
@@ -567,8 +581,12 @@ function openProjectModal(projectId) {
 
   modalImpact.textContent = p.impact;
 
-  modal.classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
+  if (typeof modal.showModal === 'function') {
+    modal.showModal();
+  } else {
+    modal.setAttribute('open', '');
+    modal.classList.remove('hidden');
+  }
 
   if (window.lucide) {
     window.lucide.createIcons();
@@ -578,8 +596,12 @@ function openProjectModal(projectId) {
 function closeProjectModal() {
   const modal = document.getElementById('projectModal');
   if (modal) {
-    modal.classList.add('hidden');
-    document.body.style.overflow = '';
+    if (typeof modal.close === 'function') {
+      modal.close();
+    } else {
+      modal.removeAttribute('open');
+      modal.classList.add('hidden');
+    }
   }
 }
 
@@ -605,7 +627,8 @@ function openPhotoModal(imgSrc, title, caption) {
   }
   
   if (modalHeaderImg) {
-    modalHeaderImg.innerHTML = `<img src="${imgSrc}" alt="${title}" class="w-full h-full object-cover object-center">`;
+    modalHeaderImg.className = 'relative w-full bg-slate-950 flex items-center justify-center overflow-hidden min-h-[260px] max-h-[55vh]';
+    modalHeaderImg.innerHTML = `<img src="${imgSrc}" alt="${title}" class="w-full h-auto max-h-[55vh] object-contain">`;
   }
 
   if (modalBody) {
@@ -624,8 +647,12 @@ function openPhotoModal(imgSrc, title, caption) {
     modalImpact.textContent = 'Registro patrimonial de participación escolar masiva y compromiso juvenil con el medio ambiente en Tocopilla.';
   }
 
-  modal.classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
+  if (typeof modal.showModal === 'function') {
+    modal.showModal();
+  } else {
+    modal.setAttribute('open', '');
+    modal.classList.remove('hidden');
+  }
 
   if (window.lucide) {
     window.lucide.createIcons();
@@ -827,6 +854,172 @@ function setupProjects2026Slider() {
   setupInfiniteDragCarousel('projectsGrid', 'projects2026Prev', 'projects2026Next');
 }
 
+// 11. Modern Web Platform Features (Progress Indicator, Dialog Fallbacks & View Transitions)
+function initModernWebFeatures() {
+  // A. Scroll Progress Bar JS Fallback (for browsers lacking native animation-timeline: scroll())
+  if (!CSS.supports('animation-timeline', 'scroll()')) {
+    const progress = document.querySelector('#scrollProgress');
+    if (progress) {
+      window.addEventListener('scroll', () => {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        const pct = scrollable > 0 ? (scrolled / scrollable) : 0;
+        progress.style.transform = `scaleX(${pct})`;
+      }, { passive: true });
+    }
+  }
+
+  // B. Scroll Reveal Fallback via IntersectionObserver
+  if (!CSS.supports('(animation-timeline: view()) and (animation-range: entry)') &&
+      matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+  }
+
+  // C. Native <dialog> Light Dismiss Fallback (click outside to close)
+  const modal = document.getElementById('projectModal');
+  if (modal && !('closedBy' in HTMLDialogElement.prototype)) {
+    const outside = (e, d) => {
+      const r = d.getBoundingClientRect();
+      return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+    };
+    modal.addEventListener('click', (e) => {
+      if (outside(e, modal)) {
+        closeProjectModal();
+      }
+    });
+  }
+}
+
+// 12. Galería Oficial de la Gran Final 2026 en USQAI UCN
+const final2026Photos = [
+  { id: 1, file: 'assets/galeria-final-web/final-2026-foto-01.jpg', tag: 'Premiación', title: 'Entrega del Galardón y Cheque Ganador de la Final', desc: 'Equipo premiado con el cheque simbólico en el escenario principal de USQAI UCN.' },
+  { id: 2, file: 'assets/galeria-final-web/final-2026-foto-02.jpg', tag: 'Bienvenida', title: 'Palabras del equipo directivo y jurado evaluador', desc: 'Apertura institucional y motivación para las delegaciones escolares de Tocopilla.' },
+  { id: 3, file: 'assets/galeria-final-web/final-2026-foto-03.jpg', tag: 'Pitches', title: 'Defensa de Pitch en el Salón Principal', desc: 'Estudiantes defendiendo su solución socioambiental con apoyo de diapositivas y métricas.' },
+  { id: 4, file: 'assets/galeria-final-web/final-2026-foto-04.jpg', tag: 'Pitches', title: 'Ronda de preguntas y retroalimentación técnica', desc: 'El jurado dialogando y evaluando la propuesta con las y los expositores.' },
+  { id: 5, file: 'assets/galeria-final-web/final-2026-foto-05.jpg', tag: 'Premiación', title: 'Entrega de reconocimientos y diplomas oficiales', desc: 'Estudiantes finalistas recibiendo sus certificados oficiales de participación.' },
+  { id: 6, file: 'assets/galeria-final-web/final-2026-foto-06.jpg', tag: 'Pitches', title: 'Oratoria y despliegue escénico juvenil', desc: 'Estudiantes demostrando su preparación en modulación, presencia y convencimiento.' },
+  { id: 7, file: 'assets/galeria-final-web/final-2026-foto-07.jpg', tag: 'Pitches', title: 'Escuela Pablo Neruda • "Misión Tercera Colación"', desc: 'Defensa del proyecto Tercera Colación Saludable: cero basura orgánica en Tocopilla.' },
+  { id: 8, file: 'assets/galeria-final-web/final-2026-foto-08.jpg', tag: 'Delegación', title: 'Compañeros y barras apoyando en el auditorio', desc: 'El auditorio de USQAI repleto de entusiasmo apoyando a los 10 equipos escolares.' },
+  { id: 9, file: 'assets/galeria-final-web/final-2026-foto-09.jpg', tag: 'Pitches', title: 'Exposición frente al mural artístico de Tocopilla', desc: 'Presentación inspiradora con la identidad visual y cultural del puerto salitrero.' },
+  { id: 10, file: 'assets/galeria-final-web/final-2026-foto-10.jpg', tag: 'Bienvenida', title: 'Conducción y moderación de la jornada final', desc: 'Animación de las rondas de pitch en el escenario de Speakers en Verde Tocopilla.' },
+  { id: 11, file: 'assets/galeria-final-web/final-2026-foto-11.jpg', tag: 'Delegación', title: 'Delegaciones escolares en las graderías de USQAI', desc: 'Docentes guías y estudiantes compartiendo momentos de camaradería durante el evento.' },
+  { id: 12, file: 'assets/galeria-final-web/final-2026-foto-12.jpg', tag: 'Cierre', title: 'Foto oficial en el escenario con todos los finalistas', desc: 'El cierre triunfal que congrega a los 10 equipos, directivos, jurados y organizadores.' },
+  { id: 13, file: 'assets/galeria-final-web/final-2026-foto-13.jpg', tag: 'Pitches', title: 'Ronda de preguntas y retroalimentación técnica', desc: 'Expertos de innovación dialogando directamente con las y los expositores tocopillanos.' },
+  { id: 14, file: 'assets/galeria-final-web/final-2026-foto-14.jpg', tag: 'Pitches', title: 'Defensa Liceo Politécnico • Prótesis Robótica 3D', desc: 'Demostración en vivo del antebrazo articulado y el impacto de la manufactura aditiva inclusiva.' },
+  { id: 15, file: 'assets/galeria-final-web/final-2026-foto-15.jpg', tag: 'Pitches', title: 'Presentación Basurero Inteligente con Reconocimiento', desc: 'Equipo 2 del Liceo Politécnico explicando su sistema de gamificación para comercios de Tocopilla.' },
+  { id: 16, file: 'assets/galeria-final-web/final-2026-foto-16.jpg', tag: 'Pitches', title: 'Defensa Liceo Domingo Latrille • Horizonte Villanorte', desc: 'Propuesta de revitalización del borde costero mediante energías limpias y espacios públicos accesibles.' },
+  { id: 17, file: 'assets/galeria-final-web/final-2026-foto-17.jpg', tag: 'Pitches', title: 'Presentación Escuela Sagrada Familia • Frijolarium', desc: 'Investigación escolar sobre legumbres, germinación sustentable y soberanía alimentaria.' },
+  { id: 18, file: 'assets/galeria-final-web/final-2026-foto-18.jpg', tag: 'Pitches', title: 'Defensa Escuela Carlos Condell • EcoHogar', desc: 'Prototipo de aislación térmica con biopolímeros y materiales reciclados para viviendas costeras.' },
+  { id: 19, file: 'assets/galeria-final-web/final-2026-foto-19.jpg', tag: 'Pitches', title: 'Presentación Escuela Pedro Aguirre Cerda • Sweet Calm', desc: 'Herramientas multisensoriales para la inclusión de estudiantes con necesidades educativas especiales.' },
+  { id: 20, file: 'assets/galeria-final-web/final-2026-foto-20.jpg', tag: 'Pitches', title: 'Defensa Escuela Arturo Prat • BioFiltro Marino', desc: 'Tratamiento y purificación de aguas mediante algas y sedimentación natural en Tocopilla.' },
+  { id: 21, file: 'assets/galeria-final-web/final-2026-foto-21.jpg', tag: 'Jurado', title: 'Deliberación minuciosa del jurado calificador', desc: 'El comité evaluador consensuando las rúbricas de pitch, oratoria y rigurosidad metodológica.' },
+  { id: 22, file: 'assets/galeria-final-web/final-2026-foto-22.jpg', tag: 'Emoción', title: 'Aplausos espontáneos de las familias y compañeros', desc: 'Un salón repleto de emoción, pancartas y orgullo comunal tras finalizar las 10 rondas de pitch.' },
+  { id: 23, file: 'assets/galeria-final-web/final-2026-foto-23.jpg', tag: 'Premiación', title: 'Anuncio oficial de los 3 Pitches Destacados 2026', desc: 'El momento culminante donde se reconocen a las tres iniciativas con mayor solidez y oratoria.' },
+  { id: 24, file: 'assets/galeria-final-web/final-2026-foto-24.jpg', tag: 'Premiación', title: 'Reconocimiento a Escuela Pablo Neruda', desc: 'El equipo recibe su galardón y ovación por Tercera Colación Saludable.' },
+  { id: 25, file: 'assets/galeria-final-web/final-2026-foto-25.jpg', tag: 'Premiación', title: 'Reconocimiento a Escuela República de los Estados Unidos', desc: 'Felicitaciones al equipo de LombriLab por su sobresaliente defensa científica y oratoria.' },
+  { id: 26, file: 'assets/galeria-final-web/final-2026-foto-26.jpg', tag: 'Premiación', title: 'Reconocimiento a Escuela Bernardo O´Higgins', desc: 'Estudiantes y docente guía de EcoPuntos Escolares celebrando en el escenario de USQAI.' },
+  { id: 27, file: 'assets/galeria-final-web/final-2026-foto-27.jpg', tag: 'Premiación', title: 'Entrega de medallas de reconocimiento a todos los finalistas', desc: 'Cada uno de los 10 equipos recibió su medalla oficial por ser embajadores de la innovación escolar.' },
+  { id: 28, file: 'assets/galeria-final-web/final-2026-foto-28.jpg', tag: 'Alianzas', title: 'Palabras de cierre de SQM y Fundación En Verde', desc: 'Reflexión sobre el impacto del programa en la descentralización del talento escolar tocopillano.' },
+  { id: 29, file: 'assets/galeria-final-web/final-2026-foto-29.jpg', tag: 'Cierre', title: 'Abrazos y emoción entre los equipos participantes', desc: 'La camaradería y el compañerismo reinando tras una intensa jornada de aprendizaje y crecimiento.' },
+  { id: 30, file: 'assets/galeria-final-web/final-2026-foto-30.jpg', tag: 'Delegación', title: 'Foto oficial de la delegación completa en USQAI UCN', desc: 'Más de 80 personas reunidas en la explanada de la UCN celebrando el futuro sustentable de Tocopilla.' },
+  { id: 31, file: 'assets/galeria-final-web/final-2026-foto-31.jpg', tag: 'Cierre', title: 'Los 3 Pitches Destacados juntos en el podio', desc: 'Las escuelas Pablo Neruda, Estados Unidos y Bernardo O´Higgins levantando sus reconocimientos.' },
+  { id: 32, file: 'assets/galeria-final-web/final-2026-foto-32.jpg', tag: 'Cierre', title: 'Docentes tocopillanos: los pilares de la transformación', desc: 'Fotografía homenaje a los profesores guías que hicieron posible cada uno de los proyectos.' },
+  { id: 33, file: 'assets/galeria-final-web/final-2026-foto-33.jpg', tag: 'Cierre', title: 'Sonrisas, medallas y la alegría del deber cumplido', desc: 'Estudiantes mostrando sus medallas y diplomas oficiales con entusiasmo contagioso.' },
+  { id: 34, file: 'assets/galeria-final-web/final-2026-foto-34.jpg', tag: 'Cierre', title: 'El equipo organizador de Speakers en Verde', desc: 'Fundación En Verde, Verdical y USQAI UCN agradeciendo el compromiso de toda la comunidad.' },
+  { id: 35, file: 'assets/galeria-final-web/final-2026-foto-35.jpg', tag: 'Cierre', title: 'Postal panorámica del Gran Cierre 2026', desc: 'La imagen que sella una edición histórica del certamen comunal en Antofagasta.' },
+  { id: 36, file: 'assets/galeria-final-web/final-2026-foto-36.jpg', tag: 'Cierre', title: 'Regreso triunfal a Tocopilla con nuevas metas', desc: 'Los estudiantes listos para implementar los fondos y llevar sus ideas a la realidad en sus colegios.' },
+  { id: 37, file: 'assets/galeria-final-web/final-2026-foto-37.jpg', tag: 'Cierre', title: 'Speakers en Verde Tocopilla 2026 • ¡Misión Cumplida!', desc: 'El testimonio gráfico definitivo de la voz escolar que transforma el norte de Chile.' }
+];
+
+function initFinal2026Gallery() {
+  const container = document.getElementById('finalGalleryGrid');
+  const toggleBtn = document.getElementById('toggleAllPhotosBtn');
+  const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+  if (!container) return;
+
+  let showAll = false;
+  let activeTag = 'all';
+
+  function renderGallery() {
+    let filtered = final2026Photos;
+    if (activeTag !== 'all') {
+      filtered = final2026Photos.filter(p => p.tag.toLowerCase().includes(activeTag.toLowerCase()));
+    }
+
+    const itemsToDisplay = showAll ? filtered : filtered.slice(0, 12);
+
+    container.innerHTML = itemsToDisplay.map((p, idx) => `
+      <div class="gallery-photo-card group/item scroll-reveal" 
+           onclick="openPhotoModal('${p.file}', '${p.title.replace(/'/g, "\\'")}', '${p.desc.replace(/'/g, "\\'")}')" 
+           title="Clic para ver en alta resolución">
+        <img src="${p.file}" alt="${p.title}" loading="lazy" decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-90 group-hover/item:opacity-100 transition-opacity"></div>
+        <div class="absolute top-3 left-3">
+          <span class="px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-white text-[10px] font-extrabold uppercase tracking-wider border border-white/20">
+            ${p.tag}
+          </span>
+        </div>
+        <div class="absolute bottom-3 left-3 right-3 text-white space-y-1">
+          <h4 class="text-xs sm:text-sm font-black font-display line-clamp-1 leading-snug group-hover/item:text-amber-300 transition-colors">
+            ${p.title}
+          </h4>
+          <p class="text-[11px] text-slate-200 line-clamp-1 font-medium">
+            ${p.desc}
+          </p>
+        </div>
+        <div class="absolute bottom-3 right-3 w-7 h-7 rounded-full bg-sev-purple/80 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-all transform scale-75 group-hover/item:scale-100">
+          <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i>
+        </div>
+      </div>
+    `).join('');
+
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+
+    if (toggleBtn) {
+      if (filtered.length <= 12) {
+        toggleBtn.classList.add('hidden');
+      } else {
+        toggleBtn.classList.remove('hidden');
+        toggleBtn.innerHTML = showAll 
+          ? `<i data-lucide="chevron-up" class="w-4 h-4"></i><span>Mostrar menos fotos (ver solo destacadas)</span>`
+          : `<i data-lucide="grid" class="w-4 h-4 text-amber-500"></i><span>Ver todas las fotografías de la jornada (${filtered.length} fotos)</span><i data-lucide="chevron-down" class="w-4 h-4"></i>`;
+        if (window.lucide) {
+          window.lucide.createIcons();
+        }
+      }
+    }
+  }
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      showAll = !showAll;
+      renderGallery();
+    });
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active', 'bg-sev-purple', 'text-white'));
+      btn.classList.add('active', 'bg-sev-purple', 'text-white');
+      activeTag = btn.getAttribute('data-tag') || 'all';
+      renderGallery();
+    });
+  });
+
+  renderGallery();
+}
+
 // Initialize on DOM Loaded
 document.addEventListener('DOMContentLoaded', () => {
   initTocopillaMap();
@@ -834,6 +1027,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProjects(projects);
   setupFiltersAndSearch();
   setupNavigation();
+  initModernWebFeatures();
+  initFinal2026Gallery();
 
   // Inicializar todos los carruseles horizontales infinitos
   setupProjects2026Slider();
@@ -847,3 +1042,4 @@ document.addEventListener('DOMContentLoaded', () => {
     window.lucide.createIcons();
   }
 });
+
