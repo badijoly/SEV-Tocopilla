@@ -901,7 +901,7 @@ function initModernWebFeatures() {
 
 // 12. Galería Oficial de la Gran Final 2026 en USQAI UCN
 const final2026Photos = [
-  { id: 1, file: 'assets/galeria-final-web/final-2026-foto-01.jpg', tag: 'Premiación', title: 'Entrega del Galardón y Cheque Ganador de la Final', desc: 'Equipo premiado con el cheque simbólico en el escenario principal de USQAI UCN.' },
+  { id: 1, file: 'assets/galeria-final-web/final-2026-foto-01.jpg', tag: 'Financiamiento', title: 'Fondo de $300.000 para cada una de las 10 iniciativas', desc: 'Todos los equipos participantes obtuvieron $300.000 para financiar y dar continuidad a sus proyectos sustentables en Tocopilla.' },
   { id: 2, file: 'assets/galeria-final-web/final-2026-foto-02.jpg', tag: 'Bienvenida', title: 'Palabras del equipo directivo y jurado evaluador', desc: 'Apertura institucional y motivación para las delegaciones escolares de Tocopilla.' },
   { id: 3, file: 'assets/galeria-final-web/final-2026-foto-03.jpg', tag: 'Pitches', title: 'Defensa de Pitch en el Salón Principal', desc: 'Estudiantes defendiendo su solución socioambiental con apoyo de diapositivas y métricas.' },
   { id: 4, file: 'assets/galeria-final-web/final-2026-foto-04.jpg', tag: 'Pitches', title: 'Ronda de preguntas y retroalimentación técnica', desc: 'El jurado dialogando y evaluando la propuesta con las y los expositores.' },
