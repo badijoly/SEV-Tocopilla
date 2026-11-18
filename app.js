@@ -602,7 +602,7 @@ function closeProjectModal() {
   }
 }
 
-function openPhotoModal(imgSrc, title, caption) {
+function openPhotoModal(imgSrc, title, caption, projectId) {
   const modal = document.getElementById('projectModal');
   const modalTitle = document.getElementById('modalTitle');
   const modalSchool = document.getElementById('modalSchool');
@@ -612,16 +612,39 @@ function openPhotoModal(imgSrc, title, caption) {
 
   if (!modal) return;
 
+  const project = projectId ? projects.find(item => item.id === projectId) : null;
+
   if (modalBadges) {
-    modalBadges.innerHTML = title === 'Speakers en acción'
-      ? `<span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-sev-greenDark">Gran Final 2026 • Instantánea en Escenario</span>`
-      : `<span class="px-3 py-1 rounded-full text-xs font-bold bg-pink-100 text-sev-magenta">Fotografía Oficial • Archivo Histórico</span>`;
+    if (project) {
+      modalBadges.innerHTML = `
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-100 text-sev-purple">Equipo Finalista • Gran Final 2026</span>
+        <span class="badge-${project.category} text-[11px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">${project.categoryLabel}</span>
+      `;
+    } else if (title === 'Speakers en acción') {
+      modalBadges.innerHTML = `<span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-sev-greenDark">Gran Final 2026 • Instantánea en Escenario</span>`;
+    } else {
+      modalBadges.innerHTML = `<span class="px-3 py-1 rounded-full text-xs font-bold bg-pink-100 text-sev-magenta">Fotografía Oficial • Gran Final 2026</span>`;
+    }
   }
+
   if (modalTitle) {
     modalTitle.textContent = title || 'Comunidad Escolar en la Gran Final 2026';
   }
+
   if (modalSchool) {
-    modalSchool.innerHTML = `<span class="text-xs font-bold text-slate-500 uppercase">USQAI Universidad Católica del Norte • Speakers en Verde</span>`;
+    if (project) {
+      modalSchool.innerHTML = `
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5 text-sev-greenDark font-bold">
+            <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+            <span>${project.school}</span>
+          </div>
+          <div class="text-xs text-slate-500 font-medium pl-5 mt-0.5">${project.address}</div>
+        </div>
+      `;
+    } else {
+      modalSchool.innerHTML = `<span class="text-xs font-bold text-slate-500 uppercase">USQAI Universidad Católica del Norte • Gran Final 2026</span>`;
+    }
   }
   
   if (modalHeaderImg) {
@@ -630,14 +653,32 @@ function openPhotoModal(imgSrc, title, caption) {
   }
 
   if (modalBody) {
-    modalBody.innerHTML = `
-      <p class="text-sm leading-relaxed text-slate-700">${caption || 'Instantánea en escenario que retrata el compromiso, oratoria y talento de las delegaciones escolares tocopillanas durante la Gran Final 2026.'}</p>
+    const projectLinkHtml = project ? `
+      <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+        <button type="button" 
+                onclick="closeProjectModal(); setTimeout(() => openProjectModal('${project.id}'), 120);" 
+                class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-sev-green hover:bg-sev-greenDark text-white font-bold text-xs shadow-md transition group">
+          <i data-lucide="folder-open" class="w-4 h-4 text-emerald-100"></i>
+          <span>Ver Ficha Completa del Proyecto (${project.title})</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+        </button>
+        <a href="${imgSrc}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 text-xs font-bold text-sev-purple hover:underline py-2">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          <span>Abrir foto original en alta resolución</span>
+        </a>
+      </div>
+    ` : `
       <div class="pt-2">
         <a href="${imgSrc}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-sev-purple hover:underline">
           <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
           <span>Abrir fotografía en alta resolución original</span>
         </a>
       </div>
+    `;
+
+    modalBody.innerHTML = `
+      <p class="text-sm leading-relaxed text-slate-700 font-medium">${caption || 'Instantánea que retrata el compromiso, oratoria y talento de las delegaciones escolares tocopillanas durante la Gran Final 2026.'}</p>
+      ${projectLinkHtml}
     `;
   }
 
@@ -900,112 +941,128 @@ const final2026Photos = [
     file: 'assets/galeria-final-web/galeria-final-01.jpg', 
     tag: 'Bienvenida', 
     title: 'Bienvenida para las delegaciones participantes', 
-    desc: 'Llegada y recepción oficial para las delegaciones escolares participantes en USQAI UCN.' 
+    desc: 'Llegada y recepción oficial para las delegaciones escolares participantes en USQAI UCN.',
+    projectId: null
   },
   { 
     id: 2, 
     file: 'assets/galeria-final-web/galeria-final-02.jpg', 
     tag: 'Talleres', 
     title: 'Todos los estudiantes preparándose escénicamente', 
-    desc: 'Dinámicas de oratoria, expresión corporal y preparación escénica previa para enfrentar el desafío.' 
+    desc: 'Dinámicas de oratoria, expresión corporal y preparación escénica previa para enfrentar el desafío.',
+    projectId: null
   },
   { 
     id: 3, 
     file: 'assets/galeria-final-web/galeria-final-03.jpg', 
     tag: 'Talleres', 
     title: 'Pausa activa justo antes de sus presentaciones', 
-    desc: 'Los participantes haciendo una pausa activa y ejercicios de relajación antes de subir al escenario.' 
+    desc: 'Los participantes haciendo una pausa activa y ejercicios de relajación antes de subir al escenario.',
+    projectId: null
   },
   { 
     id: 4, 
     file: 'assets/galeria-final-web/galeria-final-04.jpg', 
     tag: 'Audiencia', 
     title: 'Toda la audiencia atentos a los pitch', 
-    desc: 'El auditorio en pleno, jurados, docentes y delegaciones escolares concentrados en las exposiciones.' 
+    desc: 'El auditorio en pleno, jurados, docentes y delegaciones escolares concentrados en las exposiciones.',
+    projectId: null
   },
   { 
     id: 5, 
     file: 'assets/galeria-final-web/galeria-final-05.jpg', 
     tag: 'Pitches', 
     title: 'Equipo expositor: Basurero Inteligente Gamificado', 
-    desc: 'Exposición del proyecto de basurero con reconocimiento de residuos del Liceo Politécnico Diego Portales.' 
+    desc: 'Exposición del proyecto de basurero con reconocimiento de residuos del Liceo Politécnico Diego Portales.',
+    projectId: 'basurero-inteligente'
   },
   { 
     id: 6, 
     file: 'assets/galeria-final-web/galeria-final-06.jpg', 
     tag: 'Pitches', 
     title: 'Equipo expositor: BloomPods', 
-    desc: 'Defensa del proyecto BloomPods: cápsulas de semillas nativas y sustrato para reforestar de la Escuela Gabriela Mistral.' 
+    desc: 'Defensa del proyecto BloomPods: lápices plantables y cápsulas germinadoras de la Escuela Carlos Condell de la Haza.',
+    projectId: 'bloompods'
   },
   { 
     id: 7, 
     file: 'assets/galeria-final-web/galeria-final-07.jpg', 
     tag: 'Pitches', 
     title: 'Equipo expositor: Horizonte Villanorte', 
-    desc: 'Presentación de la propuesta costera sustentable con energía solar del Liceo Domingo Latrille.' 
+    desc: 'Presentación de la propuesta costera sustentable con energía solar del Liceo Domingo Latrille.',
+    projectId: 'domingo-latrille'
   },
   { 
     id: 8, 
     file: 'assets/galeria-final-web/galeria-final-08.jpg', 
     tag: 'Pitches', 
     title: 'Equipo expositor: Tercera Colación Saludable', 
-    desc: 'Defensa del proyecto Tercera Colación Saludable de la Escuela Pablo Neruda (Pitch Destacado Tocopilla 2026).' 
+    desc: 'Defensa del proyecto Tercera Colación Saludable de la Escuela Pablo Neruda (Pitch Destacado Tocopilla 2026).',
+    projectId: 'pablo-neruda'
   },
   { 
     id: 9, 
     file: 'assets/galeria-final-web/galeria-final-09.jpg', 
     tag: 'Pitches', 
     title: 'Equipo expositor: LombriLab', 
-    desc: 'Defensa del proyecto LombriLab de la Escuela República de los Estados Unidos (Pitch Destacado Tocopilla 2026).' 
+    desc: 'Defensa del proyecto LombriLab de la Escuela República de los Estados Unidos (Pitch Destacado Tocopilla 2026).',
+    projectId: 'lombrilab'
   },
   { 
     id: 10, 
     file: 'assets/galeria-final-web/galeria-final-10.jpg', 
     tag: 'Pitches', 
     title: 'Equipo expositor: Jardín Acuapónico', 
-    desc: 'Presentación del sistema sustentable de cultivo recirculante de la Escuela Carlos Condell.' 
+    desc: 'Presentación del sistema sustentable de cultivo recirculante de la Escuela Arturo Prat Chacón.',
+    projectId: 'acuaponia'
   },
   { 
     id: 11, 
     file: 'assets/galeria-final-web/galeria-final-11.jpg', 
     tag: 'Pitches', 
     title: 'Equipo expositor: EcoPuntos Escolares', 
-    desc: 'Defensa del proyecto EcoPuntos Escolares de la Escuela Bernardo O´Higgins (Pitch Destacado Tocopilla 2026).' 
+    desc: 'Defensa del proyecto EcoPuntos Escolares de la Escuela Bernardo O´Higgins (Pitch Destacado Tocopilla 2026).',
+    projectId: 'ecopuntos'
   },
   { 
     id: 12, 
     file: 'assets/galeria-final-web/galeria-final-12.jpg', 
     tag: 'Pitches', 
     title: 'Equipo expositor: Prótesis Robótica 3D', 
-    desc: 'Demostración de la prótesis de bajo costo en manufactura 3D del Liceo Politécnico Diego Portales.' 
+    desc: 'Demostración de la prótesis de bajo costo en manufactura 3D del Liceo Politécnico Diego Portales.',
+    projectId: 'protesis'
   },
   { 
     id: 13, 
     file: 'assets/galeria-final-web/galeria-final-13.jpg', 
     tag: 'Pitches', 
     title: 'Equipo expositor: Jabonería con Aceites Reciclados', 
-    desc: 'Presentación del modelo de economía circular y jabones ecológicos de la Escuela Arturo Prat.' 
+    desc: 'Presentación del modelo de economía circular y jabones ecológicos del Colegio Sagrada Familia.',
+    projectId: 'jaboneria'
   },
   { 
     id: 14, 
     file: 'assets/galeria-final-web/galeria-final-14.jpg', 
     tag: 'Pitches', 
     title: 'Equipo expositor: Sweet Calm', 
-    desc: 'Defensa de las herramientas multisensoriales inclusivas de la Escuela Pedro Aguirre Cerda.' 
+    desc: 'Defensa de las herramientas multisensoriales inclusivas de la Escuela Pedro Aguirre Cerda.',
+    projectId: 'sweet-calm'
   },
   { 
     id: 15, 
     file: 'assets/galeria-final-web/galeria-final-15.jpg', 
     tag: 'Cierre', 
     title: 'Todos los participantes al cierre de las presentaciones', 
-    desc: 'La totalidad de los participantes congregados en el escenario al término de la ronda de pitches.' 
+    desc: 'La totalidad de los participantes congregados en el escenario al término de la ronda de pitches.',
+    projectId: null
   },
   { 
     id: 16, 
     file: 'assets/galeria-final-web/galeria-final-16.jpg', 
     tag: 'Cierre', 
     title: 'Una despedida de la jornada llena de color y energía', 
-    desc: 'Cierre festivo cargado de emoción, color y entusiasmo de toda la comitiva de Tocopilla.' 
+    desc: 'Cierre festivo cargado de emoción, color y entusiasmo de toda la comitiva de Tocopilla.',
+    projectId: null
   }
 ];
 
@@ -1028,7 +1085,7 @@ function initFinal2026Gallery() {
 
     container.innerHTML = filtered.map((p) => `
       <div class="gallery-photo-card group/item scroll-reveal" 
-           onclick="openPhotoModal('${p.file}', '${p.title.replace(/'/g, "\\'")}', '${p.desc.replace(/'/g, "\\'")}')" 
+           onclick="openPhotoModal('${p.file}', '${p.title.replace(/'/g, "\\'")}', '${p.desc.replace(/'/g, "\\'")}', ${p.projectId ? `'${p.projectId}'` : 'null'})" 
            title="Clic para ver en alta resolución">
         <img src="${p.file}" alt="${p.title}" loading="lazy" decoding="async">
         <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-90 group-hover/item:opacity-100 transition-opacity"></div>
