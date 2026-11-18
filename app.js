@@ -617,18 +617,18 @@ function openPhotoModal(imgSrc, title, caption, projectId) {
   if (modalBadges) {
     if (project) {
       modalBadges.innerHTML = `
-        <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-100 text-sev-purple">Equipo Finalista • Gran Final 2026</span>
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-100 text-sev-purple">Equipo finalista • Gran Final 2026</span>
         <span class="badge-${project.category} text-[11px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">${project.categoryLabel}</span>
       `;
     } else if (title === 'Speakers en acción') {
-      modalBadges.innerHTML = `<span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-sev-greenDark">Gran Final 2026 • Instantánea en Escenario</span>`;
+      modalBadges.innerHTML = `<span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-sev-greenDark">Gran Final 2026 • Instantánea en escenario</span>`;
     } else {
-      modalBadges.innerHTML = `<span class="px-3 py-1 rounded-full text-xs font-bold bg-pink-100 text-sev-magenta">Fotografía Oficial • Gran Final 2026</span>`;
+      modalBadges.innerHTML = `<span class="px-3 py-1 rounded-full text-xs font-bold bg-pink-100 text-sev-magenta">Fotografía oficial • Gran Final 2026</span>`;
     }
   }
 
   if (modalTitle) {
-    modalTitle.textContent = title || 'Comunidad Escolar en la Gran Final 2026';
+    modalTitle.textContent = title || 'Comunidad escolar en la Gran Final 2026';
   }
 
   if (modalSchool) {
@@ -659,7 +659,7 @@ function openPhotoModal(imgSrc, title, caption, projectId) {
                 onclick="closeProjectModal(); setTimeout(() => openProjectModal('${project.id}'), 120);" 
                 class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-sev-green hover:bg-sev-greenDark text-white font-bold text-xs shadow-md transition group">
           <i data-lucide="folder-open" class="w-4 h-4 text-emerald-100"></i>
-          <span>Ver Ficha Completa del Proyecto (${project.title})</span>
+          <span>Ver ficha completa del proyecto (${project.title})</span>
           <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
         </button>
         <a href="${imgSrc}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 text-xs font-bold text-sev-purple hover:underline py-2">

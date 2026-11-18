@@ -501,17 +501,26 @@ dialog#projectModal[open]::backdrop {
 }
 
 /* 3.1 Lightbox Modal Limpio para Speakers en Acción */
-dialog#speakersLightbox {
-  border: none;
+dialog#speakersLightbox:not([open]) {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+dialog#speakersLightbox[open] {
+  display: flex !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: none !important;
+  max-height: none !important;
   background: transparent !important;
-  padding: 0;
-  margin: 0;
-  max-width: 100vw;
-  max-height: 100vh;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  outline: none;
+  border: none !important;
+  outline: none !important;
+  overflow: hidden !important;
 }
 
 dialog#speakersLightbox::backdrop {
