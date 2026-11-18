@@ -453,7 +453,7 @@ function renderProjects(items) {
         </button>
         <button onclick="openProjectModal('${p.id}')" 
                 class="flex-1 py-2.5 px-4 rounded-xl text-xs font-bold bg-sev-green hover:bg-sev-greenDark text-white transition flex items-center justify-center gap-1.5 group">
-          <span>Ver Ficha Completa</span>
+          <span>Ver ficha completa</span>
           <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
         </button>
       </div>
