@@ -899,45 +899,120 @@ function initModernWebFeatures() {
   }
 }
 
-// 12. Galería Oficial de la Gran Final 2026 en USQAI UCN
+// 12. Galería Oficial de la Gran Final 2026 en USQAI UCN (Selección oficial de 16 fotos)
 const final2026Photos = [
-  { id: 1, file: 'assets/galeria-final-web/final-2026-foto-01.jpg', tag: 'Financiamiento', title: 'Fondo de $300.000 para cada iniciativa', desc: 'Entrega del fondo de $300.000 otorgado a todos los equipos finalistas para ejecutar y dar continuidad a sus proyectos socioambientales en Tocopilla.' },
-  { id: 2, file: 'assets/galeria-final-web/final-2026-foto-02.jpg', tag: 'Jurado', title: 'Jurado evaluador realizando preguntas a los equipos', desc: 'Comité de expertos y jurados interactuando con los expositores durante la ronda de preguntas en la Gran Final.' },
-  { id: 3, file: 'assets/galeria-final-web/final-2026-foto-03.jpg', tag: 'Pitches', title: 'Exposición del Liceo Polivalente Domingo Latrille', desc: 'El equipo de Villanorte presentando su proyecto "Horizonte Villanorte": costanera activa, inclusiva y sostenible con energía solar.' },
-  { id: 4, file: 'assets/galeria-final-web/final-2026-foto-04.jpg', tag: 'Pitches', title: 'Defensa del Liceo Latrille en el Salón Principal', desc: 'Estudiantes del Liceo Domingo Latrille respondiendo las consultas técnicas del jurado calificador en USQAI UCN.' },
-  { id: 5, file: 'assets/galeria-final-web/final-2026-foto-05.jpg', tag: 'Reconocimiento', title: 'Equipo del Liceo Latrille con sus diplomas y medallas', desc: 'Estudiantes del Liceo Latrille luciendo con orgullo sus medallas oficiales y diplomas de participación en la Gran Final.' },
-  { id: 6, file: 'assets/galeria-final-web/final-2026-foto-06.jpg', tag: 'Pitches', title: 'Presentación Escuela Pablo Neruda • Pitch Destacado', desc: 'Estudiantes de la Escuela Pablo Neruda exponiendo su propuesta de alimentación consciente y sustentabilidad escolar.' },
-  { id: 7, file: 'assets/galeria-final-web/final-2026-foto-07.jpg', tag: 'Pitches', title: 'Escuela Pablo Neruda: "Misión Tercera Colación"', desc: 'Defensa del proyecto "Tercera Colación Saludable" frente al auditorio: recetas nutritivas y cero basura orgánica familiar.' },
-  { id: 8, file: 'assets/galeria-final-web/final-2026-foto-08.jpg', tag: 'Pitches', title: 'Exposición Escuela República de los Estados Unidos', desc: 'Defensa del proyecto "LombriLab" (Pitch Destacado): lombricultura y regeneración de suelos áridos en Caleta Boy.' },
-  { id: 9, file: 'assets/galeria-final-web/final-2026-foto-09.jpg', tag: 'Pitches', title: 'Equipo Escuela Estados Unidos defendiendo LombriLab', desc: 'Presentación en vivo con el mural artístico tocopillano, destacando la ciencia escolar y el cuidado del entorno.' },
-  { id: 10, file: 'assets/galeria-final-web/final-2026-foto-10.jpg', tag: 'Autoridades', title: 'Seremi de Educación saludando a los estudiantes', desc: 'La Seremi de Educación de Antofagasta compartiendo con los jóvenes speakers y brindando palabras de aliento.' },
-  { id: 11, file: 'assets/galeria-final-web/final-2026-foto-11.jpg', tag: 'Delegación', title: 'Seremi de Educación con estudiantes de Escuela Carlos Condell', desc: 'La Seremi de Educación conversando y conociendo en detalle el proyecto de los estudiantes de la Escuela Carlos Condell.' },
-  { id: 12, file: 'assets/galeria-final-web/final-2026-foto-12.jpg', tag: 'Pitches Destacados', title: 'Seremi de Educación entregando galvano a Escuela Pablo Neruda', desc: 'Momento de entrega del galvano de distinción por ser uno de los tres proyectos destacados a las estudiantes de la Escuela Pablo Neruda.' },
-  { id: 13, file: 'assets/galeria-final-web/final-2026-foto-13.jpg', tag: 'Pitches', title: 'Ronda de preguntas y retroalimentación técnica', desc: 'Expertos de innovación dialogando directamente con las y los expositores tocopillanos.' },
-  { id: 14, file: 'assets/galeria-final-web/final-2026-foto-14.jpg', tag: 'Pitches', title: 'Defensa Liceo Politécnico • Prótesis Robótica 3D', desc: 'Demostración en vivo del antebrazo articulado y el impacto de la manufactura aditiva inclusiva.' },
-  { id: 15, file: 'assets/galeria-final-web/final-2026-foto-15.jpg', tag: 'Pitches', title: 'Presentación Basurero Inteligente con Reconocimiento', desc: 'Equipo 2 del Liceo Politécnico explicando su sistema de gamificación para comercios de Tocopilla.' },
-  { id: 16, file: 'assets/galeria-final-web/final-2026-foto-16.jpg', tag: 'Pitches', title: 'Defensa Liceo Domingo Latrille • Horizonte Villanorte', desc: 'Propuesta de revitalización del borde costero mediante energías limpias y espacios públicos accesibles.' },
-  { id: 17, file: 'assets/galeria-final-web/final-2026-foto-17.jpg', tag: 'Pitches', title: 'Presentación Escuela Sagrada Familia • Frijolarium', desc: 'Investigación escolar sobre legumbres, germinación sustentable y soberanía alimentaria.' },
-  { id: 18, file: 'assets/galeria-final-web/final-2026-foto-18.jpg', tag: 'Pitches', title: 'Defensa Escuela Carlos Condell • EcoHogar', desc: 'Prototipo de aislación térmica con biopolímeros y materiales reciclados para viviendas costeras.' },
-  { id: 19, file: 'assets/galeria-final-web/final-2026-foto-19.jpg', tag: 'Pitches', title: 'Presentación Escuela Pedro Aguirre Cerda • Sweet Calm', desc: 'Herramientas multisensoriales para la inclusión de estudiantes con necesidades educativas especiales.' },
-  { id: 20, file: 'assets/galeria-final-web/final-2026-foto-20.jpg', tag: 'Pitches', title: 'Defensa Escuela Arturo Prat • BioFiltro Marino', desc: 'Tratamiento y purificación de aguas mediante algas y sedimentación natural en Tocopilla.' },
-  { id: 21, file: 'assets/galeria-final-web/final-2026-foto-21.jpg', tag: 'Jurado', title: 'Deliberación minuciosa del jurado calificador', desc: 'El comité evaluador consensuando las rúbricas de pitch, oratoria y rigurosidad metodológica.' },
-  { id: 22, file: 'assets/galeria-final-web/final-2026-foto-22.jpg', tag: 'Emoción', title: 'Aplausos espontáneos de las familias y compañeros', desc: 'Un salón repleto de emoción, pancartas y orgullo comunal tras finalizar las 10 rondas de pitch.' },
-  { id: 23, file: 'assets/galeria-final-web/final-2026-foto-23.jpg', tag: 'Premiación', title: 'Anuncio oficial de los 3 Pitches Destacados 2026', desc: 'El momento culminante donde se reconocen a las tres iniciativas con mayor solidez y oratoria.' },
-  { id: 24, file: 'assets/galeria-final-web/final-2026-foto-24.jpg', tag: 'Premiación', title: 'Reconocimiento a Escuela Pablo Neruda', desc: 'El equipo recibe su galardón y ovación por Tercera Colación Saludable.' },
-  { id: 25, file: 'assets/galeria-final-web/final-2026-foto-25.jpg', tag: 'Premiación', title: 'Reconocimiento a Escuela República de los Estados Unidos', desc: 'Felicitaciones al equipo de LombriLab por su sobresaliente defensa científica y oratoria.' },
-  { id: 26, file: 'assets/galeria-final-web/final-2026-foto-26.jpg', tag: 'Premiación', title: 'Reconocimiento a Escuela Bernardo O´Higgins', desc: 'Estudiantes y docente guía de EcoPuntos Escolares celebrando en el escenario de USQAI.' },
-  { id: 27, file: 'assets/galeria-final-web/final-2026-foto-27.jpg', tag: 'Premiación', title: 'Entrega de medallas de reconocimiento a todos los finalistas', desc: 'Cada uno de los 10 equipos recibió su medalla oficial por ser embajadores de la innovación escolar.' },
-  { id: 28, file: 'assets/galeria-final-web/final-2026-foto-28.jpg', tag: 'Alianzas', title: 'Palabras de cierre de SQM y Fundación En Verde', desc: 'Reflexión sobre el impacto del programa en la descentralización del talento escolar tocopillano.' },
-  { id: 29, file: 'assets/galeria-final-web/final-2026-foto-29.jpg', tag: 'Cierre', title: 'Abrazos y emoción entre los equipos participantes', desc: 'La camaradería y el compañerismo reinando tras una intensa jornada de aprendizaje y crecimiento.' },
-  { id: 30, file: 'assets/galeria-final-web/final-2026-foto-30.jpg', tag: 'Delegación', title: 'Foto oficial de la delegación completa en USQAI UCN', desc: 'Más de 80 personas reunidas en la explanada de la UCN celebrando el futuro sustentable de Tocopilla.' },
-  { id: 31, file: 'assets/galeria-final-web/final-2026-foto-31.jpg', tag: 'Cierre', title: 'Los 3 Pitches Destacados juntos en el podio', desc: 'Las escuelas Pablo Neruda, Estados Unidos y Bernardo O´Higgins levantando sus reconocimientos.' },
-  { id: 32, file: 'assets/galeria-final-web/final-2026-foto-32.jpg', tag: 'Cierre', title: 'Docentes tocopillanos: los pilares de la transformación', desc: 'Fotografía homenaje a los profesores guías que hicieron posible cada uno de los proyectos.' },
-  { id: 33, file: 'assets/galeria-final-web/final-2026-foto-33.jpg', tag: 'Cierre', title: 'Sonrisas, medallas y la alegría del deber cumplido', desc: 'Estudiantes mostrando sus medallas y diplomas oficiales con entusiasmo contagioso.' },
-  { id: 34, file: 'assets/galeria-final-web/final-2026-foto-34.jpg', tag: 'Cierre', title: 'El equipo organizador de Speakers en Verde', desc: 'Fundación En Verde, Verdical y USQAI UCN agradeciendo el compromiso de toda la comunidad.' },
-  { id: 35, file: 'assets/galeria-final-web/final-2026-foto-35.jpg', tag: 'Cierre', title: 'Postal panorámica del Gran Cierre 2026', desc: 'La imagen que sella una edición histórica del certamen comunal en Antofagasta.' },
-  { id: 36, file: 'assets/galeria-final-web/final-2026-foto-36.jpg', tag: 'Cierre', title: 'Regreso triunfal a Tocopilla con nuevas metas', desc: 'Los estudiantes listos para implementar los fondos y llevar sus ideas a la realidad en sus colegios.' },
-  { id: 37, file: 'assets/galeria-final-web/final-2026-foto-37.jpg', tag: 'Cierre', title: 'Speakers en Verde Tocopilla 2026 • ¡Misión Cumplida!', desc: 'El testimonio gráfico definitivo de la voz escolar que transforma el norte de Chile.' }
+  { 
+    id: 1, 
+    file: 'assets/galeria-final-web/galeria-final-01.jpg', 
+    tag: 'Bienvenida', 
+    title: 'Bienvenida para las delegaciones participantes', 
+    desc: 'Llegada y recepción oficial para las delegaciones escolares participantes en USQAI UCN.' 
+  },
+  { 
+    id: 2, 
+    file: 'assets/galeria-final-web/galeria-final-02.jpg', 
+    tag: 'Talleres', 
+    title: 'Todos los estudiantes preparándose escénicamente', 
+    desc: 'Dinámicas de oratoria, expresión corporal y preparación escénica previa para enfrentar el desafío.' 
+  },
+  { 
+    id: 3, 
+    file: 'assets/galeria-final-web/galeria-final-03.jpg', 
+    tag: 'Talleres', 
+    title: 'Pausa activa justo antes de sus presentaciones', 
+    desc: 'Los participantes haciendo una pausa activa y ejercicios de relajación antes de subir al escenario.' 
+  },
+  { 
+    id: 4, 
+    file: 'assets/galeria-final-web/galeria-final-04.jpg', 
+    tag: 'Audiencia', 
+    title: 'Toda la audiencia atentos a los pitch', 
+    desc: 'El auditorio en pleno, jurados, docentes y delegaciones escolares concentrados en las exposiciones.' 
+  },
+  { 
+    id: 5, 
+    file: 'assets/galeria-final-web/galeria-final-05.jpg', 
+    tag: 'Pitches', 
+    title: 'Equipo expositor: Basurero Inteligente Gamificado', 
+    desc: 'Exposición del proyecto de basurero con reconocimiento de residuos del Liceo Politécnico Diego Portales.' 
+  },
+  { 
+    id: 6, 
+    file: 'assets/galeria-final-web/galeria-final-06.jpg', 
+    tag: 'Pitches', 
+    title: 'Equipo expositor: BloomPods', 
+    desc: 'Defensa del proyecto BloomPods: cápsulas de semillas nativas y sustrato para reforestar de la Escuela Gabriela Mistral.' 
+  },
+  { 
+    id: 7, 
+    file: 'assets/galeria-final-web/galeria-final-07.jpg', 
+    tag: 'Pitches', 
+    title: 'Equipo expositor: Horizonte Villanorte', 
+    desc: 'Presentación de la propuesta costera sustentable con energía solar del Liceo Domingo Latrille.' 
+  },
+  { 
+    id: 8, 
+    file: 'assets/galeria-final-web/galeria-final-08.jpg', 
+    tag: 'Pitches', 
+    title: 'Equipo expositor: Tercera Colación Saludable', 
+    desc: 'Defensa del proyecto Tercera Colación Saludable de la Escuela Pablo Neruda (Pitch Destacado Tocopilla 2026).' 
+  },
+  { 
+    id: 9, 
+    file: 'assets/galeria-final-web/galeria-final-09.jpg', 
+    tag: 'Pitches', 
+    title: 'Equipo expositor: LombriLab', 
+    desc: 'Defensa del proyecto LombriLab de la Escuela República de los Estados Unidos (Pitch Destacado Tocopilla 2026).' 
+  },
+  { 
+    id: 10, 
+    file: 'assets/galeria-final-web/galeria-final-10.jpg', 
+    tag: 'Pitches', 
+    title: 'Equipo expositor: Jardín Acuapónico', 
+    desc: 'Presentación del sistema sustentable de cultivo recirculante de la Escuela Carlos Condell.' 
+  },
+  { 
+    id: 11, 
+    file: 'assets/galeria-final-web/galeria-final-11.jpg', 
+    tag: 'Pitches', 
+    title: 'Equipo expositor: EcoPuntos Escolares', 
+    desc: 'Defensa del proyecto EcoPuntos Escolares de la Escuela Bernardo O´Higgins (Pitch Destacado Tocopilla 2026).' 
+  },
+  { 
+    id: 12, 
+    file: 'assets/galeria-final-web/galeria-final-12.jpg', 
+    tag: 'Pitches', 
+    title: 'Equipo expositor: Prótesis Robótica 3D', 
+    desc: 'Demostración de la prótesis de bajo costo en manufactura 3D del Liceo Politécnico Diego Portales.' 
+  },
+  { 
+    id: 13, 
+    file: 'assets/galeria-final-web/galeria-final-13.jpg', 
+    tag: 'Pitches', 
+    title: 'Equipo expositor: Jabonería con Aceites Reciclados', 
+    desc: 'Presentación del modelo de economía circular y jabones ecológicos de la Escuela Arturo Prat.' 
+  },
+  { 
+    id: 14, 
+    file: 'assets/galeria-final-web/galeria-final-14.jpg', 
+    tag: 'Pitches', 
+    title: 'Equipo expositor: Sweet Calm', 
+    desc: 'Defensa de las herramientas multisensoriales inclusivas de la Escuela Pedro Aguirre Cerda.' 
+  },
+  { 
+    id: 15, 
+    file: 'assets/galeria-final-web/galeria-final-15.jpg', 
+    tag: 'Cierre', 
+    title: 'Todos los participantes al cierre de las presentaciones', 
+    desc: 'La totalidad de los participantes congregados en el escenario al término de la ronda de pitches.' 
+  },
+  { 
+    id: 16, 
+    file: 'assets/galeria-final-web/galeria-final-16.jpg', 
+    tag: 'Cierre', 
+    title: 'Una despedida de la jornada llena de color y energía', 
+    desc: 'Cierre festivo cargado de emoción, color y entusiasmo de toda la comitiva de Tocopilla.' 
+  }
 ];
 
 function initFinal2026Gallery() {
@@ -946,18 +1021,18 @@ function initFinal2026Gallery() {
   const filterBtns = document.querySelectorAll('.gallery-filter-btn');
   if (!container) return;
 
-  let showAll = false;
   let activeTag = 'all';
 
   function renderGallery() {
     let filtered = final2026Photos;
     if (activeTag !== 'all') {
-      filtered = final2026Photos.filter(p => p.tag.toLowerCase().includes(activeTag.toLowerCase()));
+      filtered = final2026Photos.filter(p => 
+        p.tag.toLowerCase().includes(activeTag.toLowerCase()) ||
+        (activeTag === 'Preparación' && (p.tag === 'Bienvenida' || p.tag === 'Talleres' || p.tag === 'Audiencia'))
+      );
     }
 
-    const itemsToDisplay = showAll ? filtered : filtered.slice(0, 12);
-
-    container.innerHTML = itemsToDisplay.map((p, idx) => `
+    container.innerHTML = filtered.map((p) => `
       <div class="gallery-photo-card group/item scroll-reveal" 
            onclick="openPhotoModal('${p.file}', '${p.title.replace(/'/g, "\\'")}', '${p.desc.replace(/'/g, "\\'")}')" 
            title="Clic para ver en alta resolución">
@@ -986,26 +1061,22 @@ function initFinal2026Gallery() {
       window.lucide.createIcons();
     }
 
+    // El botón inferior ahora dirige al repositorio Dropbox con las 325 fotos completas
     if (toggleBtn) {
-      if (filtered.length <= 12) {
-        toggleBtn.classList.add('hidden');
-      } else {
-        toggleBtn.classList.remove('hidden');
-        toggleBtn.innerHTML = showAll 
-          ? `<i data-lucide="chevron-up" class="w-4 h-4"></i><span>Mostrar menos fotos (ver solo destacadas)</span>`
-          : `<i data-lucide="grid" class="w-4 h-4 text-amber-500"></i><span>Ver todas las fotografías de la jornada (${filtered.length} fotos)</span><i data-lucide="chevron-down" class="w-4 h-4"></i>`;
-        if (window.lucide) {
-          window.lucide.createIcons();
-        }
+      toggleBtn.innerHTML = `
+        <a href="https://www.dropbox.com/scl/fo/fru5uyqwqkqr95wxqiqg2/AH2w4mHMNRsdrcMI3VdUTHo?rlkey=vm8o22213q3in6lo72cnlf5sp&st=28qc0q31&dl=0" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2">
+          <i data-lucide="folder-archive" class="w-4 h-4 text-amber-500"></i>
+          <span>Explorar y descargar las 325 fotos originales en Dropbox</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      `;
+      if (window.lucide) {
+        window.lucide.createIcons();
       }
     }
-  }
-
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      showAll = !showAll;
-      renderGallery();
-    });
   }
 
   filterBtns.forEach(btn => {
