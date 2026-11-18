@@ -523,7 +523,6 @@ function openProjectModal(projectId) {
   const modalBadges = document.getElementById('modalBadges');
   const modalHeaderImg = document.getElementById('modalHeaderImage') || document.getElementById('modalHeaderImg');
   const modalBody = document.getElementById('modalBody');
-  const modalImpact = document.getElementById('modalImpact');
 
   modalTitle.textContent = p.title;
   modalSchool.innerHTML = `
@@ -579,8 +578,6 @@ function openProjectModal(projectId) {
     </div>
   `;
 
-  modalImpact.textContent = p.impact;
-
   if (typeof modal.showModal === 'function') {
     modal.showModal();
   } else {
@@ -612,7 +609,6 @@ function openPhotoModal(imgSrc, title, caption) {
   const modalBadges = document.getElementById('modalBadges');
   const modalHeaderImg = document.getElementById('modalHeaderImage') || document.getElementById('modalHeaderImg');
   const modalBody = document.getElementById('modalBody');
-  const modalImpact = document.getElementById('modalImpact');
 
   if (!modal) return;
 
@@ -643,10 +639,6 @@ function openPhotoModal(imgSrc, title, caption) {
         </a>
       </div>
     `;
-  }
-
-  if (modalImpact) {
-    modalImpact.textContent = 'Registro oficial de participación escolar masiva y compromiso juvenil con el medio ambiente en Tocopilla.';
   }
 
   if (typeof modal.showModal === 'function') {
