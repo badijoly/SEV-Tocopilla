@@ -1171,38 +1171,47 @@ const speakersEnAccionPhotos = [
 
 let currentLightboxIndex = 0;
 
-function openLightbox(index) {
-  currentLightboxIndex = index;
-  const dialog = document.getElementById('lightboxModal');
-  const img = document.getElementById('lightboxImg');
-  const counter = document.getElementById('lightboxCounter');
-  const originalLink = document.getElementById('lightboxOriginalLink');
+function getLightboxElements() {
+  return {
+    dialog: document.getElementById('speakersLightbox') || document.getElementById('lightboxModal'),
+    img: document.getElementById('lightboxImage') || document.getElementById('lightboxImg'),
+    counter: document.getElementById('lightboxCounter'),
+    backdrop: document.getElementById('lightboxBackdrop')
+  };
+}
+
+function openAccionLightbox(index) {
+  currentLightboxIndex = (typeof index === 'number' && index >= 0 && index < speakersEnAccionPhotos.length) ? index : 0;
+  const { dialog, img, counter } = getLightboxElements();
   if (!dialog || !img) return;
 
   const currentSrc = speakersEnAccionPhotos[currentLightboxIndex];
   img.src = currentSrc;
   if (counter) counter.textContent = `${currentLightboxIndex + 1} / ${speakersEnAccionPhotos.length}`;
-  if (originalLink) originalLink.href = currentSrc;
 
   if (typeof dialog.showModal === 'function') {
-    dialog.showModal();
+    if (!dialog.open) dialog.showModal();
   } else {
     dialog.setAttribute('open', '');
     dialog.classList.remove('hidden');
   }
+
+  document.body.classList.add('overflow-hidden');
 
   if (window.lucide) {
     window.lucide.createIcons();
   }
 }
 
+function openLightbox(index) {
+  openAccionLightbox(index);
+}
+
 function updateLightboxImage() {
-  const img = document.getElementById('lightboxImg');
-  const counter = document.getElementById('lightboxCounter');
-  const originalLink = document.getElementById('lightboxOriginalLink');
+  const { img, counter } = getLightboxElements();
   if (!img) return;
 
-  img.style.opacity = '0.35';
+  img.style.opacity = '0.3';
   img.style.transform = 'scale(0.98)';
   setTimeout(() => {
     const currentSrc = speakersEnAccionPhotos[currentLightboxIndex];
@@ -1210,32 +1219,106 @@ function updateLightboxImage() {
     img.style.opacity = '1';
     img.style.transform = 'scale(1)';
     if (counter) counter.textContent = `${currentLightboxIndex + 1} / ${speakersEnAccionPhotos.length}`;
-    if (originalLink) originalLink.href = currentSrc;
-  }, 90);
+  }, 75);
 }
 
-function nextLightbox(e) {
-  if (e) e.stopPropagation();
+function nextAccionPhoto(e) {
+  if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
   currentLightboxIndex = (currentLightboxIndex + 1) % speakersEnAccionPhotos.length;
   updateLightboxImage();
 }
 
-function prevLightbox(e) {
-  if (e) e.stopPropagation();
+function prevAccionPhoto(e) {
+  if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
   currentLightboxIndex = (currentLightboxIndex - 1 + speakersEnAccionPhotos.length) % speakersEnAccionPhotos.length;
   updateLightboxImage();
 }
 
-function closeLightbox() {
-  const dialog = document.getElementById('lightboxModal');
+function nextLightbox(e) { nextAccionPhoto(e); }
+function prevLightbox(e) { prevAccionPhoto(e); }
+
+function closeAccionLightbox() {
+  const { dialog } = getLightboxElements();
   if (dialog) {
     if (typeof dialog.close === 'function') {
-      dialog.close();
+      if (dialog.open) dialog.close();
     } else {
       dialog.removeAttribute('open');
       dialog.classList.add('hidden');
     }
   }
+  document.body.classList.remove('overflow-hidden');
+}
+
+function closeLightbox() {
+  closeAccionLightbox();
+}
+
+function setupSpeakersLightboxEvents() {
+  const { dialog, backdrop } = getLightboxElements();
+
+  if (dialog) {
+    dialog.addEventListener('click', (e) => {
+      // Cierra si el clic ocurre directamente en el fondo del dialog
+      if (e.target === dialog) {
+        closeAccionLightbox();
+      }
+    });
+    dialog.addEventListener('cancel', () => {
+      document.body.classList.remove('overflow-hidden');
+    });
+  }
+
+  if (backdrop) {
+    backdrop.addEventListener('click', (e) => {
+      // Cierra si el clic ocurre en el backdrop (fuera de la imagen y flechas)
+      if (e.target === backdrop) {
+        closeAccionLightbox();
+      }
+    });
+
+    // Soporte táctil de deslizamiento (swipe horizontal en pantallas táctiles)
+    let touchStartX = 0;
+    let touchStartY = 0;
+    backdrop.addEventListener('touchstart', (e) => {
+      if (e.touches && e.touches[0]) {
+        touchStartX = e.touches[0].screenX;
+        touchStartY = e.touches[0].screenY;
+      }
+    }, { passive: true });
+
+    backdrop.addEventListener('touchend', (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        const diffX = e.changedTouches[0].screenX - touchStartX;
+        const diffY = e.changedTouches[0].screenY - touchStartY;
+        // Solo accionar si el desplazamiento fue preponderantemente horizontal
+        if (Math.abs(diffX) > 40 && Math.abs(diffY) < 60) {
+          if (diffX < 0) {
+            nextAccionPhoto();
+          } else {
+            prevAccionPhoto();
+          }
+        }
+      }
+    }, { passive: true });
+  }
+
+  // Navegación fluida por teclado (flechas y escape)
+  document.addEventListener('keydown', (e) => {
+    const { dialog } = getLightboxElements();
+    if (!dialog || !dialog.open) return;
+
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      nextAccionPhoto();
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      prevAccionPhoto();
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      closeAccionLightbox();
+    }
+  });
 }
 
 // Initialize on DOM Loaded
@@ -1255,6 +1338,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setupInfiniteDragCarousel('sliderPitchesTrack', 'sliderPitchesPrev', 'sliderPitchesNext');
   setupInfiniteDragCarousel('sliderTestimoniosTrack', 'sliderTestimoniosPrev', 'sliderTestimoniosNext');
   setupInfiniteDragCarousel('slider2025Track', 'slider2025Prev', 'slider2025Next');
+
+  // Inicializar visor lightbox para Speakers en acción
+  setupSpeakersLightboxEvents();
 
   if (window.lucide) {
     window.lucide.createIcons();
